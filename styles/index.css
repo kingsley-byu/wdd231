@@ -24,13 +24,21 @@
     --spacing: 1.5rem;
 }
 
-/* ===== RESET ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ===== BASE ===== */
+*, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-body); background-color: var(--color-bg); color: var(--color-text); line-height: 1.7; }
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
+ul { list-style: none; padding: 0; margin: 0; }
 
 /* ===== HEADER ===== */
 header {
@@ -47,16 +55,14 @@ header {
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
+.header-brand { display: flex; align-items: center; gap: 0.75rem; }
+
 .header-brand img {
     width: 40px;
     height: 40px;
     flex-shrink: 0;
     object-fit: contain;
 }
-
-.header-brand { display: flex; align-items: center; gap: 0.75rem; }
-
-.logo { width: 40px; height: 40px; color: var(--color-accent-light); flex-shrink: 0; }
 
 .site-name {
     font-family: var(--font-display);
@@ -150,6 +156,7 @@ section h2 {
     text-align: center;
     padding: 0.65rem 1rem;
     letter-spacing: 0.03em;
+    margin: 0;
 }
 
 /* ===== ABOUT ===== */
@@ -157,18 +164,23 @@ section h2 {
 #about p:last-child { padding-bottom: 1.25rem; }
 #about strong { color: var(--color-primary-dark); }
 
-/* ===== PHOTO ===== */
-#photo-section figure { padding: 1.25rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-#photo-section img {
+/* ===== PHOTO SECTION (picture element) ===== */
+/* The <picture> element itself is inline by default, so we make it block */
+#photo-section picture {
+    display: block;
+    padding: 1.25rem;
+}
+
+/* The <img> inside <picture> fills the section nicely */
+#photo-section picture img {
     width: 100%;
-    max-width: 280px;
     border-radius: var(--radius);
     border: 3px solid var(--color-border);
     object-fit: cover;
-    aspect-ratio: 3/4;
-    background-color: #e8d5c0;
+    /* preserve the aspect ratio from the width/height attributes */
+    aspect-ratio: 4 / 3;
+    background-color: #e8d5c0; /* shows while image loads */
 }
-#photo-section figcaption { font-size: 0.85rem; color: var(--color-text-muted); font-style: italic; }
 
 /* ===== COURSES ===== */
 .filter-buttons { display: flex; gap: 0.75rem; padding: 1rem 1.25rem 0.5rem; flex-wrap: wrap; }
@@ -227,9 +239,9 @@ footer {
 .footer-social { display: flex; gap: 1.25rem; align-items: center; }
 .footer-social a { color: #aaa; transition: color 0.2s, transform 0.2s; display: flex; }
 .footer-social a:hover { color: var(--color-accent-light); transform: translateY(-3px); }
-.footer-info p, .footer-modified p { font-size: 0.85rem; color: #888; }
+.footer-info p, .footer-modified p { font-size: 0.85rem; color: #888; margin: 0; }
 
-/* ===== LARGE SCREEN ===== */
+/* ===== TABLET & DESKTOP (768px+) ===== */
 @media (min-width: 768px) {
     .hamburger { display: none; }
 
@@ -240,7 +252,6 @@ footer {
     .navigation li.current a { border-left: none; background-color: rgba(230,126,34,0.2); color: var(--color-accent-light); }
 
     .main-grid { grid-template-columns: 2fr 1fr; }
-    #photo-section img { max-width: 100%; }
 }
 
 @media (min-width: 1024px) {
