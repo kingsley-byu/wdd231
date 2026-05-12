@@ -1,0 +1,29 @@
+{
+    "family-name": "osaruyi",
+    "date-moved-to-ward": "12 may 2026",
+    "number-in-family": 4,
+    "visited-by=bishop": true,
+    "family-data":[
+        {
+            "name": "Osaruyi kingsley osawaru",
+            "gender": "Male",
+            "birthdate": "May 5 1997"
+        },
+        {
+            "name":"Osaruyi Gracious",
+            "gender":"Female",
+            "birthdate":"20 september 1994"
+        },
+        {
+            "name":"Osaruyi Justice",
+            "gender":"Male",
+            "birthdate":"1991"
+        },
+        {
+            "name":"Osaruyi osaretin",
+            "gender":"Male",
+            "birthdate":"january 12 2000"
+        }
+    ]
+
+}

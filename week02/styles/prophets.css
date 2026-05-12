@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f8;
+    color: #222;
+    padding: 1rem;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: #2d4a8a;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* CARDS CONTAINER */
+
+#cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* CARD */
+
+#cards section {
+    background-color: #dfe7fd;
+    border: 1px solid #9aa7d1;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 6px;
+}
+
+/* NAME */
+
+#cards h2 {
+    font-family: 'Merriweather', serif;
+    color: #324c8c;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+
+
+
+/* IMAGE */
+
+#cards img {
+    margin-top: 1rem;
+    width: 220px;
+    height: auto;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* LARGE SCREEN */
+
+@media screen and (min-width: 700px) {
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    #cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    #cards section {
+        padding: 1rem;
+    }
+
+    #cards h2 {
+        font-size: 1.7rem;
+    }
+
+    #cards img {
+        width: 180px;
+    }
+}
