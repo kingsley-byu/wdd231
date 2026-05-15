@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaduna Chamber of Commerce</title>
+    <link rel="icon" href="kaduna-chamber.ico">
     <meta name="description" content="Discover local businesses, events, and opportunities with the Kaduna Chamber of Commerce.">
     <meta name="author" content="Osaruyi Kingsley Osawaru">
+    <link rel="icon"  href="images/kaduna-chamber.ico">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Kaduna Chamber of Commerce">
 
@@ -13,12 +15,19 @@
     <meta property="og:image" content="">
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+     
+    <link rel="stylesheet" href="styles/normalize.css">
+    <script src="script/chamber.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="inages/" alt="Chamber of Commerce logo">
-        <span>Kaduna Chamber of Commerce</span>
-        <button id="menu-btn" arial-label="Toggle navigation">☰</button>
+        <img src="images/kaduna-chamber-logo.svg" alt="Chamber of Commerce logo">
+        <span id="title-bar">Kaduna Chamber of Commerce</span>
+        <button id="menu-btn" aria-label="Toggle navigation">☰</button>
         
         <nav id="nav-bar">
             <ul>
@@ -31,9 +40,26 @@
         
     </header>
     <main>
-        <div class="card"></div>
+        <h1>Kaduna chamber of Commerce Members</h1>
+        <div class="menu">
+            <button id="grid">Grid</button>
+            <button id="list">List</button>
+	    </div>
+        <div id="cards"></div>
     </main>
     <footer>
+        <div class="social-media">
+            <a href=""><img src="image/"></a>
+            <a href=""><img src="image/"></a>
+            <a href=""><img src="image/"></a>
+        </div>
+        <div class="footer-info">
+            <p>&copy; <span id="currentyear"></span> &bull; Osaruyi Kingsley Osawaru &bull; Nigeria</p>
+        </div>
+
+        <div class="footer-modified">
+            <p id="lastModified"></p>
+        </div>
 
     </footer>
     
