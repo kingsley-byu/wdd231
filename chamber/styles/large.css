@@ -1,0 +1,34 @@
+/* ===== TABLET & DESKTOP ===== */
+@media (min-width: 768px) {
+    #menu-btn {
+        display: none;
+    }
+
+    #nav-bar {
+        display: flex !important;
+        width: auto;
+        background: none;
+    }
+
+    #nav-bar ul {
+        flex-direction: row;
+        gap: 0.25rem;
+    }
+
+    #nav-bar ul li a {
+        padding: 0.5rem 0.9rem;
+        border-radius: 5px;
+        border-left: none;
+        font-size: 0.9rem;
+    }
+
+    #nav-bar ul li a:hover {
+        border-left: none;
+        background-color: rgba(255 255 255 / 10%);
+    }
+
+    #title-bar {
+        font-size: 1.5rem;
+    }
+}
+

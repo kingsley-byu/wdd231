@@ -52,8 +52,8 @@ const displayMembers = (members) => {
         address.textContent = `${member.companyAddress.street}, ${member.companyAddress.city}, ${member.companyAddress.country}`;
         phone.textContent = member.phoneNumber;
         websiteUrl.innerHTML = `<a href="${member.website}" target="_blank">Visit Website</a>`;
-        level.textContent = member.membershipLevel;
-        year.textContent = member.yearEstablished;
+        level.textContent = `Membership level: ${member.membershipLevel}`;
+        year.textContent = `Year Established: ${member.yearEstablished}`;
 
         card.appendChild(picture);
         card.appendChild(name);
