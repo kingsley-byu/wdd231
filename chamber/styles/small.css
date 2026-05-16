@@ -249,27 +249,3 @@ footer {
     margin-top: 2rem;
 }
 
-.footer-social {
-    display: flex;
-    gap: 1.25rem;
-    align-items: center;
-}
-
-.footer-social a {
-    color: #aaa;
-    transition: color 0.2s, transform 0.2s;
-    display: flex;
-}
-
-.footer-social a:hover {
-    color: var(--accent-light);
-    transform: translateY(-3px);
-}
-
-.footer-info p,
-.footer-modified p {
-    font-size: 0.85rem;
-    color: #888;
-    margin: 0;
-}
-
