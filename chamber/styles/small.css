@@ -175,7 +175,7 @@ section p {
     color: var(--text-muted);
 }
 
-img {
+picture {
     width: auto;
     height: 75px;
 }
@@ -198,7 +198,7 @@ img {
     margin: 0.2rem 0;
 }
 
-.grid img {
+.grid picture {
     border: 1px solid #eee;
     box-shadow: 0 0 0.75rem #ccc;
     border-radius: 4px;
@@ -224,7 +224,7 @@ img {
     margin: 0 0.5rem;
 }
 
-.list section img {
+.list section picture {
     display: none;
 }
 
