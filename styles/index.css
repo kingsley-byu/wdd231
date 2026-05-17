@@ -137,7 +137,7 @@ main > h1 {
 }
 
 /* ===== MAIN GRID ===== */
-.main-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+#main-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem; }
 
 /* ===== SECTIONS ===== */
 section {
@@ -251,7 +251,7 @@ footer {
     .navigation a:hover { border-left: none; background-color: rgba(255,255,255,0.1); }
     .navigation li.current a { border-left: none; background-color: rgba(230,126,34,0.2); color: var(--color-accent-light); }
 
-    .main-grid { grid-template-columns: 2fr 1fr; }
+    #main-grid { grid-template-columns: 2fr 1fr; }
 }
 
 @media (min-width: 1024px) {
