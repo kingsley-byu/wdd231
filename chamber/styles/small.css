@@ -184,7 +184,7 @@ picture {
 /* ===== GRID VIEW ===== */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit);
+    grid-template-columns: auto;
     gap: 0.5rem;
     align-items: start;
     padding: 0.5rem 0;
