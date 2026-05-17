@@ -10,7 +10,7 @@
         "phoneNumber": "+234 810 630 5637",
         "website": "https://www.businesslist.com.ng/company/253749/equinoxx-systems-nig",
         "imageFile": "images/equinoxx-power-engineering",
-        "membershipLevel": "1",
+        "membershipLevel": 2,
         "yearEstablished":"2010"
         },
         
@@ -25,7 +25,7 @@
         "phoneNumber": "+234 802 334 8314",
         "website": "https://www.businesslist.com.ng/company/256911/fab-cakemaster",
         "imageFile": "images/ab-cakemaster",
-        "membershipLevel": "1",
+        "membershipLevel": 2,
         "yearEstablished": "2014"
         },
 
@@ -40,7 +40,7 @@
         "phoneNumber": "+2349024444460",
         "website": "https://www.businesslist.com.ng/company/196444/dmalan-computers",
         "imageFile": "images/dmala-computers",
-        "membershipLevel": "1",
+        "membershipLevel": 3,
         "yearEstablished": "2007"
         },
 
@@ -55,7 +55,7 @@
         "phoneNumber": "08026076666",
         "website": "https://www.businesslist.com.ng/company/266276/zealous-event-planners",
         "imageFile": "images/zealous-event-planners",
-        "membershipLevel": "1",
+        "membershipLevel": 3,
         "yearEstablished": "2007"
         },
 
@@ -64,12 +64,13 @@
         "companyAddress": {
             "street": "NO 49/50 kachia Road",
             "city": "Kaduna",
+          
             "country": "Nigeria"
         },
         "phoneNumber": "+234 903 478 4555",
         "website": "https://www.businesslist.com.ng/company/262222/mayal-agricultural-services-co-ltd",
         "imageFile": "images/mayal-agricultural-services",
-        "membershipLevel": "",
+        "membershipLevel": 2,
         "yearEstablished": "2013"
         },
 
@@ -83,7 +84,7 @@
         "phoneNumber": "09127102794",
         "website": "https://www.businesslist.com.ng/company/272440/olam-feed-and-chicks",
         "imageFile": "images/olam-feed-and-chicks",
-        "membershipLevel": "2",
+        "membershipLevel": 2,
         "yearEstablished": "1996"
         },
 
@@ -97,7 +98,7 @@
         "phoneNumber": "+2347069233444",
         "website": "https://www.businesslist.com.ng/company/254019/house-of-bobi-fashion-enterprise",
         "imageFile": "images/house-of-bobi-fashion-enterprise",
-        "membershipLevel": "1",
+        "membershipLevel": 3,
         "yearEstablished": "1996"
        }   
 ]

@@ -51,7 +51,15 @@ const displayMembers = (members) => {
         address.textContent = `${member.companyAddress.street}, ${member.companyAddress.city}, ${member.companyAddress.country}`;
         phone.textContent = member.phoneNumber;
         websiteUrl.innerHTML = `<a href="${member.website}" target="_blank">Visit Website</a>`;
-        level.textContent = `Membership level: ${member.membershipLevel}`;
+        if (member.membershipLevel === 1) {
+         level.innerHTML = `Membership Level: <span style="color: blue;">Member</span>`;
+
+        } else if (member.membershipLevel === 2) {
+        level.innerHTML = `Membership Level: <span style="color: red;">Silver</span>`;
+
+        } else if (member.membershipLevel === 3) {
+        level.innerHTML = `Membership Level: <span style="color: gold;">Gold</span>`;
+        }
         year.textContent = `Year Established: ${member.yearEstablished}`;
 
         card.appendChild(picture);
