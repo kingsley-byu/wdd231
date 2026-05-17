@@ -5,12 +5,11 @@
         "companyAddress": {
             "street": "3 Kachia Road",
             "city": "Kaduna",
-            "state": "Kaduna state",
             "country": "Nigeria" 
         },
         "phoneNumber": "+234 810 630 5637",
         "website": "https://www.businesslist.com.ng/company/253749/equinoxx-systems-nig",
-        "imageFile": "images/eqinoxx-power-engineering",
+        "imageFile": "images/equinoxx-power-engineering",
         "membershipLevel": "1",
         "yearEstablished":"2010"
         },
@@ -20,7 +19,6 @@
         "companyAddress": {
             "street": "plot 17 Angola road. Barnawa",
             "city": "Kaduna",
-            "state": "Kaduna state",
             "country": "Nigeria"
             
         },
@@ -36,11 +34,10 @@
         "companyAddress": {
             "street": "NF 10 Maiduguri Road",
             "city": "Kaduna",
-            "state": "Kaduna state",
             "country": "Nigeria"
             
         },
-        "phoneNumber": "",
+        "phoneNumber": "+2349024444460",
         "website": "https://www.businesslist.com.ng/company/196444/dmalan-computers",
         "imageFile": "images/dmala-computers",
         "membershipLevel": "1",
@@ -52,7 +49,6 @@
         "companyAddress": {
             "street": "No 18 Iyaka Street",
             "city": "Kaduna",
-            "state": "Kaduna state",
             "country": "Nigeria"
             
         },
@@ -66,9 +62,8 @@
         {        
         "companyName":"Mayal Agricultural Services Co. Ltd",
         "companyAddress": {
-            "street": "NO 49/50 kachia Road opposite Customary Court Sabo Tasha",
+            "street": "NO 49/50 kachia Road",
             "city": "Kaduna",
-            "state": "Kaduna state",
             "country": "Nigeria"
         },
         "phoneNumber": "+234 903 478 4555",
@@ -83,7 +78,6 @@
         "companyAddress": {
             "street": "Tudun Wada, 800282",
             "city": "Zaria",
-            "state": "Kaduna state",
             "country": "Nigeria"
         },
         "phoneNumber": "09127102794",
@@ -98,7 +92,6 @@
         "companyAddress": {
             "street": "Suite 4B Yawuri Plaza beside MRS filling Station, Junction road",
             "city": "Kaduna",
-            "state": "Kaduna state",
             "country": "Nigeria"
         },
         "phoneNumber": "+2347069233444",

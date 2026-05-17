@@ -1,37 +1,14 @@
-/* ===== TABLET & DESKTOP ===== */
-@media (min-width: 768px) {
-    #menu-btn {
-        display: none;
+@media (min-width: 1024px) {
+    main {
+        padding: 2rem 2rem 3rem;
     }
 
-    #nav-bar {
-        display: flex !important;
-        width: auto;
-        background: none;
+    h1 {
+        font-size: 2.2rem;
     }
 
-    #nav-bar ul {
-        flex-direction: row;
-        gap: 0.25rem;
+    /* Add this */
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
     }
-
-    #nav-bar ul li a {
-        padding: 0.5rem 0.9rem;
-        border-radius: 5px;
-        border-left: none;
-        font-size: 0.9rem;
-    }
-
-    #nav-bar ul li a:hover {
-        border-left: none;
-        background-color: rgba(255 255 255 / 10%);
-    }
-
-    #title-bar {
-        font-size: 1.5rem;
-    }
-
-   
-
 }
-

@@ -6,7 +6,6 @@ menu.addEventListener('click', () => {
 });
 
 const cardContainer = document.querySelector('#cards');
-const display = document.querySelector('article');
 
 async function getMembersData() {
     const response = await fetch('data/members.json');
@@ -71,13 +70,13 @@ const gridButton = document.querySelector('#grid');
 const listBtn = document.querySelector('#list');
 
 gridButton.addEventListener('click', () => {
-    display.classList.add('grid');
-    display.classList.remove('list');
+    cardContainer.classList.add('grid');
+    cardContainer.classList.remove('list');
 });
 
 listBtn.addEventListener('click', () => {
-    display.classList.add('list');
-    display.classList.remove('grid');
+    cardContainer.classList.add('list');
+    cardContainer.classList.remove('grid');
 });
 
 document.querySelector('#currentyear').textContent = new Date().getFullYear();

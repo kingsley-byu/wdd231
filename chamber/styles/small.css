@@ -1,12 +1,13 @@
 :root {
-    --primary-color: #1a3c5e;
-    --color-dark: #0f2237;
+    --primary-color: #0B3C5D;
+    --color-dark: #081521; 
     --accent-color: #c8791a;
     --accent-light: #e8962a;
-    --background-color: #f4f1ec;
-    --card-bg: #ffffff;
+    --background-color: #F9F9F9;
+    --dark-color: #0f2237;
+    --card-bg: #fff;
     --text-color: #1e1e1e;
-    --text-muted: #666666;
+    --text-muted: #000;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'DM Sans', Arial, sans-serif;
     --spacing: 1.25rem;
@@ -19,7 +20,7 @@
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: var(--dark-color);
     color: var(--text-color);
     font-family: var(--font-body);
 }
@@ -47,8 +48,8 @@ header img {
 
 #title-bar {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 800;
     color: var(--accent-light);
     flex: 1;
     text-align: center;
@@ -122,7 +123,7 @@ h1 {
 .menu {
     margin: 1rem auto;
     padding: 0.5rem;
-    background-color: var(--color-dark);
+    background-color: var(--dark-color);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -183,8 +184,8 @@ picture {
 /* ===== GRID VIEW ===== */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fit);
+    gap: 0.5rem;
     align-items: start;
     padding: 0.5rem 0;
 }
@@ -239,7 +240,7 @@ picture {
 /* ===== FOOTER ===== */
 footer {
     background-color: var(--color-dark);
-    color: #bbb;
+    color: var(--card-bg);
     text-align: center;
     padding: 1.75rem var(--spacing);
     display: flex;
@@ -247,5 +248,7 @@ footer {
     align-items: center;
     gap: 0.85rem;
     margin-top: 2rem;
+    border-top: 2px solid ;
+    box-shadow: 0 0 0.75rem #ccc;
 }
 
