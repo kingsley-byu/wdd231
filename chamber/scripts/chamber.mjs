@@ -1,9 +1,9 @@
-const menu = document.querySelector('#menu-btn');
-const navBar = document.querySelector('#nav-bar');
-menu.addEventListener('click', () => {
-    navBar.classList.toggle('open');
-    menu.classList.toggle('open');
-});
+// navigation 
+import { initNav } from './shared/nav.mjs';
+// Footer
+import { setFooterInfo } from './shared/footer.mjs';
+// Membership
+import { getMembershipLabel } from './shared/membership.mjs';
 
 const cardContainer = document.querySelector('#cards');
 
@@ -13,7 +13,7 @@ async function getMembersData() {
     console.table(data.members);
     displayMembers(data.members);
 }
-getMembersData();
+
 
 const displayMembers = (members) => {
     members.forEach((member) => {
@@ -51,16 +51,8 @@ const displayMembers = (members) => {
         address.textContent = `${member.companyAddress.street}, ${member.companyAddress.city}, ${member.companyAddress.country}`;
         phone.textContent = member.phoneNumber;
         websiteUrl.innerHTML = `<a href="${member.website}" target="_blank">Visit Website</a>`;
-        if (member.membershipLevel === 1) {
-         level.innerHTML = `Membership Level: <span style="color: blue;">Member</span>`;
-
-        } else if (member.membershipLevel === 2) {
-        level.innerHTML = `Membership Level: <span style="color: red;">Silver</span>`;
-
-        } else if (member.membershipLevel === 3) {
-        level.innerHTML = `Membership Level: <span style="color: gold;">Gold</span>`;
-        }
         year.textContent = `Year Established: ${member.yearEstablished}`;
+        level.innerHTML = getMembershipLabel(member.membershipLevel);
 
         card.appendChild(picture);
         card.appendChild(name);
@@ -87,5 +79,7 @@ listBtn.addEventListener('click', () => {
     cardContainer.classList.remove('grid');
 });
 
-document.querySelector('#currentyear').textContent = new Date().getFullYear();
-document.querySelector('#lastModified').textContent = `Last Modified: ${document.lastModified}`;
+// run everything
+initNav();
+setFooterInfo();
+getMembersData();
