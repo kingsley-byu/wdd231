@@ -1,105 +1,127 @@
 {
-    "members":[
-        {        
-        "companyName":"Equinoxx Power Engineering Ltd",
-        "companyAddress": {
-            "street": "3 Kachia Road",
-            "city": "Kaduna",
-            "country": "Nigeria" 
-        },
-        "phoneNumber": "+234 810 630 5637",
-        "website": "https://www.businesslist.com.ng/company/253749/equinoxx-systems-nig",
-        "imageFile": "images/equinoxx-power-engineering",
-        "membershipLevel": 2,
-        "yearEstablished":"2010"
-        },
-        
-        {        
-        "companyName":"Fab Cakemaster",
-        "companyAddress": {
-            "street": "plot 17 Angola road. Barnawa",
-            "city": "Kaduna",
-            "country": "Nigeria"
-            
-        },
-        "phoneNumber": "+234 802 334 8314",
-        "website": "https://www.businesslist.com.ng/company/256911/fab-cakemaster",
-        "imageFile": "images/ab-cakemaster",
-        "membershipLevel": 2,
-        "yearEstablished": "2014"
-        },
+  "members": [
+    {
+      "companyName": "Equinoxx Power Engineering Ltd",
+      "companyAddress": {
+        "street": "3 Kachia Road",
+        "city": "Kaduna",
+        "country": "Nigeria"
+      },
+      "phoneNumber": "+234 810 630 5637",
+      "website": "https://www.businesslist.com.ng/company/253749/equinoxx-systems-nig",
+      "imageFile": "images/equinoxx-power-engineering",
+      "membershipLevel": 2,
+      "yearEstablished": "2010"
+    },
 
-        {        
-        "companyName":"Dmalan Computers",
-        "companyAddress": {
-            "street": "NF 10 Maiduguri Road",
-            "city": "Kaduna",
-            "country": "Nigeria"
-            
-        },
-        "phoneNumber": "+2349024444460",
-        "website": "https://www.businesslist.com.ng/company/196444/dmalan-computers",
-        "imageFile": "images/dmala-computers",
-        "membershipLevel": 3,
-        "yearEstablished": "2007"
-        },
+    {
+      "companyName": "Fab Cakemaster",
+      "companyAddress": {
+        "street": "plot 17 Angola road. Barnawa",
+        "city": "Kaduna",
+        "country": "Nigeria"
+      },
+      "phoneNumber": "+234 802 334 8314",
+      "website": "https://www.businesslist.com.ng/company/256911/fab-cakemaster",
+      "imageFile": "images/ab-cakemaster",
+      "membershipLevel": 2,
+      "yearEstablished": "2014"
+    },
 
-        {        
-        "companyName":"Zealous Event Planners",
-        "companyAddress": {
-            "street": "No 18 Iyaka Street",
-            "city": "Kaduna",
-            "country": "Nigeria"
-            
-        },
-        "phoneNumber": "08026076666",
-        "website": "https://www.businesslist.com.ng/company/266276/zealous-event-planners",
-        "imageFile": "images/zealous-event-planners",
-        "membershipLevel": 3,
-        "yearEstablished": "2007"
-        },
+    {
+      "companyName": "Dmalan Computers",
+      "companyAddress": {
+        "street": "NF 10 Maiduguri Road",
+        "city": "Kaduna",
+        "country": "Nigeria"
+      },
+      "phoneNumber": "+2349024444460",
+      "website": "https://www.businesslist.com.ng/company/196444/dmalan-computers",
+      "imageFile": "images/dmala-computers",
+      "membershipLevel": 3,
+      "yearEstablished": "2007"
+    },
 
-        {        
-        "companyName":"Mayal Agricultural Services Co. Ltd",
-        "companyAddress": {
-            "street": "NO 49/50 kachia Road",
-            "city": "Kaduna",
-          
-            "country": "Nigeria"
-        },
-        "phoneNumber": "+234 903 478 4555",
-        "website": "https://www.businesslist.com.ng/company/262222/mayal-agricultural-services-co-ltd",
-        "imageFile": "images/mayal-agricultural-services",
-        "membershipLevel": 2,
-        "yearEstablished": "2013"
-        },
+    {
+      "companyName": "Zealous Event Planners",
+      "companyAddress": {
+        "street": "No 18 Iyaka Street",
+        "city": "Kaduna",
+        "country": "Nigeria"
+      },
+      "phoneNumber": "08026076666",
+      "website": "https://www.businesslist.com.ng/company/266276/zealous-event-planners",
+      "imageFile": "images/zealous-event-planners",
+      "membershipLevel": 3,
+      "yearEstablished": "2007"
+    },
 
-        {        
-        "companyName":"olam feed and chicks",
-        "companyAddress": {
-            "street": "Tudun Wada, 800282",
-            "city": "Zaria",
-            "country": "Nigeria"
-        },
-        "phoneNumber": "09127102794",
-        "website": "https://www.businesslist.com.ng/company/272440/olam-feed-and-chicks",
-        "imageFile": "images/olam-feed-and-chicks",
-        "membershipLevel": 2,
-        "yearEstablished": "1996"
-        },
+    {
+      "companyName": "Mayal Agricultural Services Co. Ltd",
+      "companyAddress": {
+        "street": "NO 49/50 kachia Road",
+        "city": "Kaduna",
+        "country": "Nigeria"
+      },
+      "phoneNumber": "+234 903 478 4555",
+      "website": "https://www.businesslist.com.ng/company/262222/mayal-agricultural-services-co-ltd",
+      "imageFile": "images/mayal-agricultural-services",
+      "membershipLevel": 2,
+      "yearEstablished": "2013"
+    },
 
-        {        
-        "companyName":"House of Bobi Fashion Enterprise",
-        "companyAddress": {
-            "street": "Suite 4B Yawuri Plaza beside MRS filling Station, Junction road",
-            "city": "Kaduna",
-            "country": "Nigeria"
-        },
-        "phoneNumber": "+2347069233444",
-        "website": "https://www.businesslist.com.ng/company/254019/house-of-bobi-fashion-enterprise",
-        "imageFile": "images/house-of-bobi-fashion-enterprise",
-        "membershipLevel": 3,
-        "yearEstablished": "1996"
-       }   
-]
+    {
+      "companyName": "olam feed and chicks",
+      "companyAddress": {
+        "street": "Tudun Wada, 800282",
+        "city": "Zaria",
+        "country": "Nigeria"
+      },
+      "phoneNumber": "09127102794",
+      "website": "https://www.businesslist.com.ng/company/272440/olam-feed-and-chicks",
+      "imageFile": "images/olam-feed-and-chicks",
+      "membershipLevel": 2,
+      "yearEstablished": "1996"
+    },
+
+    {
+      "companyName": "House of Bobi Fashion Enterprise",
+      "companyAddress": {
+        "street": "Suite 4B Yawuri Plaza beside MRS filling Station, Junction road",
+        "city": "Kaduna",
+        "country": "Nigeria"
+      },
+      "phoneNumber": "+2347069233444",
+      "website": "https://www.businesslist.com.ng/company/254019/house-of-bobi-fashion-enterprise",
+      "imageFile": "images/house-of-bobi-fashion-enterprise",
+      "membershipLevel": 3,
+      "yearEstablished": "1996"
+    }
+  ],
+
+  "comingEvents": [
+    {
+      "title": "Kaduna Business Networking Summit",
+      "date": "2026-06-15",
+      "description": "Join local entrepreneurs and business leaders for a networking and partnership event focused on economic growth in Kaduna State."
+    },
+
+    {
+      "title": "SME Digital Marketing Workshop",
+      "date": "2026-07-02",
+      "description": "A hands-on workshop teaching small business owners how to use social media and online advertising to grow their businesses."
+    },
+
+    {
+      "title": "Annual Trade Fair Exhibition",
+      "date": "2026-08-10",
+      "description": "Explore products and services from local companies, manufacturers, and startups across Kaduna State."
+    },
+
+    {
+      "title": "Youth Entrepreneurship Conference",
+      "date": "2026-09-05",
+      "description": "An inspiring conference designed to encourage young entrepreneurs through mentorship, innovation talks, and investment opportunities."
+    }
+  ]
 }

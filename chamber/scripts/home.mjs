@@ -1,24 +1,85 @@
+const latitude = 10.5222;
+const longitude = 7.4383;
+
+const urlPage = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=2b3f713a857c58b805c48f575ba009e1`;
+
+
+async function getWeatherData() {
+  try {
+    const response = await fetch(urlPage);
+    if (response.ok){
+        const data = await response.json();
+        console.log(data);
+        displayWeatherData(data);
+        
+    } else throw Error(await response.text());
+    }
+    catch (error) {
+        console.log(error);
+    };
+    
+}
+
+async function getEvent(){
+   try {
+     const response = await fetch('data/members.json');
+     if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        displayEvent(data);
+
+     } else throw Error(await response.text());
+   }
+   catch (error) {
+    console.log(error);
+   }
+
+}
+getEvent();// Event call
+getWeatherData();// weather call
 const sectionOne = document.querySelector('#event');
-// Event card
+const displayEvent = (events) => {
+events.forEach((comingEvents) => {
 const eventCard = document.createElement('div');
-const event= document.createElement('h2');
-const = document.createElement('');
-const = document.createElement('');
+let event= document.createElement('h2');
+let eventTitle = document.createElement('p');
+let eventDate= document.createElement('p');
+let eventDescription= document.createElement('p');
+eventCard.appendChild(event);
+eventCard.appendChild(eventTitle);
+eventCard.appendChild(eventDate);
+eventCard.appendChild(eventDescription)
+
+sectionOne.appendChild(eventCard);
+
+//Add textContent
+event.textContent = 'Events';
+eventTitle.textContent = `Title: ${comingEvents.title}`;
+eventDate.textContent = `Date: ${comingEvents.eventDate}`;
+eventDescription.textContent = comingEvents.description;
+
+    });
+};
+    // Event card
+
+
+
 
 //Current weather
+function displayWeatherData() {
 const currentWeather = document.createElement('div');
 const weather= document.createElement('h2');
 const weatherCard = document.createElement('div');
-const imageDiv = document.createElement('div');
+let imageDiv = document.createElement('div');
 const weatherDiv = document.createElement('div');
-const image= document.createElement('img');
-const fareihite = document.createElement('p');
-const cloudy= document.createElement('p');
-const high= document.createElement('p');
-const low= document.createElement('p');
-const humidity= document.createElement('p');
-const sunrise= document.createElement('p');
-const sunset= document.createElement('p');
+let image= document.createElement('img');
+let fareihite = document.createElement('p');
+let cloudy= document.createElement('p');
+let high= document.createElement('p');
+let low= document.createElement('p');
+let humidity= document.createElement('p');
+let sunrise= document.createElement('p');
+let sunset= document.createElement('p');
 
 //Add classList to the  weather divs
 weatherCard.classList.add('weather-cards');
@@ -32,10 +93,12 @@ weatherDiv.appendChild(low);
 weatherDiv.appendChild(humidity);
 weatherDiv.appendChild(sunrise);
 weatherDiv.appendChild(sunset);
+imageDiv.appendChild(image);
 
 weatherCard.appendChild(imageDiv);
 weatherCard.appendChild(weatherDiv);
 
+currentWeather.appendChild(weather);
 currentWeather.appendChild(weatherCard);// overall weather card
 
 sectionOne.appendChild(currentWeather);
@@ -44,11 +107,11 @@ sectionOne.appendChild(currentWeather);
 
 
 //Weather forecast
-const weatherForecast = document.createElement('div');
-const weatherHeading= document.createElement('h2');
-const today= document.createElement('p');
-const nextDay= document.createElement('p');
-const TwoDayAfter= document.createElement('p');
+let weatherForecast = document.createElement('div');
+let weatherHeading= document.createElement('h2');
+let today= document.createElement('p');
+let nextDay= document.createElement('p');
+let TwoDayAfter= document.createElement('p');
 
 // Append the 3 information to the weather forecast div
 weatherForecast.appendChild(weatherHeading);
@@ -56,32 +119,36 @@ weatherForecast.appendChild(today);
 weatherForecast.appendChild(nextDay);
 weatherForecast.appendChild(TwoDayAfter);
 sectionOne.appendChild(weatherForecast);
+}
+
+
+
+
+
 
 
 //Business card
-const sectionTwo = document.querySelector('business-info');
-const eventCard = document.createElement('div');
-const name= document.createElement('h2');
-const tag = document.createElement('p');
-const info = document.createElement('div');
-const imageDiv2 = document.createElement('p');
-const email = document.createElement('p');
-const phone = document.createElement('p');
-const url = document.createElement('p');
+
+const sectionTwo = document.querySelector('#business-info');
+let eventCard = document.createElement('div');// main div
+let name= document.createElement('h2');//append to main div
+let tag = document.createElement('p');//append to main div
+const subDiv = document.createElement('div');//imagediv
+let image = document.createElement('p');//append to image div
+let info = document.createElement('div');// info div
+let email = document.createElement('p');//append to info div
+let phone = document.createElement('p');//append to info div
+let url = document.createElement('p');//append to info div
 // Add classList 
 eventCard.classList.add('business-name');
 info.classList.add('business-information')
 //append business cards
-eventCard.appendChild(name);
-eventCard.appendChild(tag);
+subDiv.appendChild(image);
+info.appendChild()
 
-info.appendChild(imageDiv2);
-info.appendChild(email);
-info.appendChild(phone);
-info.appendChild(url);
 
-sectionTwo.appendChild(eventCard);
-sectionTwo.appendChild(info);
+
+
 
 
 
