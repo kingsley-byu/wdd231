@@ -42,52 +42,76 @@
         
     </header>
     <main>
-        <section class="hero">
-
-            <picture>
-                <source srcset="images/kaduna-image-large.webp" media="(min-width: 1000px)">
-                <source srcset="images/kaduna-image-medium.webp" media="(min-width: 640px)">
-
-                <img src="images/kaduna-image-small.webp" alt="Kaduna city business district" loading="lazy" width="1200" height="500">
-            </picture>
-
-            <div class="hero-overlay">
+        <picture>
+            <source srcset="images/kaduna-image-large.webp" media="(min-width: 1000px)">
+            <source srcset="images/kaduna-image-medium.webp" media="(min-width: 1000px)">
+            <img src="images/kaduna-image-medium.webp" alt="Kaduna city business district" loading="lazy">
+        </picture>
+         <div class="hero-overlay">
                 <h1>Welcome to Kaduna Chamber of Commerce</h1>
 
-                <p>Connecting businesses, supporting growth, and creating opportunities in Kaduna State.</p>
+                <p>
+                    Connecting businesses, supporting growth, and creating
+                    opportunities in Kaduna State.
+                </p>
 
                 <a href="join.html" class="cta-btn">Join Now</a>
             </div>
 
         </section>
 
-        <section id="event" class="info-card"></section>
-
-        <section id="current-weather" class="info-card"></section>
-        <section id="forecast" class="info-card"></section>
-        <section class="spotlight-section">
-
-            <h2 class="spotlight-heading">Business Spotlights</h2>
-
-            <div id="business-info">
-
-
-            </div>
-
-        </section>
+        <section id="event"></section>
+        <section id="business-info"></section>
         
     </main>
+    <!-- FOOTER -->
     <footer>
-        
-        <div class="footer-info">
-            <p>&copy; <span id="currentyear"></span> &bull; Osaruyi Kingsley Osawaru &bull; Nigeria</p>
+
+        <div class="footer-contact">
+
+            <h3>Kaduna Chamber of Commerce</h3>
+
+            <p>10 Ahmadu Bello Way</p>
+            <p>Kaduna, Nigeria</p>
+
+            <p>info@kadunachamber.org</p>
+
+            <p>(234) 800-000-0000</p>
+
         </div>
 
-        <div class="footer-modified">
+        <div class="footer-socials">
+
+            <a href="#">
+                <img src="images/youtube.svg" alt="YouTube Icon">
+            </a>
+
+            <a href="#">
+                <img src="images/twitter.svg" alt="Twitter Icon">
+            </a>
+
+            <a href="#">
+                <img src="images/linkedin.svg" alt="LinkedIn Icon">
+            </a>
+
+        </div>
+
+        <div class="footer-project">
+
+            <p>
+                WDD231 Class Project
+            </p>
+
+            <p>
+                &copy; <span id="currentyear"></span>
+                Osaruyi Kingsley Osawaru
+                • Nigeria
+            </p>
+
             <p id="lastModified"></p>
+
         </div>
 
     </footer>
-    
 </body>
 </html>
