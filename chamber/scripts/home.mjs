@@ -1,254 +1,200 @@
+import { initNav } from './shared/nav.mjs';
+import { setFooterInfo } from './shared/footer.mjs';
+
 const latitude = 10.5222;
 const longitude = 7.4383;
 const apiKey = "2b3f713a857c58b805c48f575ba009e1";
-const urlPage = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
 
+// Convert Unix timestamp to readable time
+function formatTime(unix) {
+    return new Date(unix * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
 
-
-
-async function getEvent(){
-   try {
-     const response = await fetch('data/members.json');
-     if (response.ok) {
+// ===== EVENTS =====
+async function getEvent() {
+    try {
+        const response = await fetch('data/members.json');
+        if (!response.ok) throw Error(await response.text());
         const data = await response.json();
-        console.log(data);
         displayEvent(data.comingEvents);
         displayBusinessCard(data.members);
-
-     } else throw Error(await response.text());
-   }
-   catch (error) {
-    console.log(error);
-   }
-
-}
-
-
-const sectionOne = document.querySelector('#event');
-const displayEvent = (events) => {
-let eventHeading = document.createElement('h2');
-eventHeading.textContent = 'Events';
-sectionOne.appendChild(eventHeading);
-events.forEach((comingEvents) => {
-const eventCard = document.createElement('div');
-let eventTitle = document.createElement('p');
-let eventDate= document.createElement('p');
-let eventDescription= document.createElement('p');
-eventCard.appendChild(eventTitle);
-eventCard.appendChild(eventDate);
-eventCard.appendChild(eventDescription)
-
-sectionOne.appendChild(eventCard);
-
-//Add textContent
-eventTitle.textContent = `Title: ${comingEvents.title}`;
-eventDate.textContent = `Date: ${comingEvents.date}`;
-eventDescription.textContent = comingEvents.description;
-
-    });
-};
-
-
-
-
-async function getWeatherData() {
-  try {
-    const response = await fetch(urlPage);
-    if (response.ok){
-        const data = await response.json();
-        console.log(data);
-        displayWeatherData(data);
-        
-        
-    } else throw Error(await response.text());
-    }
-    catch (error) {
-        console.log(error);
-    };
-    
-}
-//Current weather
-function displayWeatherData(data) {
-const currentWeather = document.createElement('div');
-const weather= document.createElement('h2');
-const weatherCard = document.createElement('div');
-let imageDiv = document.createElement('div');
-const weatherDiv = document.createElement('div');
-let image= document.createElement('img');
-let fahrenheit = document.createElement('p');
-let cloudy= document.createElement('p');
-let high= document.createElement('p');
-let low= document.createElement('p');
-let humidity= document.createElement('p');
-let sunrise= document.createElement('p');
-let sunset= document.createElement('p');
-
-
-//Add classList to the  weather divs
-weatherCard.classList.add('weather-cards');
-weatherDiv.classList.add('weather-info');// this is the div containing the info such as  high, low, humidity etc
-
-//Append the weather info to the sub-div (high, low, humidity)
-weatherDiv.appendChild(fahrenheit);
-weatherDiv.appendChild(cloudy);
-weatherDiv.appendChild(high);
-weatherDiv.appendChild(low);
-weatherDiv.appendChild(humidity);
-weatherDiv.appendChild(sunrise);
-weatherDiv.appendChild(sunset);
-imageDiv.appendChild(image);
-
-weatherCard.appendChild(imageDiv);
-weatherCard.appendChild(weatherDiv);
-
-currentWeather.appendChild(weather);
-currentWeather.appendChild(weatherCard);// overall weather card
-
-sectionOne.appendChild(currentWeather);
-
-// Add textContent to the element
-weather.textContent = 'Current Weather';
-image.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-fahrenheit.textContent= `Temp: ${data.main.temp}°C`;
-cloudy.textContent = `${data.weather[0].description}`
-high.textContent= `Max temp: ${data.main.temp_max}°C`;
-low.textContent =  `Min temp: ${data.main.temp_min}°C`;
-humidity.textContent = `Humidity: ${data.main.pressure}`;
-sunrise.textContent = `Sunrise: ${data.sys.sunrise}`;
-sunset.textContent = `Sunset: ${data.sys.sunset}`;
-
-}
-
-
-
-async function getForecast() {
-   
-    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
-
-    try {
-        const response = await fetch(url);
-        if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-        displayWeatherForecast(data); 
-        } else throw Error(await response.text())
-        
     } catch (error) {
         console.log(error);
     }
 }
-//Weather forecast
-function displayWeatherForecast(data) {
 
-let weatherForecast = document.createElement('div');
-let weatherHeading= document.createElement('h2');
-let today= document.createElement('p');
-let nextDay= document.createElement('p');
-let TwoDayAfter= document.createElement('p');
+function displayEvent(events) {
+    const eventList = document.querySelector('#event-list');
+    events.forEach((ev) => {
+        const eventCard = document.createElement('div');
+        eventCard.classList.add('event-card');
 
-// Add textContent to the weather forecast information
+        let title = document.createElement('p');
+        let date = document.createElement('p');
+        let desc = document.createElement('p');
 
-weatherHeading.textContent = 'Weather Forecast';
+        title.classList.add('event-title');
+        date.classList.add('event-date');
 
-const dailyData = data.list.filter(item =>
-    item.dt_txt.includes("12:00:00")
-);
-today.textContent = `Today: ${dailyData[0].main.temp}°C,  ${dailyData[0].weather[0].description}`;
-nextDay.textContent = `Tomorrow: ${dailyData[1].main.temp}°C,  ${dailyData[1].weather[0].description}`;;
-TwoDayAfter.textContent = `Day After: ${dailyData[2].main.temp}°C,  ${dailyData[2].weather[0].description}`;;
+        title.textContent = ev.title;
+        date.textContent = ev.date;
+        desc.textContent = ev.description;
 
-// Append the 3 information to the weather forecast div
-weatherForecast.appendChild(weatherHeading);
-weatherForecast.appendChild(today);
-weatherForecast.appendChild(nextDay);
-weatherForecast.appendChild(TwoDayAfter);
-
-sectionOne.appendChild(weatherForecast);
-
-
-   
+        eventCard.appendChild(title);
+        eventCard.appendChild(date);
+        eventCard.appendChild(desc);
+        eventList.appendChild(eventCard);
+    });
 }
 
+// ===== CURRENT WEATHER =====
+async function getWeatherData() {
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+        const response = await fetch(url);
+        if (!response.ok) throw Error(await response.text());
+        const data = await response.json();
+        displayWeatherData(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
+function displayWeatherData(data) {
+    const container = document.querySelector('#weather-content');
 
+    const topRow = document.createElement('div');
+    topRow.classList.add('weather-top');
 
-//Business card
-function displayBusinessCard(members){
-const sectionTwo = document.querySelector('#business-info');
-const eligibleMembers = members.filter(member =>
-    member.membershipLevel >= 2
-);
+    const image = document.createElement('img');
+    image.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    image.alt = data.weather[0].description;
 
-const shuffled = eligibleMembers.sort(() => Math.random() - 0.5);
-const selectedMembers = shuffled.slice(0, 3);
+    const temp = document.createElement('p');
+    temp.classList.add('weather-temp');
+    temp.textContent = `${data.main.temp}°C`;
 
-selectedMembers.forEach((cards) => {
-        
-let name= document.createElement('h2');//append to main div
-let tag = document.createElement('p');//append to main div
-const businessCard = document.createElement('div');// main div
-const subDiv = document.createElement('div');//imagediv
+    topRow.appendChild(image);
+    topRow.appendChild(temp);
 
-let picture = document.createElement('picture');
+    const details = document.createElement('div');
+    details.classList.add('weather-details');
 
-let sourceLarge = document.createElement('source');
-sourceLarge.setAttribute('srcset', `${cards.imageFile}-large.webp`);
-sourceLarge.setAttribute('media', '(min-width: 1000px)');
+    const fields = [
+        `${data.weather[0].description}`,
+        `High: ${data.main.temp_max}°C`,
+        `Low: ${data.main.temp_min}°C`,
+        `Humidity: ${data.main.humidity}%`,
+        `Sunrise: ${formatTime(data.sys.sunrise)}`,
+        `Sunset: ${formatTime(data.sys.sunset)}`
+    ];
 
-let sourceMedium = document.createElement('source');
-sourceMedium.setAttribute('srcset', `${cards.imageFile}-medium.webp`);
-sourceMedium.setAttribute('media', '(min-width: 640px)');
-
-let image = document.createElement('img');
-image.setAttribute('src', `${cards.imageFile}-small.webp`);
-image.setAttribute('alt', `portrait of ${cards.companyName}`);
-image.setAttribute('loading', 'lazy');
-image.setAttribute('width', '200');
-image.setAttribute('height', '150');       
-
-       
-
-let info = document.createElement('div');// info div
-let email = document.createElement('p');//append to info div
-let phone = document.createElement('p');//append to info div
-let url = document.createElement('p');//append to info div
-// Add classList 
-businessCard.classList.add('business-name');
-info.classList.add('business-information')
-
-//Add textContent
-name.textContent = cards.companyName;
-tag.textContent = cards.tag;
-picture.textContent = cards.imageFile;
-email.textContent = cards.email;
-url.textContent = cards.website;
-//append business cards
-
-info.appendChild(email);
-info.appendChild(phone);
-info.appendChild(url);
-// Append the images to the picture element
-picture.appendChild(sourceLarge);
-picture.appendChild(sourceMedium);
-picture.appendChild(image);
-// Append the picture div to the subDiv
-subDiv.appendChild(picture);
-businessCard.appendChild(subDiv);
-businessCard.appendChild(info);
-
-sectionTwo.appendChild(name);
-sectionTwo.appendChild(tag);
-sectionTwo.appendChild(businessCard);
-
-
+    fields.forEach(text => {
+        const p = document.createElement('p');
+        p.textContent = text;
+        details.appendChild(p);
     });
-};
 
-getEvent();// Event call
-getWeatherData();// weather call
-getForecast()
+    container.appendChild(topRow);
+    container.appendChild(details);
+}
 
+// ===== FORECAST =====
+async function getForecast() {
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+        const response = await fetch(url);
+        if (!response.ok) throw Error(await response.text());
+        const data = await response.json();
+        displayWeatherForecast(data);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
+function displayWeatherForecast(data) {
+    const container = document.querySelector('#forecast-content');
+    const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00"));
 
+    const labels = ['Today', 'Tomorrow', 'Day After'];
+    dailyData.slice(0, 3).forEach((day, i) => {
+        const row = document.createElement('p');
+        row.classList.add('forecast-row');
+        row.innerHTML = `<span>${labels[i]}:</span> <strong>${day.main.temp}°C</strong> — ${day.weather[0].description}`;
+        container.appendChild(row);
+    });
+}
 
+// ===== BUSINESS SPOTLIGHTS =====
+function displayBusinessCard(members) {
+    const sectionTwo = document.querySelector('#business-info');
 
+    const eligible = members.filter(m => m.membershipLevel >= 2);
+    const selected = eligible.sort(() => Math.random() - 0.5).slice(0, 3);
+
+    selected.forEach((cards) => {
+        const businessCard = document.createElement('div');
+        businessCard.classList.add('business-card');
+
+        let name = document.createElement('h3');
+        let tag = document.createElement('p');
+
+        name.classList.add('business-name');
+        tag.classList.add('business-tag');
+
+        name.textContent = cards.companyName;
+        tag.textContent = cards.tag;
+
+        let picture = document.createElement('picture');
+        let sourceLarge = document.createElement('source');
+        sourceLarge.setAttribute('srcset', `${cards.imageFile}-large.webp`);
+        sourceLarge.setAttribute('media', '(min-width: 1000px)');
+        let sourceMedium = document.createElement('source');
+        sourceMedium.setAttribute('srcset', `${cards.imageFile}-medium.webp`);
+        sourceMedium.setAttribute('media', '(min-width: 640px)');
+        let image = document.createElement('img');
+        image.setAttribute('src', `${cards.imageFile}-small.webp`);
+        image.setAttribute('alt', `portrait of ${cards.companyName}`);
+        image.setAttribute('loading', 'lazy');
+        image.setAttribute('width', '80');
+        image.setAttribute('height', '80');
+
+        picture.appendChild(sourceLarge);
+        picture.appendChild(sourceMedium);
+        picture.appendChild(image);
+
+        const info = document.createElement('div');
+        info.classList.add('business-info-block');
+
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('business-body');
+
+        let email = document.createElement('p');
+        let phone = document.createElement('p');
+        let url = document.createElement('p');
+
+        email.innerHTML = `<span>EMAIL:</span> ${cards.email}`;
+        phone.innerHTML = `<span>PHONE:</span> ${cards.phoneNumber}`;
+        url.innerHTML = `<span>URL:</span> <a href="${cards.website}" target="_blank">${cards.website}</a>`;
+
+        info.appendChild(email);
+        info.appendChild(phone);
+        info.appendChild(url);
+
+        cardBody.appendChild(picture);
+        cardBody.appendChild(info);
+
+        businessCard.appendChild(name);
+        businessCard.appendChild(tag);
+        businessCard.appendChild(cardBody);
+
+        sectionTwo.appendChild(businessCard);
+    });
+}
+
+// ===== INIT =====
+initNav();
+setFooterInfo();
+getEvent();
+getWeatherData();
+getForecast();

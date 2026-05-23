@@ -265,3 +265,292 @@ footer {
     box-shadow: 0 0 0.75rem #ccc;
 }
 
+
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero picture,
+.hero img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1rem;
+    background-color: rgba(0 0 0 / 55%);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 280px;
+    text-align: right;
+}
+
+.hero-overlay h1 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    background: none;
+    padding: 0;
+    color: #fff;
+    margin-bottom: 0.4rem;
+}
+
+.hero-overlay p {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+    color: #ddd;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+
+.cta-btn:hover {
+    background-color: var(--accent-light);
+}
+
+/* ===== SECTION LABEL ===== */
+.section-label {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin: 1rem 0 0.5rem;
+}
+
+/* ===== INFO GRID (mobile: stacked) ===== */
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-card {
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    padding: 0;
+    border: none;
+}
+
+.card-heading {
+    background-color: var(--color-dark);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px 6px 0 0;
+}
+
+#event-list,
+#weather-content,
+#forecast-content {
+    padding: 0.75rem 1rem;
+}
+
+/* Events */
+.event-card {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+
+.event-title {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.event-date {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+}
+
+/* Current weather */
+.weather-top {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.weather-top img {
+    width: 60px;
+    height: 60px;
+}
+
+.weather-temp {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.weather-details p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Forecast */
+.forecast-row {
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #eee;
+    color: var(--text-muted);
+}
+
+.forecast-row span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ===== BUSINESS SPOTLIGHTS (mobile: stacked) ===== */
+.business-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.business-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 6px rgba(0 0 0 / 10%);
+    min-width: 0;        /* prevents overflow blowout */
+    overflow: hidden;    /* clips anything that escapes */
+    width: 100%;
+}
+
+.business-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  /* truncates long names with ... */
+}
+
+.business-tag {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.business-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.business-body picture {
+    flex-shrink: 0;   /* image never squishes */
+    width: 80px;
+    height: 80px;
+}
+
+.business-body picture img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.business-info-block {
+    min-width: 0;      /* allows text to wrap instead of overflow */
+    flex: 1;
+}
+
+.business-info-block p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;   /* keeps URL on one line with ... */
+}
+
+.business-info-block span {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.business-info-block a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.business-info-block a:hover {
+    text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--color-dark);
+    color: var(--card-bg);
+    padding: 1.75rem var(--spacing);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer-contact h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--accent-light);
+    margin-bottom: 0.4rem;
+}
+
+.footer-contact p {
+    font-size: 0.85rem;
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.footer-socials img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0.7);
+    transition: filter 0.2s;
+}
+
+.footer-socials a:hover img {
+    filter: brightness(1);
+}
+
+.footer-project p {
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.7;
+}

@@ -42,6 +42,51 @@
         background-color: rgba(255 255 255 / 10%);
     }
 
+
+    /* ===== HOME PAGE DESKTOP ===== */
+
+
+    .hero picture,
+    .hero img {
+        height: 420px;
+    }
+
+    .hero-overlay {
+        max-width: 380px;
+        padding: 1.5rem;
+    }
+
+    .hero-overlay h1 {
+        font-size: 1.4rem;
+    }
+
+    /* 3 columns side by side */
+    .info-grid {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .info-card {
+        flex: 1;
+    }
+
+   .business-grid {
+        grid-template-columns: repeat(3, 1fr);  /* exactly 3 equal columns */
+    }
+
+    .business-card {
+        min-width: 0;   /* critical — prevents grid blowout */
+    }
+
+    /* footer 3 columns */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+
 }
 
 
