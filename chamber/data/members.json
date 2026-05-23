@@ -8,10 +8,11 @@
         "country": "Nigeria"
       },
       "phoneNumber": "+234 810 630 5637",
+      "email": "info@equinoxxpower.com",
       "website": "https://www.businesslist.com.ng/company/253749/equinoxx-systems-nig",
       "imageFile": "images/equinoxx-power-engineering",
       "membershipLevel": 2,
-      "yearEstablished": "2010"
+      "tag": "Engineering"
     },
 
     {
@@ -22,10 +23,11 @@
         "country": "Nigeria"
       },
       "phoneNumber": "+234 802 334 8314",
+      "email": "orders@fabcakemaster.com",
       "website": "https://www.businesslist.com.ng/company/256911/fab-cakemaster",
       "imageFile": "images/ab-cakemaster",
       "membershipLevel": 2,
-      "yearEstablished": "2014"
+      "tag": "Bakery"
     },
 
     {
@@ -36,10 +38,11 @@
         "country": "Nigeria"
       },
       "phoneNumber": "+2349024444460",
+      "email": "support@dmalancomputers.com",
       "website": "https://www.businesslist.com.ng/company/196444/dmalan-computers",
       "imageFile": "images/dmala-computers",
       "membershipLevel": 3,
-      "yearEstablished": "2007"
+      "tag": "Computers & IT"
     },
 
     {
@@ -50,10 +53,11 @@
         "country": "Nigeria"
       },
       "phoneNumber": "08026076666",
+      "email": "events@zealousplanners.com",
       "website": "https://www.businesslist.com.ng/company/266276/zealous-event-planners",
       "imageFile": "images/zealous-event-planners",
       "membershipLevel": 3,
-      "yearEstablished": "2007"
+      "tag": "Events"
     },
 
     {
@@ -64,10 +68,11 @@
         "country": "Nigeria"
       },
       "phoneNumber": "+234 903 478 4555",
+      "email": "info@mayalagri.com",
       "website": "https://www.businesslist.com.ng/company/262222/mayal-agricultural-services-co-ltd",
       "imageFile": "images/mayal-agricultural-services",
       "membershipLevel": 2,
-      "yearEstablished": "2013"
+      "tag": "Agriculture"
     },
 
     {
@@ -78,10 +83,11 @@
         "country": "Nigeria"
       },
       "phoneNumber": "09127102794",
+      "email": "contact@olamfeed.com",
       "website": "https://www.businesslist.com.ng/company/272440/olam-feed-and-chicks",
       "imageFile": "images/olam-feed-and-chicks",
       "membershipLevel": 2,
-      "yearEstablished": "1996"
+      "tag": "Livestock Feed"
     },
 
     {
@@ -92,10 +98,11 @@
         "country": "Nigeria"
       },
       "phoneNumber": "+2347069233444",
+      "email": "fashion@houseofbobi.com",
       "website": "https://www.businesslist.com.ng/company/254019/house-of-bobi-fashion-enterprise",
       "imageFile": "images/house-of-bobi-fashion-enterprise",
       "membershipLevel": 3,
-      "yearEstablished": "1996"
+      "tag": "Fashion"
     }
   ],
 
@@ -105,19 +112,16 @@
       "date": "2026-06-15",
       "description": "Join local entrepreneurs and business leaders for a networking and partnership event focused on economic growth in Kaduna State."
     },
-
     {
       "title": "SME Digital Marketing Workshop",
       "date": "2026-07-02",
       "description": "A hands-on workshop teaching small business owners how to use social media and online advertising to grow their businesses."
     },
-
     {
       "title": "Annual Trade Fair Exhibition",
       "date": "2026-08-10",
       "description": "Explore products and services from local companies, manufacturers, and startups across Kaduna State."
     },
-
     {
       "title": "Youth Entrepreneurship Conference",
       "date": "2026-09-05",

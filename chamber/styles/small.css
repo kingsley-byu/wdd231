@@ -103,6 +103,14 @@ header img {
     background-color: rgba(255 255 255 / 5%);
 }
 
+#nav-bar ul li a.active {
+    color: var(--accent-light);
+    border-left: 3px solid var(--accent-color);
+    background-color: rgba(255 255 255 / 10%);
+    font-weight: 600;
+}
+
+
 /* ===== MAIN ===== */
 main {
     margin: 0 auto;
@@ -236,6 +244,10 @@ picture {
 .list section:nth-child(even) {
     background-color: #e8e4dd;
 }
+
+
+/* ============ HOME CSS FILE ============== */
+
 
 /* ===== FOOTER ===== */
 footer {

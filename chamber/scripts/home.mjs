@@ -12,7 +12,7 @@ async function getEvent(){
      if (response.ok) {
         const data = await response.json();
         console.log(data);
-        displayEvent(data.events);
+        displayEvent(data.comingEvents);
         displayBusinessCard(data.members);
 
      } else throw Error(await response.text());
@@ -26,13 +26,14 @@ async function getEvent(){
 
 const sectionOne = document.querySelector('#event');
 const displayEvent = (events) => {
+let eventHeading = document.createElement('h2');
+eventHeading.textContent = 'Events';
+sectionOne.appendChild(eventHeading);
 events.forEach((comingEvents) => {
 const eventCard = document.createElement('div');
-let event= document.createElement('h2');
 let eventTitle = document.createElement('p');
 let eventDate= document.createElement('p');
 let eventDescription= document.createElement('p');
-eventCard.appendChild(event);
 eventCard.appendChild(eventTitle);
 eventCard.appendChild(eventDate);
 eventCard.appendChild(eventDescription)
@@ -40,7 +41,6 @@ eventCard.appendChild(eventDescription)
 sectionOne.appendChild(eventCard);
 
 //Add textContent
-event.textContent = 'Events';
 eventTitle.textContent = `Title: ${comingEvents.title}`;
 eventDate.textContent = `Date: ${comingEvents.date}`;
 eventDescription.textContent = comingEvents.description;
@@ -108,7 +108,7 @@ sectionOne.appendChild(currentWeather);
 
 // Add textContent to the element
 weather.textContent = 'Current Weather';
-image.textContent = 1;
+image.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 fahrenheit.textContent= `Temp: ${data.main.temp}°C`;
 cloudy.textContent = `${data.weather[0].description}`
 high.textContent= `Max temp: ${data.main.temp_max}°C`;
@@ -134,7 +134,7 @@ async function getForecast() {
         } else throw Error(await response.text())
         
     } catch (error) {
-        console.error("Error fetching forecast:", error);
+        console.log(error);
     }
 }
 //Weather forecast
@@ -154,8 +154,8 @@ const dailyData = data.list.filter(item =>
     item.dt_txt.includes("12:00:00")
 );
 today.textContent = `Today: ${dailyData[0].main.temp}°C,  ${dailyData[0].weather[0].description}`;
-nextDay.textContent = `Tomorrow: ${dailyData[0].main.temp}°C,  ${dailyData[0].weather[0].description}`;;
-TwoDayAfter.textContent = `Day After: ${dailyData[0].main.temp}°C,  ${dailyData[0].weather[0].description}`;;
+nextDay.textContent = `Tomorrow: ${dailyData[1].main.temp}°C,  ${dailyData[1].weather[0].description}`;;
+TwoDayAfter.textContent = `Day After: ${dailyData[2].main.temp}°C,  ${dailyData[2].weather[0].description}`;;
 
 // Append the 3 information to the weather forecast div
 weatherForecast.appendChild(weatherHeading);
@@ -179,7 +179,7 @@ const eligibleMembers = members.filter(member =>
     member.membershipLevel >= 2
 );
 
-const shuffled = eligibleMembers.sort(() => math.random() - 0.5);
+const shuffled = eligibleMembers.sort(() => Math.random() - 0.5);
 const selectedMembers = shuffled.slice(0, 3);
 
 selectedMembers.forEach((cards) => {
@@ -217,9 +217,11 @@ businessCard.classList.add('business-name');
 info.classList.add('business-information')
 
 //Add textContent
-picture.textContent = selectedMembers.imageFile;
-email.textContent = 1;
-url.textContent = selectedMembers.website;
+name.textContent = cards.companyName;
+tag.textContent = cards.tag;
+picture.textContent = cards.imageFile;
+email.textContent = cards.email;
+url.textContent = cards.website;
 //append business cards
 
 info.appendChild(email);

@@ -42,16 +42,39 @@
         
     </header>
     <main>
-        <picture>
-            <source srcset="">
-            <source srcset="">
-            <img src="" alt="">
-        </picture>
-        <button id="join-btn"><a href="join.html">Join Us Today</a></button>
-        <h1>Home</h1>
+        <section class="hero">
 
-        <section id="event"></section>
-        <section id="business-info"></section>
+            <picture>
+                <source srcset="images/kaduna-image-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/kaduna-image-medium.webp" media="(min-width: 640px)">
+
+                <img src="images/kaduna-image-small.webp" alt="Kaduna city business district" loading="lazy" width="1200" height="500">
+            </picture>
+
+            <div class="hero-overlay">
+                <h1>Welcome to Kaduna Chamber of Commerce</h1>
+
+                <p>Connecting businesses, supporting growth, and creating opportunities in Kaduna State.</p>
+
+                <a href="join.html" class="cta-btn">Join Now</a>
+            </div>
+
+        </section>
+
+        <section id="event" class="info-card"></section>
+
+        <section id="current-weather" class="info-card"></section>
+        <section id="forecast" class="info-card"></section>
+        <section class="spotlight-section">
+
+            <h2 class="spotlight-heading">Business Spotlights</h2>
+
+            <div id="business-info">
+
+
+            </div>
+
+        </section>
         
     </main>
     <footer>
