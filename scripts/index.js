@@ -96,8 +96,8 @@ document.getElementById('lastModified').textContent = `Last Modification: ${docu
 
 
 // ===== DISPLAY COURSES =====
+const container = document.getElementById('course-cards');
 function displayCourses(courseList) {
-    const container = document.getElementById('course-cards');
     container.innerHTML = '';
 
     courseList.forEach(course => {
@@ -126,6 +126,44 @@ document.querySelectorAll('.filter-btn').forEach(button => {
         const filtered = filter === 'all' ? courses : courses.filter(course => course.subject === filter);
         displayCourses(filtered);
     });
+});
+
+function displayCourseDetails(course) {
+
+    const courseDetails = document.querySelector("#course-details");
+
+    courseDetails.innerHTML = `
+        <button id="closeModal">❌</button>
+        <h2>${course.subject} ${course.number}</h2>
+        <h3>${course.title}</h3>
+        <p><strong>Credits</strong>: ${course.credits}</p>
+        <p><strong>Certificate</strong>: ${course.certificate}</p>
+        <p>${course.description}</p>
+        <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+    `;
+
+    courseDetails.showModal();
+
+    const closeButton = document.getElementById("closeModal");
+
+    closeButton.addEventListener("click", () => {
+        courseDetails.close();
+    });
+}
+
+container.addEventListener('click', (event) => {
+
+    const clickedCard = event.target;
+
+    const courseCode = clickedCard.textContent;
+
+    const selectedCourse = courses.find(course =>
+        `${course.subject} ${course.number}` === courseCode
+    );
+
+    if (selectedCourse) {
+        displayCourseDetails(selectedCourse);
+    }
 });
 
 
