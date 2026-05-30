@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaduna Chamber of Commerce | Home</title>
+    <meta name="description" content="Discover local businesses, events, and opportunities with the Kaduna Chamber of Commerce.">
+    <meta name="author" content="Osaruyi Kingsley Osawaru">
+    <link rel="icon" href="images/kaduna-chamber.ico">
+    <meta property="og:title" content="Kaduna Chamber of Commerce">
+    <meta property="og:description" content="Discover local businesses, events, and opportunities with the Kaduna Chamber of Commerce.">
+    <meta property="og:image" content="https://kingsley-byu.github.io/wdd231/chamber/images/kaduna-chamber-logo.svg">
+    <meta property="og:url" content="https://kingsley-byu.github.io/wdd231/chamber/index.html">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/home.mjs" type="module"></script>
+</head>
+<body>
+    <header>
+        <img src="images/kaduna-chamber-logo.svg" alt="Chamber of Commerce logo">
+        <span id="title-bar">Kaduna Chamber of Commerce</span>
+        <button id="menu-btn" aria-label="Toggle navigation">☰</button>
+        <nav id="nav-bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Join</h1>
+        <form method="get" action="thankyou.html" class="form-field">
+
+                <h2>Applicant Information</h2>
+
+                <label>
+                    First Name
+                    <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        title="Enter your first name"
+                        autocomplete="given-name"
+                        required>
+                </label>
+
+                <label>
+                    Last Name
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        title="Enter your last name"
+                        autocomplete="family-name"
+                        required>
+                </label>
+
+                <label>
+                    Organizational Title
+                    <input
+                        type="text"
+                        id="organizationTitle"
+                        name="organizationTitle"
+                        title="Enter your organizational title (minimum 7 characters)"
+                        autocomplete="organization-title"
+                        pattern="[A-Za-z\s\-]{7,}"
+                        placeholder="Operations Manager">
+                </label>
+
+                <label>
+                    Email Address
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        title="Enter your email address"
+                        autocomplete="email"
+                        placeholder="example@email.com"
+                        required>
+                </label>
+
+                <label>
+                    Mobile Phone Number
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        title="Enter your mobile phone number"
+                        autocomplete="tel"
+                        required>
+                </label>
+
+                <h2>Organization Information</h2>
+
+                <label>
+                    Organization Name
+                    <input
+                        type="text"
+                        id="organizationName"
+                        name="organizationName"
+                        title="Enter your organization name"
+                        autocomplete="organization"
+                        required>
+                </label>
+
+                <label>
+                    Organization Description
+                    <textarea
+                        id="description"
+                        name="description"
+                        title="Describe your business or organization"
+                        rows="5"></textarea>
+                </label>
+
+                <h2>Membership Level</h2>
+
+                <label>
+                    Membership Level
+                    <select
+                        id="membershipLevel"
+                        name="membershipLevel"
+                        required>
+                        <option value="" selected disabled>Select a membership level</option>
+                        <option value="np">NP Membership</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+                </label>
+
+                <input
+                    type="hidden"
+                    id="timestamp"
+                    name="timestamp">
+
+                <input
+                    type="submit"
+                    value="Submit Application">
+
+
+        </form>
+
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <h3>Kaduna Chamber of Commerce</h3>
+            <p>10 Ahmadu Bello Way</p>
+            <p>Kaduna, Nigeria</p>
+            <p>info@kadunachamber.org</p>
+            <p>(234) 800-000-0000</p>
+        </div>
+        <div class="footer-socials">
+            <a href="#"><img src="images/youtube.svg" alt="YouTube Icon"></a>
+            <a href="#"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+            <a href="#"><img src="images/linkedin.svg" alt="LinkedIn Icon"></a>
+        </div>
+        <div class="footer-project">
+            <p>WDD231 Class Project</p>
+            <p>&copy; <span id="currentyear"></span> Osaruyi Kingsley Osawaru • Nigeria</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
