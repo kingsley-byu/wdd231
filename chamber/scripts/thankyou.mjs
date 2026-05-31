@@ -14,3 +14,7 @@ document.querySelector("#results").innerHTML = `
 <p><strong>Phone Number</strong>:${formDetails.get('phone')}
 <p><strong>Organization Name</strong>:${formDetails.get('organizationName')}
 <p><strong>Membership Level</strong>:${formDetails.get('membershipLevel')}`;
+
+
+initNav();
+setFooterInfo();
