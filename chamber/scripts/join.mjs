@@ -2,6 +2,9 @@ import { initNav } from './shared/nav.mjs';
 import { setFooterInfo } from './shared/footer.mjs';
 
 import { getEvent } from './shared/membership.mjs';
+
+
+
 async function fetchMemberLevelData() {
     const data = await getEvent();
     console.table(data.memberLevels)
@@ -11,6 +14,7 @@ async function fetchMemberLevelData() {
 
 const membershipCard = document.querySelector("#membership-card")
 const dialog = document.querySelector("#membership-dialog");
+document.querySelector("#timestamp").value = new Date().toISOString();
 
 
 

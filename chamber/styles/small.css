@@ -613,6 +613,18 @@ main > div {
     gap: 0.75rem;
 }
 
+/* Keyframe: subtle fade-in + slide up from below */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Each card is a <section> injected by JS.
    We scope with #membership-card to avoid overriding the
    global section rules used in the directory page. */
@@ -626,7 +638,16 @@ main > div {
     text-align: center;
     box-shadow: 0 2px 8px rgba(0 0 0 / 15%);
     transition: transform 0.2s, box-shadow 0.2s;
+
+    /* Page-load animation — not triggered by hover */
+    animation: cardEntrance 0.5s ease both;
 }
+
+/* Stagger each card by its position so they arrive one after another */
+#membership-card section:nth-child(1) { animation-delay: 0.1s; }
+#membership-card section:nth-child(2) { animation-delay: 0.25s; }
+#membership-card section:nth-child(3) { animation-delay: 0.4s; }
+#membership-card section:nth-child(4) { animation-delay: 0.55s; }
 
 #membership-card section:hover {
     transform: translateY(-2px);
@@ -659,10 +680,16 @@ main > div {
     border: none;
     border-radius: 10px;
     padding: 0;
-    max-width: 90vw;
-    width: 340px;
+    width: min(500px, 90vw);
     box-shadow: 0 8px 32px rgba(0 0 0 / 35%);
     overflow: hidden;
+
+    /* Center on screen */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
 }
 
 #membership-dialog::backdrop {
@@ -674,20 +701,20 @@ main > div {
     background-color: var(--primary-color);
     color: #ffffff;
     font-family: var(--font-heading);
-    font-size: 1.1rem;
-    padding: 1rem 1.25rem 0.75rem;
+    font-size: 1.3rem;
+    padding: 1.25rem 1.5rem 1rem;
     margin: 0;
 }
 
 #membership-dialog p {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.88rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
     color: var(--text-muted);
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 #membership-dialog p:last-of-type {
-    padding-bottom: 1.25rem;
+    padding-bottom: 1.5rem;
 }
 
 #closeModal {
