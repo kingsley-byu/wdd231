@@ -2,7 +2,7 @@
   "memberLevels": [
     {
       "id": "np",
-      "title": "NP Membership",
+      "title": "Non Profit Membership Level",
       "cost": "Free",
       "benefits": [
         "No membership fee",
@@ -13,7 +13,7 @@
     },
     {
       "id": "bronze",
-      "title": "Bronze Membership",
+      "title": "Bronze Membership Level",
       "cost": "₦25,000/year",
       "benefits": [
         "All NP benefits",
@@ -24,7 +24,7 @@
     },
     {
       "id": "silver",
-      "title": "Silver Membership",
+      "title": "Silver Membership Level",
       "cost": "₦50,000/year",
       "benefits": [
         "All Bronze benefits",
@@ -35,7 +35,7 @@
     },
     {
       "id": "gold",
-      "title": "Gold Membership",
+      "title": "Gold Membership Level",
       "cost": "₦100,000/year",
       "benefits": [
         "All Silver benefits",
