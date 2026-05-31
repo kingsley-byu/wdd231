@@ -1,18 +1,20 @@
-// navigation 
+ // navigation 
 import { initNav } from './shared/nav.mjs';
 // Footer
 import { setFooterInfo } from './shared/footer.mjs';
 // Membership
 import { getMembershipLabel } from './shared/membership.mjs';
+import { getEvent } from './shared/membership.mjs';
 
 const cardContainer = document.querySelector('#cards');
 
 async function getMembersData() {
-    const response = await fetch('data/members.json');
-    const data = await response.json();
-    console.table(data.members);
+    const data = await getEvent();
     displayMembers(data.members);
 }
+
+
+
 
 
 const displayMembers = (members) => {

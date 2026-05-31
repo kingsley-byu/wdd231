@@ -1,4 +1,52 @@
 {
+  "memberLevels": [
+    {
+      "id": "np",
+      "title": "NP Membership",
+      "cost": "Free",
+      "benefits": [
+        "No membership fee",
+        "Business directory listing",
+        "Networking opportunities",
+        "Community event access"
+      ]
+    },
+    {
+      "id": "bronze",
+      "title": "Bronze Membership",
+      "cost": "₦25,000/year",
+      "benefits": [
+        "All NP benefits",
+        "Training workshops",
+        "Monthly business newsletter",
+        "Basic advertising opportunities"
+      ]
+    },
+    {
+      "id": "silver",
+      "title": "Silver Membership",
+      "cost": "₦50,000/year",
+      "benefits": [
+        "All Bronze benefits",
+        "Event discounts",
+        "Featured directory placement",
+        "Business promotion opportunities"
+      ]
+    },
+    {
+      "id": "gold",
+      "title": "Gold Membership",
+      "cost": "₦100,000/year",
+      "benefits": [
+        "All Silver benefits",
+        "Homepage spotlight advertising",
+        "Premium event access",
+        "Priority sponsorship opportunities",
+        "Exclusive networking events"
+      ]
+    }
+  ],
+
   "members": [
     {
       "companyName": "Equinoxx Power Engineering Ltd",
