@@ -1,31 +1,32 @@
+/* =====================================================
+   KADUNA CHAMBER OF COMMERCE — small.css
+   Mobile-first base stylesheet (all screens)
+   ===================================================== */
+
+/* ===== CSS VARIABLES ===== */
 :root {
     --primary-color: #0B3C5D;
     --color-dark: #081521;
-
-    /* Accessible accent colors */
     --accent-color: #9a5d12;
     --accent-light: #b86d14;
-
     --background-color: #F9F9F9;
     --dark-color: #0f2237;
     --card-bg: #ffffff;
-
-    /* Better text contrast */
     --text-color: #111111;
     --text-muted: #333333;
-
     --font-heading: 'Playfair Display', serif;
     --font-body: 'DM Sans', Arial, sans-serif;
-
     --spacing: 1.25rem;
 }
 
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== BODY ===== */
 body {
     background-color: var(--dark-color);
     color: var(--text-color);
@@ -124,20 +125,17 @@ main {
     max-width: 1100px;
 }
 
-h1{background-color: var(--primary-color);
+h1 {
+    background-color: var(--primary-color);
     color: #ffffff;
     padding: 1rem;
     text-align: center;
     font-family: var(--font-heading);
     font-size: 1.8rem;
     letter-spacing: 0.02em;
-    
 }
 
-
-
-
-
+/* ===== FILTER MENU ===== */
 .menu {
     margin: 1rem auto;
     padding: 0.5rem;
@@ -164,7 +162,7 @@ h1{background-color: var(--primary-color);
     background-color: var(--accent-light);
 }
 
-/* ===== CARDS ===== */
+/* ===== DIRECTORY CARDS (section elements) ===== */
 section {
     border: 1px solid rgb(0 0 0 / 10%);
     padding: 0.75rem;
@@ -324,7 +322,7 @@ picture {
     margin: 1rem 0 0.5rem;
 }
 
-/* ===== INFO GRID (mobile: stacked) ===== */
+/* ===== INFO GRID (home page — stacked on mobile) ===== */
 .info-grid {
     display: flex;
     flex-direction: column;
@@ -411,7 +409,7 @@ picture {
     color: var(--primary-color);
 }
 
-/* ===== BUSINESS SPOTLIGHTS (mobile: stacked) ===== */
+/* ===== BUSINESS SPOTLIGHTS ===== */
 .business-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -425,8 +423,8 @@ picture {
     border-radius: 8px;
     padding: 0.75rem 1rem;
     box-shadow: 0 2px 6px rgba(0 0 0 / 10%);
-    min-width: 0;        /* prevents overflow blowout */
-    overflow: hidden;    /* clips anything that escapes */
+    min-width: 0;
+    overflow: hidden;
     width: 100%;
 }
 
@@ -437,7 +435,7 @@ picture {
     margin-bottom: 0.1rem;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;  /* truncates long names with ... */
+    text-overflow: ellipsis;
 }
 
 .business-tag {
@@ -454,7 +452,7 @@ picture {
 }
 
 .business-body picture {
-    flex-shrink: 0;   /* image never squishes */
+    flex-shrink: 0;
     width: 80px;
     height: 80px;
 }
@@ -468,7 +466,7 @@ picture {
 }
 
 .business-info-block {
-    min-width: 0;      /* allows text to wrap instead of overflow */
+    min-width: 0;
     flex: 1;
 }
 
@@ -478,7 +476,7 @@ picture {
     line-height: 1.6;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;   /* keeps URL on one line with ... */
+    white-space: nowrap;
 }
 
 .business-info-block span {
@@ -493,6 +491,220 @@ picture {
 
 .business-info-block a:hover {
     text-decoration: underline;
+}
+
+/* ===== JOIN PAGE ===== */
+
+/* Wrapper: form + membership cards stacked on mobile */
+main > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* --- Application Form container --- */
+#form-field {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0 0 0 / 25%);
+}
+
+.form-field {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.form-field h2 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--accent-color);
+    margin-top: 0.5rem;
+}
+
+.form-field h2:first-child {
+    margin-top: 0;
+}
+
+.form-field label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* All text-like inputs share one declaration block — no repetition */
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="tel"],
+.form-field textarea,
+.form-field select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-color);
+    background-color: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.form-field input[type="text"]:focus,
+.form-field input[type="email"]:focus,
+.form-field input[type="tel"]:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(154 93 18 / 15%);
+    background-color: #fff;
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-field select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239a5d12' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2rem;
+}
+
+.form-field input[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 0.5rem;
+}
+
+.form-field input[type="submit"]:hover {
+    background-color: var(--accent-light);
+}
+
+.form-field input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* --- Membership level cards --- */
+#membership-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Each card is a <section> injected by JS.
+   We scope with #membership-card to avoid overriding the
+   global section rules used in the directory page. */
+#membership-card section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--accent-color);
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0 0 0 / 15%);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#membership-card section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0 0 0 / 20%);
+}
+
+#membership-card section h2 {
+    font-size: 1.05rem;
+}
+
+#membership-card section button {
+    padding: 0.45rem 1.25rem;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#membership-card section button:hover {
+    background-color: var(--accent-light);
+}
+
+/* --- Dialog modal --- */
+#membership-dialog {
+    border: none;
+    border-radius: 10px;
+    padding: 0;
+    max-width: 90vw;
+    width: 340px;
+    box-shadow: 0 8px 32px rgba(0 0 0 / 35%);
+    overflow: hidden;
+}
+
+#membership-dialog::backdrop {
+    background: rgba(8 21 33 / 70%);
+    backdrop-filter: blur(3px);
+}
+
+#membership-dialog h2 {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    padding: 1rem 1.25rem 0.75rem;
+    margin: 0;
+}
+
+#membership-dialog p {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+#membership-dialog p:last-of-type {
+    padding-bottom: 1.25rem;
+}
+
+#closeModal {
+    display: block;
+    margin-left: auto;
+    margin-right: 0.75rem;
+    margin-top: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+#closeModal:hover {
+    color: var(--accent-color);
 }
 
 /* ===== FOOTER ===== */
@@ -542,4 +754,48 @@ footer {
     font-size: 0.82rem;
     color: #cfcfcf;
     line-height: 1.7;
+}
+
+/* ===== THANK YOU PAGE ===== */
+#results {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-color);
+    padding: 1.5rem 1.25rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(0 0 0 / 20%);
+}
+
+#results h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+#results p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #eeeeee;
+    line-height: 1.6;
+}
+
+#results p:first-of-type {
+    color: var(--text-color);
+    font-style: italic;
+    margin-bottom: 0.25rem;
+}
+
+#results p:last-child {
+    border-bottom: none;
+}
+
+#results strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 160px;
 }

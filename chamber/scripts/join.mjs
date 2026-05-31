@@ -16,15 +16,23 @@ const dialog = document.querySelector("#membership-dialog");
 
 function levelCards(levels) {
     levels.forEach((level) => {
+        const card = document.createElement("section");
         let h2 = document.createElement("h2");
-        let p = document.createElement("p");
+        let button = document.createElement("button");
+        
         h2.textContent = level.title
-        p.textContent = "Learn more"
+        button.textContent = "Learn more";
+        button.addEventListener("click", () => {
+            dialogBox(level);
+        })
         
 
 
-        membershipCard.appendChild(h2);
-        membershipCard.appendChild(p);
+        card.appendChild(h2);
+        card.appendChild(button);
+
+        membershipCard.appendChild(card)
+
     });
 }
 
@@ -43,19 +51,9 @@ function dialogBox(x) {
 
 } 
 
-p.addEventListener("click", (event) => {
-    const clickedCard = event.target;
-    const joinInfo = clickedCard.textContent;
-
-    const selectedLevel = data.find(level => `${level.title} ${level.id}` === joinInfo );
-    if (selectedLevel) {
-        dialogBox(selectedLevel);
-    }
-});
-
-
 
 
 fetchMemberLevelData();
 initNav();
 setFooterInfo();
+

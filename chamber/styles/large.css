@@ -1,5 +1,11 @@
-/* ===== TABLET & DESKTOP ===== */
+/* =====================================================
+   KADUNA CHAMBER OF COMMERCE — large.css
+   Tablet & desktop overrides (min-width: 768px+)
+   ===================================================== */
+
 @media (min-width: 768px) {
+
+    /* ===== HEADER / NAV ===== */
     #menu-btn {
         display: none;
     }
@@ -22,30 +28,29 @@
         font-size: 0.9rem;
     }
 
-    #nav-bar ul li a:hover {
+    /* Hover and active share the border-left: none reset;
+       only active adds the bottom border accent */
+    #nav-bar ul li a:hover,
+    #nav-bar ul li a.active {
         border-left: none;
         background-color: rgba(255 255 255 / 10%);
+    }
+
+    #nav-bar ul li a.active {
+        border-bottom: 2px solid var(--accent-color);
+        color: var(--accent-light);
     }
 
     #title-bar {
         font-size: 1.5rem;
     }
 
-   .grid {
+    /* ===== DIRECTORY ===== */
+    .grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    #nav-bar ul li a.active {
-        border-left: none;
-        border-bottom: 2px solid var(--accent-color);
-        color: var(--accent-light);
-        background-color: rgba(255 255 255 / 10%);
-    }
-
-
-    /* ===== HOME PAGE DESKTOP ===== */
-
-
+    /* ===== HERO ===== */
     .hero picture,
     .hero img {
         height: 420px;
@@ -60,7 +65,7 @@
         font-size: 1.4rem;
     }
 
-    /* 3 columns side by side */
+    /* ===== INFO GRID (home page) ===== */
     .info-grid {
         flex-direction: row;
         align-items: stretch;
@@ -70,15 +75,16 @@
         flex: 1;
     }
 
-   .business-grid {
-        grid-template-columns: repeat(3, 1fr);  /* exactly 3 equal columns */
+    /* ===== BUSINESS SPOTLIGHTS ===== */
+    .business-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .business-card {
-        min-width: 0;   /* critical — prevents grid blowout */
+        min-width: 0;
     }
 
-    /* footer 3 columns */
+    /* ===== FOOTER ===== */
     footer {
         flex-direction: row;
         justify-content: space-between;
@@ -86,9 +92,88 @@
         text-align: left;
     }
 
+    /* ===== JOIN PAGE ===== */
 
+    /* Form + cards side by side */
+    main > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        column-gap: 2rem;
+        row-gap: 1.5rem;
+        align-items: start;
+    }
+
+    /* Form spans both rows in the left column */
+    #form-field {
+        grid-column: 1;
+        grid-row: 1 / 3;
+    }
+
+    /* Cards sit in the top of the right column */
+    #membership-card {
+        grid-column: 2;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    #membership-card section {
+        padding: 1.25rem 1rem;
+    }
+
+    #membership-card section h2 {
+        font-size: 1rem;
+    }
+
+    .form-field h2 {
+        font-size: 1.2rem;
+    }
+
+    .form-field input[type="submit"] {
+        width: auto;
+        align-self: flex-end;
+        padding: 0.75rem 2.5rem;
+    }
+
+    #membership-dialog {
+        width: 420px;
+        max-width: 50vw;
+    }
 }
 
+/* ===== WIDE DESKTOP (1024px+) ===== */
+@media (min-width: 1024px) {
 
-/* ==============DESKTOP VIEW HOME ====================*/
+    /* Slightly wider form column */
+    main > div {
+        grid-template-columns: 5fr 4fr;
+    }
 
+    /* Cards stack one per row and go horizontal */
+    #membership-card {
+        grid-template-columns: 1fr;
+    }
+
+    #membership-card section {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 1rem 1.5rem;
+    }
+
+    #membership-card section h2 {
+        font-size: 1.05rem;
+    }
+}
+
+/* ===== THANK YOU PAGE — LARGE SCREEN ===== */
+@media (min-width: 768px) {
+
+    #results {
+        max-width: 680px;
+        margin: 1.5rem auto;
+        padding: 2rem 2.5rem;
+    }
+}
