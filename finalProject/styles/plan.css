@@ -104,13 +104,3 @@ footer {
     padding: 1.5rem;
     margin-top: 2rem;
 }
-
-@media (max-width: 768px) {
-    .desktop-hero {
-        grid-template-columns: 1fr;
-    }
-
-    .desktop-services {
-        grid-template-columns: repeat(2,1fr);
-    }
-}
