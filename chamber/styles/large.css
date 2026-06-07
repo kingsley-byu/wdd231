@@ -34,14 +34,11 @@
 
     #nav-bar ul li a:hover {
         border-left: none;
-        background-color: rgba(255 255 255 / 10%);
-    }
-
-    #nav-bar ul li a.active {
+        background-color: var(--overlay-nav-hover);
         border-left: none;
         border-bottom: 2px solid var(--amber);
         color: var(--amber-light);
-        background-color: rgba(255 255 255 / 8%);
+        background-color: var(--overlay-nav-active);
     }
 
     #title-bar {
@@ -194,6 +191,7 @@
 
 /* =====================================================
    WIDE — ≥ 64rem (~1024px)
+   Covers: laptop, desktop
    ===================================================== */
 @media (min-width: 64rem) {
 
@@ -244,6 +242,7 @@
     }
 }
 
+/* ============  HOVER EFFECT ======= */
 @media (hover: hover) {
 
     /* Scale + slight warm filter on hover */

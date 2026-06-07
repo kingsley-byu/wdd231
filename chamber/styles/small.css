@@ -30,6 +30,35 @@
     --border:        rgba(0 0 0 / 12%);
     --border-strong: rgba(0 0 0 / 22%);
 
+    /* Utility whites — used on dark/navy surfaces */
+    --white:         #FFFFFF;
+    --white-soft:    #E8E4DC;   /* nav links, footer text, banner text */
+    --white-muted:   #C8C4BC;   /* footer contact paragraphs */
+    --white-dim:     #A8A49C;   /* footer project text */
+    --white-hero-p:  #D0CCC4;   /* hero overlay paragraph */
+
+    /* Shadows */
+    --shadow-sm:  rgba(0 0 0 / 8%);
+    --shadow-md:  rgba(0 0 0 / 10%);
+    --shadow-lg:  rgba(0 0 0 / 15%);
+    --shadow-xl:  rgba(0 0 0 / 30%);
+    --shadow-hdr: rgba(0 0 0 / 40%);
+
+    /* Overlay backgrounds */
+    --overlay-hero:   rgba(13 43 69 / 82%);
+    --overlay-dialog: rgba(13 43 69 / 75%);
+    --overlay-nav:    rgba(255 255 255 / 6%);
+    --overlay-nav-active: rgba(255 255 255 / 10%);
+    --overlay-nav-hover:  rgba(255 255 255 / 10%);
+    --overlay-banner-btn: rgba(255 255 255 / 30%);
+    --overlay-banner-hover: rgba(255 255 255 / 12%);
+
+    /* Form input colors */
+    --input-bg:       #FAFAFA;
+    --input-bg-focus: #FFFFFF;
+    --input-focus-ring: rgba(192 120 32 / 18%);
+    --form-shadow:    rgba(0 0 0 / 12%);
+
     /* Typography */
     --font-heading: 'Playfair Display', serif;
     --font-body:    'DM Sans', Arial, sans-serif;
@@ -57,7 +86,7 @@ body {
 /* ===== HEADER ===== */
 header {
     background-color: var(--navy);
-    color: #ffffff;
+    color: var(--white);
     padding: 0.75rem var(--gap);
     display: flex;
     align-items: center;
@@ -67,7 +96,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0 0 0 / 40%);
+    box-shadow: 0 2px 10px var(--shadow-hdr);
 }
 
 header img {
@@ -88,8 +117,7 @@ header img {
 #menu-btn {
     background: none;
     border: 2px solid var(--amber);
-    color: #ffffff;
-    font-size: 1.3rem;
+    color: var(--white);
     padding: 0.2rem 0.55rem;
     border-radius: var(--radius);
     cursor: pointer;
@@ -120,8 +148,7 @@ header img {
 #nav-bar ul li a {
     display: block;
     padding: 0.7rem var(--gap);
-    color: #E8E4DC;
-    text-decoration: none;
+    color: var(--white-soft);
     font-size: 0.95rem;
     border-left: 3px solid transparent;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
@@ -130,13 +157,13 @@ header img {
 #nav-bar ul li a:hover {
     color: var(--amber-light);
     border-left-color: var(--amber);
-    background-color: rgba(255 255 255 / 6%);
+    background-color: var(--overlay-nav);
 }
 
 #nav-bar ul li a.active {
     color: var(--amber-light);
     border-left-color: var(--amber);
-    background-color: rgba(255 255 255 / 10%);
+    background-color: var(--overlay-nav-active);
     font-weight: 600;
 }
 
@@ -150,8 +177,7 @@ main {
 /* ===== PAGE TITLE (h1) ===== */
 h1 {
     background-color: var(--navy);
-    color: #ffffff;
-    padding: 0.9rem 1.25rem;
+    color: var(--white);
     font-family: var(--font-heading);
     font-size: 1.7rem;
     text-align: center;
@@ -162,8 +188,7 @@ h1 {
 /* ===== SECTION LABEL ===== */
 .section-label {
     background-color: var(--navy-mid);
-    color: #ffffff;
-    padding: 0.55rem 1rem;
+    color: var(--white);
     font-family: var(--font-heading);
     font-size: 1.3rem;
     margin: 1rem 0 0.5rem;
@@ -191,8 +216,8 @@ h1 {
     position: absolute;
     bottom: 1.25rem;
     right: 1rem;
-    background-color: rgba(13 43 69 / 82%);
-    color: #fff;
+    background-color: var(--overlay-hero);
+    color: var(--white);
     padding: 1rem 1.1rem;
     border-radius: var(--radius);
     max-width: 275px;
@@ -205,22 +230,20 @@ h1 {
     font-size: 0.95rem;
     background: none;
     padding: 0;
-    color: #fff;
-    margin-bottom: 0.4rem;
+    color: var(--white);
     text-align: right;
 }
 
 .hero-overlay p {
     font-size: 0.8rem;
-    color: #d0ccc4;
+    color: var(--white-hero-p);
     margin-bottom: 0.75rem;
 }
 
 .cta-btn {
     display: inline-block;
     background-color: var(--amber);
-    color: #ffffff;
-    padding: 0.4rem 1.1rem;
+    color: var(--white);
     border-radius: var(--radius);
     text-decoration: none;
     font-weight: 700;
@@ -252,9 +275,7 @@ h1 {
 
 .card-heading {
     background-color: var(--navy-mid);
-    color: #ffffff;
-    font-family: var(--font-heading);
-    font-size: 1rem;
+    color: var(--white);
     font-weight: 700;
     padding: 0.5rem 1rem;
 }
@@ -439,14 +460,7 @@ h1 {
     font-weight: 700;
     font-size: 0.9rem;
     background-color: var(--amber);
-    color: #ffffff;
-    border: none;
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.menu button:hover {
+    color: var(--white);
     background-color: var(--amber-light);
 }
 
@@ -505,7 +519,7 @@ h1 {
 
 .grid section {
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0 0 0 / 8%);
+    box-shadow: 0 2px 6px var(--shadow-sm);
 }
 
 .grid section > * {
@@ -566,7 +580,7 @@ main > div {
     border-radius: var(--radius);
     border: 1px solid var(--border);
     overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0 0 0 / 12%);
+    box-shadow: 0 4px 14px var(--form-shadow);
 }
 
 .form-field {
@@ -610,7 +624,7 @@ main > div {
     font-family: var(--font-body);
     font-size: 0.9rem;
     color: var(--text-primary);
-    background-color: #fafafa;
+    background-color: var(--input-bg);
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -621,8 +635,8 @@ main > div {
 .form-field textarea:focus,
 .form-field select:focus {
     border-color: var(--amber);
-    box-shadow: 0 0 0 3px rgba(192 120 32 / 18%);
-    background-color: #fff;
+    box-shadow: 0 0 0 3px var(--input-focus-ring);
+    background-color: var(--input-bg-focus);
 }
 
 .form-field textarea {
@@ -643,10 +657,7 @@ main > div {
     width: 100%;
     padding: 0.75rem;
     background-color: var(--amber);
-    color: #ffffff;
-    border: none;
-    border-radius: var(--radius);
-    font-family: var(--font-heading);
+    color: var(--white);
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -686,7 +697,7 @@ main > div {
     border: 1px solid var(--border);
     border-left: 4px solid var(--amber);
     border-radius: var(--radius);
-    box-shadow: 0 2px 8px rgba(0 0 0 / 10%);
+    box-shadow: 0 2px 8px var(--shadow-md);
     transition: transform 0.2s, box-shadow 0.2s;
     animation: cardEntrance 0.45s ease both;
 }
@@ -698,7 +709,7 @@ main > div {
 
 #membership-card section:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0 0 0 / 15%);
+    box-shadow: 0 6px 18px var(--shadow-lg);
 }
 
 #membership-card section h2 {
@@ -710,11 +721,7 @@ main > div {
 #membership-card section button {
     padding: 0.4rem 1.2rem;
     background-color: var(--amber);
-    color: #ffffff;
-    border: none;
-    border-radius: var(--radius);
-    font-family: var(--font-body);
-    font-size: 0.85rem;
+    color: var(--white);
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -730,7 +737,7 @@ main > div {
     border-radius: 10px;
     padding: 0;
     width: min(500px, 90vw);
-    box-shadow: 0 10px 36px rgba(0 0 0 / 30%);
+    box-shadow: 0 10px 36px var(--shadow-xl);
     overflow: hidden;
     position: fixed;
     top: 50%;
@@ -740,15 +747,13 @@ main > div {
 }
 
 #membership-dialog::backdrop {
-    background: rgba(13 43 69 / 75%);
+    background: var(--overlay-dialog);
     backdrop-filter: blur(3px);
 }
 
 #membership-dialog h2 {
     background-color: var(--navy);
-    color: #ffffff;
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
+    color: var(--white);
     padding: 1.1rem 1.5rem 0.9rem;
     margin: 0;
 }
@@ -787,12 +792,11 @@ main > div {
 #results {
     background-color: var(--surface);
     border-radius: var(--radius);
-    border-left: 5px solid var(--amber);
     border: 1px solid var(--border);
     border-left: 5px solid var(--amber);
     padding: 1.5rem 1.25rem;
     margin-top: 1rem;
-    box-shadow: 0 4px 14px rgba(0 0 0 / 10%);
+    box-shadow: 0 4px 14px var(--shadow-md);
 }
 
 #results h3 {
@@ -855,92 +859,34 @@ main > div {
     gap: 0.5rem;
 }
 
-/* Slot assignments */
-.section-card h2      { grid-area: place; }
-.section-card img     { grid-area: image; }
-.section-card p       { grid-area: description; }
-.section-card address { grid-area: address; }
-
-/* Slot styling */
+/* Slot assignments + styling — each selector declared exactly once */
 .section-card h2 {
+    grid-area: place;
     font-family: var(--font-heading);
     font-size: 1.05rem;
     color: var(--navy);
 }
 
-.section-card img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 4px;
-    display: block;
-}
-
 .section-card p {
+    grid-area: description;
     font-size: 0.88rem;
     color: var(--text-muted);
     line-height: 1.65;
 }
 
 .section-card address {
+    grid-area: address;
     font-size: 0.82rem;
     color: var(--amber);
     font-style: normal;
     font-weight: 600;
 }
 
-
-/* ===================================================
-   DISCOVER PAGE — VISIT BANNER
-   =================================================== */
-#visit-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    background-color: var(--navy-mid);
-    color: #E8E4DC;
-    border-left: 4px solid var(--amber);
-    border-radius: var(--radius);
-    padding: 0.7rem 1rem;
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-#visit-banner p {
-    margin: 0;
-    color: #E8E4DC;
-}
-
-#visit-banner button {
-    flex-shrink: 0;
-    background: none;
-    border: 1px solid rgba(255 255 255 / 30%);
-    color: #E8E4DC;
-    font-size: 0.75rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
-    line-height: 1.4;
-}
-
-#visit-banner button:hover {
-    background-color: rgba(255 255 255 / 12%);
-    border-color: var(--amber);
-}
-
-/* ===================================================
-   DISCOVER PAGE — IMAGE WRAPPER
-   =================================================== */
-
-/* Slot update — target the wrapper*/
+/* Image wrapper — contains the img for hover clipping */
 .section-card .card-img-wrapper {
     grid-area: image;
     overflow: hidden;
     border-radius: 4px;
-    display: block;
 }
 
 .section-card .card-img-wrapper img {
@@ -948,18 +894,15 @@ main > div {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
-    /* transition declared here so it's always present — */
     transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-
 /* ===================================================
-                      FOOTER
+   FOOTER
    =================================================== */
 footer {
     background-color: var(--navy);
-    color: #E8E4DC;
-    padding: 1.75rem var(--gap);
+    color: var(--white-soft);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -978,7 +921,7 @@ footer {
 
 .footer-contact p {
     font-size: 0.85rem;
-    color: #C8C4BC;
+    color: var(--white-muted);
     line-height: 1.75;
 }
 
@@ -1001,6 +944,47 @@ footer {
 
 .footer-project p {
     font-size: 0.8rem;
-    color: #A8A49C;
+    color: var(--white-dim);
     line-height: 1.75;
+}
+
+/* ===================================================
+   DISCOVER PAGE — VISIT BANNER
+   =================================================== */
+#visit-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: var(--navy-mid);
+    color: var(--white-soft);
+    border-left: 4px solid var(--amber);
+    border-radius: var(--radius);
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+#visit-banner p {
+    margin: 0;
+    color: var(--white-soft);
+}
+
+#visit-banner button {
+    flex-shrink: 0;
+    background: none;
+    border: 1px solid var(--overlay-banner-btn);
+    color: var(--white-soft);
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    line-height: 1.4;
+}
+
+#visit-banner button:hover {
+    background-color: var(--overlay-banner-hover);
+    border-color: var(--amber);
 }
