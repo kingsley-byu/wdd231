@@ -909,6 +909,7 @@ footer {
     gap: 1.25rem;
     margin-top: 2.5rem;
     text-align: center;
+    padding: 1rem;
 }
 
 .footer-contact h3,

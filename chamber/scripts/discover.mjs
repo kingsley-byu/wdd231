@@ -77,7 +77,7 @@ function displayPlaces(places) {
         imgWrapper.classList.add("card-img-wrapper");
 
         const image = document.createElement("img");
-        image.src = `/chamber/images/${place.photo_url}`;
+        image.src = `images/${place.photo_url}`;
         image.alt = place.name;
         image.loading = "lazy";
 
