@@ -889,8 +889,72 @@ main > div {
     font-weight: 600;
 }
 
+
 /* ===================================================
-   FOOTER
+   DISCOVER PAGE — VISIT BANNER
+   =================================================== */
+#visit-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: var(--navy-mid);
+    color: #E8E4DC;
+    border-left: 4px solid var(--amber);
+    border-radius: var(--radius);
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+#visit-banner p {
+    margin: 0;
+    color: #E8E4DC;
+}
+
+#visit-banner button {
+    flex-shrink: 0;
+    background: none;
+    border: 1px solid rgba(255 255 255 / 30%);
+    color: #E8E4DC;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    line-height: 1.4;
+}
+
+#visit-banner button:hover {
+    background-color: rgba(255 255 255 / 12%);
+    border-color: var(--amber);
+}
+
+/* ===================================================
+   DISCOVER PAGE — IMAGE WRAPPER
+   =================================================== */
+
+/* Slot update — target the wrapper*/
+.section-card .card-img-wrapper {
+    grid-area: image;
+    overflow: hidden;
+    border-radius: 4px;
+    display: block;
+}
+
+.section-card .card-img-wrapper img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    /* transition declared here so it's always present — */
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+
+/* ===================================================
+                      FOOTER
    =================================================== */
 footer {
     background-color: var(--navy);
