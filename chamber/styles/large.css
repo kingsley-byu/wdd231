@@ -1,9 +1,13 @@
 /* =====================================================
    KADUNA CHAMBER OF COMMERCE — large.css
-   Tablet & desktop overrides (min-width: 768px+)
+   Responsive overrides: medium (≥38rem) & wide (≥64rem)
    ===================================================== */
 
-@media (min-width: 768px) {
+/* =====================================================
+   MEDIUM — ≥ 38rem (~608px)
+   Covers: tablet, wider phones (landscape)
+   ===================================================== */
+@media (min-width: 38rem) {
 
     /* ===== HEADER / NAV ===== */
     #menu-btn {
@@ -18,54 +22,48 @@
 
     #nav-bar ul {
         flex-direction: row;
-        gap: 0.25rem;
+        gap: 0.2rem;
     }
 
     #nav-bar ul li a {
-        padding: 0.5rem 0.9rem;
+        padding: 0.45rem 0.9rem;
         border-radius: 5px;
         border-left: none;
         font-size: 0.9rem;
     }
 
-    /* Hover and active share the border-left: none reset;
-       only active adds the bottom border accent */
-    #nav-bar ul li a:hover,
-    #nav-bar ul li a.active {
+    #nav-bar ul li a:hover {
         border-left: none;
         background-color: rgba(255 255 255 / 10%);
     }
 
     #nav-bar ul li a.active {
-        border-bottom: 2px solid var(--accent-color);
-        color: var(--accent-light);
+        border-left: none;
+        border-bottom: 2px solid var(--amber);
+        color: var(--amber-light);
+        background-color: rgba(255 255 255 / 8%);
     }
 
     #title-bar {
-        font-size: 1.5rem;
-    }
-
-    /* ===== DIRECTORY ===== */
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
+        font-size: 1.45rem;
     }
 
     /* ===== HERO ===== */
     .hero picture,
     .hero img {
-        height: 420px;
+        height: 400px;
     }
 
     .hero-overlay {
-        max-width: 380px;
-        padding: 1.5rem;
+        max-width: 360px;
+        padding: 1.4rem;
     }
 
     .hero-overlay h1 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
-    /* ===== INFO GRID (home page) ===== */
+    /* ===== HOME — INFO GRID ===== */
     .info-grid {
         flex-direction: row;
         align-items: stretch;
@@ -75,26 +73,17 @@
         flex: 1;
     }
 
-    /* ===== BUSINESS SPOTLIGHTS ===== */
+    /* ===== HOME — BUSINESS SPOTLIGHTS ===== */
     .business-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .business-card {
-        min-width: 0;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        text-align: left;
+    /* ===== DIRECTORY ===== */
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     /* ===== JOIN PAGE ===== */
-
-    /* Form + cards side by side */
     main > div {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -104,13 +93,13 @@
         align-items: start;
     }
 
-    /* Form spans both rows in the left column */
+    /* Form spans both rows on the left */
     #form-field {
         grid-column: 1;
         grid-row: 1 / 3;
     }
 
-    /* Cards sit in the top of the right column */
+    /* Membership cards on the right */
     #membership-card {
         grid-column: 2;
         grid-row: 1;
@@ -120,15 +109,11 @@
     }
 
     #membership-card section {
-        padding: 1.25rem 1rem;
-    }
-
-    #membership-card section h2 {
-        font-size: 1rem;
+        padding: 1.1rem 1rem;
     }
 
     .form-field h2 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
 
     .form-field input[type="submit"] {
@@ -138,19 +123,94 @@
     }
 
     #membership-dialog {
-        width: min(560px, 90vw);
+        width: min(540px, 90vw);
+    }
+
+    /* ===== THANK YOU PAGE ===== */
+    #results {
+        max-width: 680px;
+        margin: 1.5rem auto;
+        padding: 2rem 2.5rem;
+    }
+
+    /* ===== DISCOVER PAGE ===== */
+
+    /* Individual card: image left, content stacked right */
+    .section-card {
+        grid-template-areas:
+            "image place"
+            "image description"
+            "image address";
+        grid-template-columns: 160px 1fr;
+        grid-template-rows: auto 1fr auto;
+        align-items: start;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    /* Image fills its grid area fully */
+    .section-card img {
+        grid-area: image;
+        width: 160px;
+        height: 100%;
+        min-height: 140px;
+        aspect-ratio: unset;
+        object-fit: cover;
+        border-radius: 0;
+        display: block;
+    }
+
+    /* Right-side content gets padding */
+    .section-card h2 {
+        padding: 0.75rem 0.9rem 0.1rem;
+        font-size: 1.05rem;
+    }
+
+    .section-card p {
+        padding: 0 0.9rem;
+    }
+
+    .section-card address {
+        padding: 0.1rem 0.9rem 0.75rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
     }
 }
 
-/* ===== WIDE DESKTOP (1024px+) ===== */
-@media (min-width: 1024px) {
+/* =====================================================
+   WIDE — ≥ 64rem (~1024px)
+   Covers: laptop, desktop
+   ===================================================== */
+@media (min-width: 64rem) {
 
-    /* Slightly wider form column */
+    /* ===== HERO ===== */
+    .hero picture,
+    .hero img {
+        height: 480px;
+    }
+
+    .hero-overlay {
+        max-width: 420px;
+        bottom: 2rem;
+        right: 2rem;
+    }
+
+    .hero-overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    /* ===== JOIN PAGE ===== */
     main > div {
         grid-template-columns: 5fr 4fr;
     }
 
-    /* Cards stack one per row and go horizontal */
+    /* Membership cards: one per row, horizontal layout */
     #membership-card {
         grid-template-columns: 1fr;
     }
@@ -163,16 +223,15 @@
     }
 
     #membership-card section h2 {
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
-}
 
-/* ===== THANK YOU PAGE — LARGE SCREEN ===== */
-@media (min-width: 768px) {
+    /* ===== DISCOVER PAGE ===== */
 
-    #results {
-        max-width: 680px;
-        margin: 1.5rem auto;
-        padding: 2rem 2.5rem;
+    /* Cards container: 2-column grid */
+    #cardsContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
 }

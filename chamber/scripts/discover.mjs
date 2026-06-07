@@ -1,38 +1,37 @@
 import { setFooterInfo } from "./shared/footer.mjs";
 import { initNav } from "./shared/nav.mjs";
 
-import { places } from "./places.js";
+
+import { places } from "../data/places.mjs";
 
 const cards = document.querySelector("#cardsContainer");
 
 function displayPlaces(places) {
     places.forEach(place => {
-        const card = document.createElement("section");
-        card.classList.add("card");
-
+        const card = document.createElement("div");
+        card.classList.add("section-card");
         // Name
         const name = document.createElement("h2");
-        name.textContent = place.name;
+        name.innerText = place.name;
 
         // Image
         const image = document.createElement("img");
-        image.src = place.photo_url;
+        image.src = `/chamber/images/${place.photo_url}`;
         image.alt = place.name;
         image.loading = "lazy";
 
         // Address
-        const address = document.createElement("p");
-        address.textContent = place.address;
-        address.classList.add("address");
+        const address = document.createElement("address");
+        address.innerText = place.address;
+        
 
         // Description
         const description = document.createElement("p");
-        description.textContent = place.description;
-        description.classList.add("description");
+        description.innerText = place.description;
 
         // Append elements to card
-        card.appendChild(name);
         card.appendChild(image);
+        card.appendChild(name);
         card.appendChild(address);
         card.appendChild(description);
 
@@ -43,3 +42,5 @@ function displayPlaces(places) {
 
 // Call the function
 displayPlaces(places);
+setFooterInfo();
+initNav();
