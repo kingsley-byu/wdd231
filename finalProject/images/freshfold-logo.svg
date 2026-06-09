@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 160" width="620" height="160">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@300;600&amp;display=swap');
+    </style>
+
+    <!-- Background gradient (dark teal pill) -->
+    <linearGradient id="pillBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#093F44"/>
+      <stop offset="50%"  stop-color="#0D5C63"/>
+      <stop offset="100%" stop-color="#052A2E"/>
+    </linearGradient>
+
+    <!-- Icon bg -->
+    <radialGradient id="iBg" cx="38%" cy="32%" r="70%">
+      <stop offset="0%"   stop-color="#1B8C96"/>
+      <stop offset="55%"  stop-color="#0D5C63"/>
+      <stop offset="100%" stop-color="#052A2E"/>
+    </radialGradient>
+
+    <radialGradient id="iAmber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FFD580"/>
+      <stop offset="100%" stop-color="#F4A226"/>
+    </radialGradient>
+
+    <radialGradient id="iCenterGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FFE099" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#F4A226" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="textGlow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="iconCircleClip">
+      <circle cx="80" cy="80" r="54"/>
+    </clipPath>
+    <clipPath id="iconDrumClip">
+      <circle cx="80" cy="80" r="33"/>
+    </clipPath>
+    <clipPath id="pillClip">
+      <rect width="620" height="160" rx="24"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- ══════════════════════════════════════════
+       BACKGROUND PILL
+  ══════════════════════════════════════════ -->
+  <rect width="620" height="160" rx="24" fill="url(#pillBg)"/>
+
+  <!-- Subtle top-left gloss -->
+  <ellipse cx="140" cy="40" rx="200" ry="60"
+           fill="rgba(255,255,255,0.04)"
+           clip-path="url(#pillClip)"/>
+
+  <!-- Bottom dark fade -->
+  <ellipse cx="310" cy="155" rx="280" ry="30"
+           fill="rgba(0,0,0,0.18)"
+           clip-path="url(#pillClip)"/>
+
+  <!-- Subtle dot-grid texture in background -->
+  <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="10" cy="10" r="0.8" fill="rgba(255,255,255,0.06)"/>
+  </pattern>
+  <rect width="620" height="160" rx="24" fill="url(#dots)" clip-path="url(#pillClip)"/>
+
+  <!-- Vertical divider glow line between icon and text -->
+  <line x1="158" y1="22" x2="158" y2="138"
+        stroke="rgba(244,162,38,0.25)" stroke-width="1"/>
+
+  <!-- ══════════════════════════════════════════
+       ICON MARK (left side, centred at 80,80)
+  ══════════════════════════════════════════ -->
+
+  <!-- Icon background circle -->
+  <circle cx="80" cy="80" r="56" fill="url(#iBg)"/>
+
+  <!-- Gloss highlight on icon -->
+  <ellipse cx="65" cy="58" rx="26" ry="16"
+           fill="rgba(255,255,255,0.08)"
+           transform="rotate(-25 65 58)"
+           clip-path="url(#iconCircleClip)"/>
+
+  <!-- Outer ring -->
+  <circle cx="80" cy="80" r="53"
+          fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <circle cx="80" cy="80" r="49"
+          fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"
+          stroke-dasharray="3 6"/>
+
+  <!-- Spinning drum motion segments -->
+  <path d="M80,47 A33,33,0,0,1,109,96 L102,92 A24,24,0,0,0,80,56 Z"
+        fill="rgba(255,255,255,0.13)" clip-path="url(#iconDrumClip)"/>
+  <path d="M109,96 A33,33,0,0,1,51,96 L58,92 A24,24,0,0,0,102,92 Z"
+        fill="rgba(255,255,255,0.06)" clip-path="url(#iconDrumClip)"/>
+  <path d="M51,96 A33,33,0,0,1,80,47 L80,56 A24,24,0,0,0,58,92 Z"
+        fill="rgba(255,255,255,0.04)" clip-path="url(#iconDrumClip)"/>
+
+  <!-- Main drum ring -->
+  <circle cx="80" cy="80" r="34"
+          fill="rgba(255,255,255,0.04)"
+          stroke="white" stroke-width="2.8" opacity="0.92"/>
+
+  <!-- Inner ring -->
+  <circle cx="80" cy="80" r="26"
+          fill="none"
+          stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+
+  <!-- Bolt holes -->
+  <circle cx="80"  cy="47" r="2"   fill="rgba(255,255,255,0.45)"/>
+  <circle cx="111" cy="63" r="2"   fill="rgba(255,255,255,0.35)"/>
+  <circle cx="100" cy="96" r="2"   fill="rgba(255,255,255,0.30)"/>
+  <circle cx="60"  cy="96" r="2"   fill="rgba(255,255,255,0.30)"/>
+  <circle cx="49"  cy="63" r="2"   fill="rgba(255,255,255,0.35)"/>
+
+  <!-- Wave -->
+  <path d="M 53 81 Q 66 71 80 81 Q 94 91 107 81"
+        fill="none" stroke="white" stroke-width="2.8"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+
+  <!-- Center amber glow + dot -->
+  <circle cx="80" cy="80" r="13" fill="url(#iCenterGlow)" opacity="0.5"/>
+  <circle cx="80" cy="80" r="8"  fill="url(#iAmber)" filter="url(#glow2)"/>
+  <circle cx="80" cy="80" r="4"  fill="white" opacity="0.55"/>
+
+  <!-- Amber bubble cluster -->
+  <circle cx="113" cy="45" r="8.5" fill="url(#iAmber)" filter="url(#glow2)" opacity="0.95"/>
+  <circle cx="123" cy="57" r="5.5" fill="url(#iAmber)" filter="url(#glow2)" opacity="0.78"/>
+  <circle cx="106" cy="37" r="4"   fill="url(#iAmber)" opacity="0.65"/>
+  <circle cx="120" cy="41" r="3"   fill="#FFD580" opacity="0.55"/>
+  <!-- Shine on biggest bubble -->
+  <circle cx="110" cy="42" r="2.8" fill="rgba(255,255,255,0.5)"/>
+
+  <!-- Small white bubbles -->
+  <circle cx="37" cy="105" r="3.5" fill="rgba(255,255,255,0.18)"/>
+  <circle cx="30" cy="95"  r="2.2" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- ══════════════════════════════════════════
+       WORDMARK (right of divider)
+  ══════════════════════════════════════════ -->
+
+  <!-- "Fresh" — white italic serif, large -->
+  <text x="176" y="90"
+        font-family="'DM Serif Display', Georgia, 'Times New Roman', serif"
+        font-size="52"
+        font-style="italic"
+        fill="white"
+        opacity="0.97"
+        letter-spacing="-1">Fresh</text>
+
+  <!-- "Fold" — amber bold serif, large, shifted right -->
+  <text x="334" y="90"
+        font-family="'DM Serif Display', Georgia, 'Times New Roman', serif"
+        font-size="52"
+        fill="#F4A226"
+        filter="url(#textGlow)"
+        letter-spacing="-1">Fold</text>
+
+  <!-- Decorative amber wavy underline -->
+  <path d="M 176 102 Q 220 108 266 102 Q 312 96 358 102 Q 404 108 436 103"
+        fill="none"
+        stroke="#F4A226"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        opacity="0.55"/>
+
+  <!-- Thin separator rule -->
+  <line x1="176" y1="115" x2="558" y2="115"
+        stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+
+  <!-- "LAUNDRY CO." tagline -->
+  <text x="178" y="135"
+        font-family="'DM Sans', system-ui, -apple-system, sans-serif"
+        font-size="11"
+        font-weight="300"
+        fill="rgba(255,255,255,0.5)"
+        letter-spacing="6">LAUNDRY CO.</text>
+
+  <!-- Amber accent dot at end of tagline -->
+  <circle cx="550" cy="130" r="3.5" fill="#F4A226" opacity="0.7"/>
+
+  <!-- Small decorative dots near Fresh/Fold join -->
+  <circle cx="328" cy="72" r="3" fill="#F4A226" opacity="0.5"/>
+  <circle cx="328" cy="82" r="2" fill="#F4A226" opacity="0.3"/>
+
+</svg>

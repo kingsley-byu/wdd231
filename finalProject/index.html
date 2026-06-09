@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshFold Laundry Co. | Home</title>
+    <meta name="description" content="">
+    <meta name="author" content="Osaruyi Kingsley Osawaru">
+    <link rel="icon" href="images/freshfold-icon.svg">
+    <meta property="og:title" content="FreshFold Laundry Co.">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://kingsley-byu.github.io/wdd231/finalProject/images/freshfold-logo.svg">
+    <meta property="og:url" content="https://kingsley-byu.github.io/wdd231/chamber/index.html">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/services.mjs" type="module"></script>
+</head>
+<body>
+    <header>
+       <img src="images/freshfold-logo.svg" alt="FreshFold Laundry Co.">
+        <button id="menu-btn" aria-label="Toggle navigation">☰</button>
+        <nav id="nav-bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html"></a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="images/">
+                <source srcset="images/">
+                <img src="images/" alt="">
+            </picture>
+
+            <div class="hero-overlay">
+                <h1>Fresh Laundry, Delivered to your Door</h1>
+                <p>Professional washing, Ironing, and delivery - tracked in real time.</p>
+            </div>
+            
+        </section>
+        <section class="services-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Services</h2>
+                    <p>Everything your laundry needs, handled with care.</p>
+                </div>
+                <div class="services-grid" id="services-grid">
+
+                </div>
+            </div>
+        </section>
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section-title">
+                    <h2>How it Works</h2>
+                    <p>Fresh clean laundry in four simple steps.</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <span class="step-icon">📋</span>
+                        <h3>Place Your Order</h3>
+                        <p>Fill out our simple order form with your service type, quality. and preferred pickup date.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <span class="step-icon">🚚</span>
+                        <h3>We Collect</h3>
+                        <p>Our team comes to your door at your scheduled time to pick up your laundry items.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <span class="step-icon">🫧</span>
+                        <h3>We clean</h3>
+                        <p>Your laundry is professionally washed, dried, and ironed using premium products.</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <span class="step-icon">📦</span>
+                        <h3>Delivered Fresh</h3>
+                        <p>We return you clean neatly folded laundry right back to your doorstep.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="cta-banner">
+            <div class="container cta-banner-inner">
+                <div class="cta-content">
+                    <h2>Ready for <em>Fresh</em> Laundry?</h2>
+                    <p>Join hundreds of happy customers who trust FreshFold to handle their
+                        laundry - clean, folded, and delivered right to your door.
+                    </p>
+
+                    <div class="btn-group">
+                        <a href="order.html" class="btn btn-primary">Place an Order</a>
+                        <a href="dashboard.html" class="btn btn-ghost-white">Track my Order</a>
+                    </div>
+                </div>
+
+                <div class="cta-visual">
+                    <div class="cta-stat-card">
+                        <strong>500+</strong>
+                        <span>Happy Customers</span>
+                    </div>
+
+                    <div class="cta-stat-card">
+                        <strong>24hr</strong>
+                        <span>Turnaround Time</span>
+                    </div>
+
+                    <div class="cta-stat-card">
+                        <strong>100%</strong>
+                        <span>Satisfaction Rate</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <h3>FreshFold Laundry Co.</h3>
+            <p>address</p>
+            <p>Benin City, Nigeria</p>
+            <p>kingsleylove2018@gmail.com</p>
+            <p>(234) 7045084904</p>
+        </div>
+        <div class="footer-socials">
+            <a href="#"><img src="images/youtube.svg" alt="YouTube Icon"></a>
+            <a href="#"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+            <a href="#"><img src="images/linkedin.svg" alt="LinkedIn Icon"></a>
+        </div>
+        <div class="footer-project">
+            <p>WDD231 Final  Project</p>
+            <p>&copy; <span id="currentyear"></span> Osaruyi Kingsley Osawaru • Nigeria</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+
+    <radialGradient id="bgGrad" cx="38%" cy="32%" r="70%">
+      <stop offset="0%"   stop-color="#1B8C96"/>
+      <stop offset="55%"  stop-color="#0D5C63"/>
+      <stop offset="100%" stop-color="#052A2E"/>
+    </radialGradient>
+
+    <radialGradient id="amberGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FFD580"/>
+      <stop offset="100%" stop-color="#F4A226"/>
+    </radialGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FFE099"/>
+      <stop offset="100%" stop-color="#F4A226" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="tinyGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+
+    <clipPath id="outerClip">
+      <circle cx="100" cy="100" r="99"/>
+    </clipPath>
+
+    <clipPath id="drumClip">
+      <circle cx="100" cy="100" r="60"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- ── DROP SHADOW ── -->
+  <circle cx="100" cy="106" r="92" fill="rgba(0,0,0,0.28)" filter="url(#shadow)"/>
+
+  <!-- ── BASE CIRCLE ── -->
+  <circle cx="100" cy="100" r="100" fill="url(#bgGrad)" clip-path="url(#outerClip)"/>
+
+  <!-- ── TOP-LEFT GLOSS HIGHLIGHT ── -->
+  <ellipse cx="72" cy="58" rx="42" ry="26"
+           fill="rgba(255,255,255,0.07)"
+           transform="rotate(-30 72 58)"
+           clip-path="url(#outerClip)"/>
+
+  <!-- ── OUTER DECORATIVE RINGS ── -->
+  <circle cx="100" cy="100" r="90" fill="none"
+          stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <circle cx="100" cy="100" r="85" fill="none"
+          stroke="rgba(255,255,255,0.04)" stroke-width="0.8"
+          stroke-dasharray="3 7"/>
+
+  <!-- ── SPINNING DRUM MOTION SEGMENTS ── -->
+  <!-- Each arc covers 120° of the drum interior giving a tri-blade spin look -->
+  <path d="M100,40 A60,60,0,0,1,152,130 L138,122 A44,44,0,0,0,100,56 Z"
+        fill="rgba(255,255,255,0.11)" clip-path="url(#drumClip)"/>
+  <path d="M152,130 A60,60,0,0,1,48,130 L62,122 A44,44,0,0,0,138,122 Z"
+        fill="rgba(255,255,255,0.06)" clip-path="url(#drumClip)"/>
+  <path d="M48,130 A60,60,0,0,1,100,40 L100,56 A44,44,0,0,0,62,122 Z"
+        fill="rgba(255,255,255,0.04)" clip-path="url(#drumClip)"/>
+
+  <!-- ── MAIN DRUM RING (BOLD) ── -->
+  <circle cx="100" cy="100" r="62"
+          fill="rgba(255,255,255,0.04)"
+          stroke="white" stroke-width="4" opacity="0.92"/>
+
+  <!-- ── INNER DRUM DETAIL RING ── -->
+  <circle cx="100" cy="100" r="47"
+          fill="none"
+          stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+
+  <!-- ── DRUM BOLT HOLES (5 small dots around inner ring) ── -->
+  <circle cx="100" cy="55"  r="3" fill="rgba(255,255,255,0.45)"/>
+  <circle cx="138" cy="78"  r="3" fill="rgba(255,255,255,0.35)"/>
+  <circle cx="124" cy="118" r="3" fill="rgba(255,255,255,0.30)"/>
+  <circle cx="76"  cy="118" r="3" fill="rgba(255,255,255,0.30)"/>
+  <circle cx="62"  cy="78"  r="3" fill="rgba(255,255,255,0.35)"/>
+
+  <!-- ── WATER WAVE (bold, bright) ── -->
+  <path d="M 68 102 Q 84 86 100 102 Q 116 118 132 102"
+        fill="none" stroke="white" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+
+  <!-- ── CENTER DOT AMBER (glowing) ── -->
+  <circle cx="100" cy="100" r="22" fill="url(#centerGlow)" opacity="0.35"/>
+  <circle cx="100" cy="100" r="13" fill="url(#amberGlow)" filter="url(#softGlow)"/>
+  <circle cx="100" cy="100" r="7"  fill="white" opacity="0.6"/>
+
+  <!-- ── AMBER BUBBLE CLUSTER (top-right, signature accent) ── -->
+  <circle cx="142" cy="52" r="13"  fill="url(#amberGlow)" filter="url(#tinyGlow)" opacity="0.95"/>
+  <circle cx="158" cy="68" r="8"   fill="url(#amberGlow)" filter="url(#tinyGlow)" opacity="0.8"/>
+  <circle cx="128" cy="42" r="6"   fill="url(#amberGlow)" opacity="0.65"/>
+  <circle cx="152" cy="46" r="4.5" fill="url(#amberGlow)" opacity="0.55"/>
+  <circle cx="163" cy="54" r="3"   fill="#FFD580" opacity="0.45"/>
+
+  <!-- Shine on biggest bubble -->
+  <circle cx="138" cy="48" r="4" fill="rgba(255,255,255,0.45)"/>
+
+  <!-- ── SMALL WHITE BUBBLES (bottom-left) ── -->
+  <circle cx="52" cy="135" r="5.5" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="44" cy="122" r="3.5" fill="rgba(255,255,255,0.14)"/>
+  <circle cx="58" cy="148" r="2.5" fill="rgba(255,255,255,0.10)"/>
+
+  <!-- ── BOTTOM EDGE FADE (depth) ── -->
+  <ellipse cx="100" cy="190" rx="80" ry="20"
+           fill="rgba(0,0,0,0.2)" clip-path="url(#outerClip)"/>
+
+</svg>

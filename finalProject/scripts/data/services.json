@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Washing",
+    "icon": "🫧",
+    "description": "Full machine wash with premium detergent. Gentle on fabrics, tough on stains.",
+    "price": "₦1,500 / load"
+  },
+  {
+    "id": 2,
+    "name": "Ironing",
+    "icon": "👔",
+    "description": "Professional steam ironing for wrinkle-free, crisp results every time.",
+    "price": "₦500 / item"
+  },
+  {
+    "id": 3,
+    "name": "Drying",
+    "icon": "💨",
+    "description": "Fast tumble drying that leaves your clothes soft and ready to fold.",
+    "price": "₦800 / load"
+  },
+  {
+    "id": 4,
+    "name": "Delivery",
+    "icon": "🚚",
+    "description": "Doorstep pickup and delivery within your area. Scheduled at your convenience.",
+    "price": "₦1,000 flat"
+  }
+]

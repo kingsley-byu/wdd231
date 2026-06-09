@@ -14,7 +14,8 @@ function formatTime(unix) {
 async function getEvent() {
     try {
         const response = await fetch('data/members.json');
-        if (!response.ok) throw Error(await response.text());
+        if (!response.ok) 
+            throw Error(await response.text());
         const data = await response.json();
         displayEvent(data.comingEvents);
         displayBusinessCard(data.members);
