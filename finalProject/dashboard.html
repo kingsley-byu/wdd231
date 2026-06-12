@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshFold Laundry Co. | Home</title>
+    <meta name="description" content="FreshFold Laundry Co. offers professional laundry, washing, ironing, pickup, and doorstep delivery services. Schedule your laundry pickup and track your orders online.">
+    <meta name="author" content="Osaruyi Kingsley Osawaru">
+    <link rel="icon" href="images/freshfold-icon.svg">
+    <meta property="og:title" content="FreshFold Laundry Co. | Fresh Laundry Delivered to Your Door">
+    <meta property="og:description" content="Professional laundry, washing, ironing, pickup, and delivery services. Enjoy clean, fresh clothes with convenient online ordering and real-time order tracking.">
+    <meta property="og:image" content="https://kingsley-byu.github.io/wdd231/finalProject/images/freshfold-logo.svg">
+    <meta property="og:url" content="https://kingsley-byu.github.io/wdd231/finalProject/index.html">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/services.mjs" type="module"></script>
+</head>
+<body>
+    <header>
+       <img src="images/freshfold-logo.svg" alt="FreshFold Laundry Co.">
+        <button id="menu-btn" aria-label="Toggle navigation">☰</button>
+        <nav id="nav-bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="order.html">Order</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container page-hero-inner">
+                <h1>Track Your Order</h1>
+                <p>Live updates on you laundry - from pickup to delivery.</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="container">
+
+                <div class="dashboard-banner">
+                    <div class="banner-left">
+                        <p class="banner-greeting">Welcome back, <strong id="customer-name">Customer</strong>  👋</p>
+                        <p class="banner-order">Order <span id="banner-order-id">#FF-0001</span></p>
+                    </div>
+                    <div class="banner-status">
+                        <span class="status-dot"></span>
+                        <span id="banner-status-text">Washing in Progress</span>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+
+                    <div class="dash-card">
+                        <h3>📋 Order Summary</h3>
+
+                        <div class="order-detail-row">
+                            <span>Order ID</span>
+                            <span id="Summary-order-id">#FF-0001</span>
+                        </div>
+
+                        <div class="order-detail-row">
+                            <span>Services</span>
+                            <span id="Summary-service">Washing</span>
+                        </div>
+                        <div class="order-detail-row">
+                            <span>Quantity</span>
+                            <span id="Summary-quantity">3 bags</span>
+                        </div>
+                        <div class="order-detail-row">
+                            <span>Pickup Date</span>
+                            <span id="Summary-date">12 June 2026</span>
+                        </div>
+                        <div class="order-detail-row">
+                            <span>Address</span>
+                            <span id="Summary-address">Benin City</span>
+                        </div>
+                        <div class="order-detail-row total-row">
+                            <span>Total Cost</span>
+                            <span id="Summary-total">1,500</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Tracker card -->
+                    <div class="dash-card">
+                        <h3>🔄 Order Progress</h3>
+
+                            <!--Progress bar -->
+                        <div class="progress-bar-track">
+                            <div class="prgress-bar-fill" id="progress-bar"></div>
+                        </div>
+                        <p class="progress-label"><span id="progress-percent">0%</span> Complete</p>
+
+                        <!-- Five stages -->
+                        <div class="tracker">
+
+                            <div class="tracker-stage" id="stage-1" data-stage="1">
+                                <div class="stage-dot">>📥</div>
+                                <div class="stage-info">
+                                    <h4>Order Received</h4>
+                                    <span class="stage-time" id="time-1"></span>
+                                </div>
+                                <span class="status-badge badge-pending">Pending</span>
+                            </div>
+
+                            <div class="tracker-stage" id="stage-2" data-stage="2">
+                                <div class="stage-dot">💨</div>
+                                <div class="stage-info">
+                                    <h4>Washing in progress</h4>
+                                    <span class="stage-time" id="time-2"></span>
+                                </div>
+                                <span class="status-badge badge-pending">Pending</span>
+                            </div>
+
+                            <div class="tracker-stage" id="stage-3" data-stage="3">
+                                <div class="stage-dot">📦</div>
+                                <div class="stage-info">
+                                    <h4>Drying Completed</h4>
+                                    <span class="stage-time" id="time-3"></span>
+                                </div>
+                                <span class="status-badge badge-pending">Pending</span>
+                            </div>
+
+                            <div class="tracker-stage" id="stage-4" data-stage="4">
+                                <div class="stage-dot">🎉</div>
+                                <div class="stage-info">
+                                    <h4>Ready for Pickup</h4>
+                                    <span class="stage-time" id="time-4"></span>
+                                </div>
+                                <span class="status-badge badge-pending">Pending</span>
+                            </div>
+
+                            <div class="tracker-stage" id="stage-5" data-stage="5">
+                                <div class="stage-dot">🎉</div>
+                                <div class="stage-info">
+                                    <h4>Delivered</h4>
+                                    <span class="stage-time" id="time-5"></span>
+                                </div>
+                                <span class="status-badge badge-pending">Pending</span>
+                            </div>
+                
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <h3>FreshFold Laundry Co.</h3>
+            <p>address</p>
+            <p>Benin City, Nigeria</p>
+            <p>kingsleylove2018@gmail.com</p>
+            <p>(234) 7045084904</p>
+        </div>
+        <div class="footer-socials">
+            <a href="#"><img src="images/youtube.svg" alt="YouTube Icon"></a>
+            <a href="#"><img src="images/twitter.svg" alt="Twitter Icon"></a>
+            <a href="#"><img src="images/linkedin.svg" alt="LinkedIn Icon"></a>
+        </div>
+        <div class="footer-project">
+            <p>WDD231 Final  Project</p>
+            <p>&copy; <span id="currentyear"></span> Osaruyi Kingsley Osawaru • Nigeria</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
