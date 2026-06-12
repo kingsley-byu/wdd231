@@ -148,11 +148,36 @@
                                 <span class="status-badge badge-pending">Pending</span>
                             </div>
                 
-                        </div>
-                     </div>
-                </div>
+                        </div> <!-- End tracker -->
+                    </div>
+
+                    <!--  Notification card  -->
+                    <div class="dash-card dash-card-full">
+                        <h3>🔔 Notifications</h3>
+                        <ul class="notification-list" id="notification-list">
+
+                            <li class="notifif-empty">No notification yet. Update will appear here as you order progresses.</li>
+                        </ul>
+                    </div>
+                </div> <!-- End dashboard grid -->
+
+                <!--- no order state (shown if localStorage is empty) -->
+                <div class="empty-state" id="empty-state" hidden>
+                    <span class="empty-icon">🧺</span>
+                    <p>You have not placed an order yet.</p>
+                    <a href="order.html" class="btn btn-primary">Place an Order</a>
+                </div>          
             </div>
         </section>
+
+        <dialog id="stage-dialog">
+            <div class="dialog-inner">
+                <span class="dialo'-icon" id="dialo-atage-icon">🔄</span>
+                <h3>Status Update</h3>
+                <p id="dialog-stage-message">Your laundry is now being washed!</p>
+                <button id="close-dialog" class="btn btn-primary">Got it</button>
+            </div>
+        </dialog>
     </main>
 
     <footer>

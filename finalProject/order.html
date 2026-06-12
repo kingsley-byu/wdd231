@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshFold Laundry Co. | Place an Order</title>
+  <meta name="description" content="Place a laundry order with FreshFold. Choose your service, schedule a pickup, and track your order in real time.">
+  <meta name="author" content="Osaruyi Kingsley Osawaru">
+
+  <link rel="icon" href="images/freshfold-icon.svg">
+
+  <meta property="og:title" content="Place an Order — FreshFold Laundry Co.">
+  <meta property="og:description" content="Fresh laundry delivered to your door. Place your order in seconds.">
+  <meta property="og:image" content="images/freshfold-logo.svg">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/large.css">
+
+  <script src="scripts/order.mjs" type="module"></script>
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <img src="images/freshfold-logo.svg" alt="FreshFold Laundry Co.">
+    <button id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="nav-bar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="order.html" class="active">Order</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══ PAGE HERO ══ -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <h1>Place Your Order</h1>
+        <p>Fill in the form below and we will handle the rest — pickup, cleaning, and delivery.</p>
+      </div>
+    </section>
+
+    <!-- ══ ORDER SECTION ══ -->
+    <section class="order-section">
+      <div class="container order-layout">
+
+        <!-- ── ORDER FORM ── -->
+        <div class="order-form-card">
+          <h2>Order Details</h2>
+          <p class="form-subtitle">Fields marked <span class="required-star">*</span> are required.</p>
+
+          <form id="order-form" novalidate>
+
+            <!-- Fieldset 1: Customer Information -->
+            <fieldset>
+              <legend>Customer Information</legend>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullname">Full Name <span class="required-star">*</span></label>
+                  <input type="text" id="fullname" name="fullname"
+                         placeholder="e.g. Kingsley Osawaru"
+                         autocomplete="name" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number <span class="required-star">*</span></label>
+                  <input type="tel" id="phone" name="phone"
+                         placeholder="e.g. 08012345678"
+                         autocomplete="tel" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                       placeholder="e.g. you@example.com"
+                       autocomplete="email">
+              </div>
+            </fieldset>
+
+            <!-- Fieldset 2: Service Selection -->
+            <fieldset>
+              <legend>Select Service <span class="required-star">*</span></legend>
+
+              <div class="service-options">
+
+                <div class="service-option">
+                  <input type="radio" id="svc-washing" name="service" value="Washing" required>
+                  <label for="svc-washing">
+                    <span class="svc-icon">🫧</span>
+                    <span class="svc-details">
+                      <strong>Washing</strong>
+                      <small>₦1,500 / load</small>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="service-option">
+                  <input type="radio" id="svc-ironing" name="service" value="Ironing">
+                  <label for="svc-ironing">
+                    <span class="svc-icon">👔</span>
+                    <span class="svc-details">
+                      <strong>Ironing</strong>
+                      <small>₦500 / item</small>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="service-option">
+                  <input type="radio" id="svc-drying" name="service" value="Drying">
+                  <label for="svc-drying">
+                    <span class="svc-icon">💨</span>
+                    <span class="svc-details">
+                      <strong>Drying</strong>
+                      <small>₦800 / load</small>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="service-option">
+                  <input type="radio" id="svc-delivery" name="service" value="Delivery">
+                  <label for="svc-delivery">
+                    <span class="svc-icon">🚚</span>
+                    <span class="svc-details">
+                      <strong>Delivery</strong>
+                      <small>₦1,000 flat</small>
+                    </span>
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+            <!-- Fieldset 3: Schedule & Details -->
+            <fieldset>
+              <legend>Schedule &amp; Details</legend>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="quantity">Quantity (bags / items) <span class="required-star">*</span></label>
+                  <input type="number" id="quantity" name="quantity"
+                         min="1" max="50" placeholder="e.g. 3" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="pickup-date">Pickup Date <span class="required-star">*</span></label>
+                  <input type="date" id="pickup-date" name="pickupDate" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Pickup Address <span class="required-star">*</span></label>
+                <input type="text" id="address" name="address"
+                       placeholder="e.g. 12 Sapele Road, Benin City"
+                       autocomplete="street-address" required>
+              </div>
+
+              <div class="form-group">
+                <label for="notes">Additional Notes <span class="optional-label">(optional)</span></label>
+                <textarea id="notes" name="notes"
+                          placeholder="Any special instructions for handling your laundry..."></textarea>
+              </div>
+            </fieldset>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary submit-btn">
+              Submit Order ✓
+            </button>
+
+          </form>
+        </div><!-- end order-form-card -->
+
+        <!-- ── SIDEBAR ── -->
+        <aside class="order-sidebar">
+
+          <!-- Pricing reference -->
+          <div class="info-card">
+            <h3>💰 Pricing</h3>
+            <ul class="price-list">
+              <li class="price-item">
+                <span>🫧 Washing</span>
+                <span>₦1,500 / load</span>
+              </li>
+              <li class="price-item">
+                <span>👔 Ironing</span>
+                <span>₦500 / item</span>
+              </li>
+              <li class="price-item">
+                <span>💨 Drying</span>
+                <span>₦800 / load</span>
+              </li>
+              <li class="price-item">
+                <span>🚚 Delivery</span>
+                <span>₦1,000 flat</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Why FreshFold -->
+          <div class="info-card">
+            <h3>✅ Why FreshFold?</h3>
+            <ul class="why-list">
+              <li>Same-day service available</li>
+              <li>Premium detergent on every wash</li>
+              <li>Real-time order tracking</li>
+              <li>Doorstep pickup &amp; delivery</li>
+              <li>Neatly folded &amp; packaged</li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="info-card contact-card">
+            <h3>📞 Need Help?</h3>
+            <p>(234) 7045084904</p>
+            <p>kingsleylove2018@gmail.com</p>
+            <p class="hours">Mon - Sat &nbsp;•&nbsp; 8am - 8pm</p>
+          </div>
+
+        </aside><!-- end order-sidebar -->
+
+      </div><!-- end order-layout -->
+    </section>
+
+    <!-- ══ ORDER CONFIRMATION DIALOG ══ -->
+    <dialog id="order-confirm-dialog">
+      <div class="dialog-inner">
+        <span class="dialog-icon">✅</span>
+        <h3>Order Placed!</h3>
+        <p>Your order <strong id="dialog-order-id">#FF-0001</strong> has been received.
+           We will contact you shortly to confirm your pickup time.</p>
+        <a href="dashboard.html" class="btn btn-primary">Track My Order →</a>
+      </div>
+    </dialog>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-contact">
+      <h3>FreshFold Laundry Co.</h3>
+      <p>Benin City, Nigeria</p>
+      <p>kingsleylove2018@gmail.com</p>
+      <p>(234) 7045084904</p>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#" aria-label="YouTube">
+        <img src="images/youtube.svg" alt="YouTube">
+      </a>
+      <a href="#" aria-label="Twitter / X">
+        <img src="images/twitter.svg" alt="Twitter">
+      </a>
+      <a href="#" aria-label="LinkedIn">
+        <img src="images/linkedin.svg" alt="LinkedIn">
+      </a>
+    </div>
+
+    <div class="footer-project">
+      <p>WDD231 Final Project</p>
+      <p>&copy; <span id="currentyear"></span> Osaruyi Kingsley Osawaru &bull; Nigeria</p>
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+</body>
+</html>
