@@ -1,0 +1,63 @@
+/* ============================================
+   DASHBOARD-LARGE.CSS
+   Dashboard page — tablet and desktop
+   breakpoint overrides only.
+   FreshFold Laundry Co.
+   ============================================ */
+
+/* ══════════════════════════════════════════
+   TABLET  (768px and up)
+══════════════════════════════════════════ */
+@media (min-width: 768px) {
+
+  .dashboard-section { padding: 3rem 0 6rem; }
+
+  /* Banner becomes a single row */
+  .dashboard-banner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 2rem;
+  }
+
+  /* 2-column grid: summary | tracker */
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Notifications spans both columns */
+  .dash-card-full { grid-column: 1 / -1; }
+
+  .dash-card { padding: 2rem; }
+
+  /* Notifications list allows more height */
+  .notification-list { max-height: 220px; }
+}
+
+/* ══════════════════════════════════════════
+   DESKTOP  (1024px and up)
+══════════════════════════════════════════ */
+@media (min-width: 1024px) {
+
+  .dashboard-section { padding: 4rem 0 7rem; }
+
+  /* 3-column grid on large screens */
+  .dashboard-grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 2rem;
+  }
+
+  .dash-card { padding: 2.2rem; }
+
+  /* Tracker stages show side by side on wide cards */
+  .tracker-stage { padding-bottom: 1.6rem; }
+
+  .stage-info h4 { font-size: 0.95rem; }
+
+  /* Notification list shows more items */
+  .notification-list { max-height: 280px; }
+
+  /* Empty state more spacious */
+  .empty-state { padding: 6rem 1rem; }
+}

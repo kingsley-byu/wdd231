@@ -1,0 +1,370 @@
+/* ============================================
+   DASHBOARD-SMALL.CSS
+   Dashboard page — mobile base styles only.
+   No media queries in this file.
+   FreshFold Laundry Co.
+   ============================================ */
+
+/* ══════════════════════════════════════════
+   DASHBOARD SECTION
+══════════════════════════════════════════ */
+.dashboard-section { padding: 2.5rem 0 5rem; }
+
+/* ══════════════════════════════════════════
+   WELCOME BANNER
+══════════════════════════════════════════ */
+.dashboard-banner {
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--white-dim-1) 0px,
+    var(--white-dim-1) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+}
+
+.banner-left { position: relative; }
+
+.banner-greeting {
+  font-size: 0.9rem;
+  color: var(--white-text-strong);
+  margin-bottom: 0.2rem;
+}
+.banner-greeting strong { color: var(--color-surface); }
+
+.banner-order {
+  font-size: 0.8rem;
+  color: var(--white-text-mid);
+}
+.banner-order span { color: var(--color-accent); font-weight: 700; }
+
+.banner-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent-surface);
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 2rem;
+  align-self: flex-start;
+  position: relative;
+}
+
+/* Pulsing dot */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+  50%       { box-shadow: 0 0 0 6px transparent; }
+}
+
+/* ══════════════════════════════════════════
+   DASHBOARD GRID
+══════════════════════════════════════════ */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* ══════════════════════════════════════════
+   DASH CARDS
+══════════════════════════════════════════ */
+.dash-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
+}
+
+.dash-card h3 {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Full-width card spans entire grid */
+.dash-card-full { grid-column: 1 / -1; }
+
+/* ══════════════════════════════════════════
+   ORDER SUMMARY ROWS
+══════════════════════════════════════════ */
+.order-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.order-detail-row:last-child { border-bottom: none; }
+.order-detail-row span:first-child { color: var(--color-muted); }
+.order-detail-row span:last-child  { font-weight: 500; color: var(--color-text); }
+
+/* Highlighted total row */
+.total-row {
+  margin-top: 0.3rem;
+  padding-top: 0.7rem;
+  border-top: 2px solid var(--color-border);
+  border-bottom: none;
+}
+.total-row span:first-child { font-weight: 600; color: var(--color-text); }
+.total-row span:last-child  { font-size: 1.05rem; color: var(--color-primary); font-weight: 700; }
+
+/* ══════════════════════════════════════════
+   PROGRESS BAR
+══════════════════════════════════════════ */
+.progress-bar-track {
+  background: var(--color-border);
+  border-radius: 2rem;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 2rem;
+  width: 0%;
+  transition: width 0.6s ease;
+}
+
+.progress-label {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+.progress-label span { color: var(--color-accent-dark); font-weight: 700; }
+
+/* ══════════════════════════════════════════
+   TRACKER STAGES
+══════════════════════════════════════════ */
+.tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tracker-stage {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 1.4rem;
+}
+
+/* Vertical connector line between stages */
+.tracker-stage:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 42px;
+  width: 2px;
+  height: calc(100% - 18px);
+  background: var(--color-border);
+}
+
+/* Connector turns teal when stage is completed */
+.tracker-stage.completed::after { background: var(--color-primary); }
+
+/* ── Stage Dot (emoji circle) ── */
+.stage-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  z-index: 1;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.tracker-stage.completed .stage-dot {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.tracker-stage.active .stage-dot {
+  border-color: var(--color-accent);
+  background: var(--accent-surface);
+  animation: stagePulse 2s infinite;
+}
+
+@keyframes stagePulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+  50%       { box-shadow: 0 0 0 8px transparent; }
+}
+
+/* ── Stage Info ── */
+.stage-info {
+  flex: 1;
+  padding-top: 0.35rem;
+}
+
+.stage-info h4 {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  margin-bottom: 0.2rem;
+  transition: color 0.3s ease;
+}
+
+.tracker-stage.completed .stage-info h4 { color: var(--color-primary); }
+.tracker-stage.active    .stage-info h4 { color: var(--color-accent-dark); }
+
+.stage-time {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+/* ── Status Badges ── */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: 2rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-pending {
+  background: var(--color-bg);
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+}
+
+.badge-active {
+  background: var(--accent-surface);
+  color: var(--color-accent-dark);
+  border: 1px solid var(--color-accent);
+}
+
+.badge-completed {
+  background: var(--primary-surface);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+/* ══════════════════════════════════════════
+   NOTIFICATIONS
+══════════════════════════════════════════ */
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notif-empty {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  font-style: italic;
+  padding: 0.5rem 0;
+}
+
+/* Injected by dashboard.mjs */
+.notification-item {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 0.9rem 1rem;
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--color-primary);
+  font-size: 0.88rem;
+  animation: slideIn 0.3s ease;
+}
+
+.notification-item.notif-active {
+  border-left-color: var(--color-accent);
+  background: var(--accent-surface);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.notif-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+.notif-text strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  margin-bottom: 0.15rem;
+}
+.notif-text span {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+/* ══════════════════════════════════════════
+   EMPTY STATE (no order in localStorage)
+══════════════════════════════════════════ */
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.empty-icon { font-size: 3.5rem; }
+
+.empty-state h3 {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--color-muted);
+}
+
+.empty-state p {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  max-width: 30ch;
+}
+
+.empty-state .btn { margin-top: 0.5rem; }
