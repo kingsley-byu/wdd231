@@ -19,8 +19,9 @@ form.addEventListener("submit", (e) =>{
     const phone = document.querySelector("#phone").value.trim();
     const address = document.querySelector("#address").value.trim();
     const notes = document.querySelector("#notes").value.trim();
-    const emailMessage = document.querySelector("#email").value.trim();
+    const email = document.querySelector("#email").value.trim();
     const quantityOrdered = document.querySelector("#quantity").value.trim();
+    const pickupDateValue = pickupDate.value;
 
 
     const selectedService = document.querySelector('input[name="service"]:checked');
@@ -38,7 +39,7 @@ form.addEventListener("submit", (e) =>{
         return;
     }
      //validate pickup date
-    if (!pickupDate){
+    if (!pickupDateValue){
         alert("Please enter a pickup date");
         return;
     }
@@ -50,31 +51,29 @@ form.addEventListener("submit", (e) =>{
     }
 
      //validate service selection
-    if (!address){
+    if (!selectedService){
         alert("Please select a service.");
         return;
     }
 
-    // if all validation pass
-    alert("Form is valid");
 
     const order = {
         id: generateOrderId(),
         name: fullname,
-        phoneNumber: phone,
-        emailAddress = emailMessage,
+        phone: phone,
+        email: email,
         service:selectedService.value,
         quantity: quantityOrdered,
-        date: pickupDate,
+        date: pickupDateValue,
         address: address,
-        note: notes,
+        notes: notes,
         stage: 1,
-        timestamp: today
+        timestamp: new Date().toISOString()
 
     };
     //Generate random id between 1000 and 9999
     
-    localStorage.setItem("freshFold-order", JSON.stringify(order));
+    localStorage.setItem("freshfold-order", JSON.stringify(order));
     
     document.querySelector("#dialog-order-id").textContent = order.id;
     document.querySelector("#order-confirm-dialog").showModal();   
