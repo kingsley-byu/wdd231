@@ -53,14 +53,13 @@ function orderDataValidate() {
             total = price * Number(order.quantity);
         }
         summaryTotal.textContent = `₦${total.toLocaleString()}`; 
-        
         const stages = [
-        { title: "Order Received",      icon: "📥" },
-        { title: "Washing in Progress", icon: "🫧" },
-        { title: "Drying Completed",    icon: "💨" },
-        { title: "Ready for Pickup",    icon: "📦" },
-        { title: "Delivered",           icon: "🎉" }
-        ];
+            { title: "Order Received",      icon: "📥", message: "Your order has been received and is being prepared for washing." },
+            { title: "Washing in Progress", icon: "🫧", message: "Your laundry is currently being washed." },
+            { title: "Drying Completed",    icon: "💨", message: "Your laundry has finished drying and is being folded." },
+            { title: "Ready for Pickup",    icon: "📦", message: "Your laundry is ready for pickup or delivery." },
+            { title: "Delivered",           icon: "🎉", message: "Your laundry has been delivered. Thank you for choosing FreshFold!" }
+            ];
 
 
         function updateTracker(currentStage) {
@@ -93,10 +92,51 @@ function orderDataValidate() {
             progressPercent.textContent = `${percent}%`;
             bannerStatusText.textContent = stages[currentStage -1].title;
         }
+    
+        function addNotification(stageNumber) {
+            const notificationList = document.querySelector("#notification-list");
+            const emptyMsg = notificationList.document.querySelector(".notif-empty");
+            
+            if (emptyMsg) {
+                emptyMsg.remove();
+            }
+            const stage = stages[stageNumber - 1];
+            const time = new Date().toLocaleTimeString();
 
-           updateTracker(order.stage);
+            const item = document.createElement("li");
+            item.className = "notification-item notif-active";
+
+            item.innerHTML = `<span class="notif-icon">${stage.icon} </span>
+            <div class="notif-text">
+                <strong>${stage.title}</strong>
+                <span>${time}</span>
+            </div>`;
+
+            // Append it to the beginning using prepend
+            notificationList.prepend(item);
     }
 
+        const dialogIcon = document.querySelector("#dialog-stage-icon");
+        const dialogMessage = document.querySelector("#dialog-stage-message");
+        const stageDialog = document.querySelector("#stage-dialog");
+        const closeDialog = document.querySelector("#close-dialog");
+        function showStageDialog(stageNumber) {
+            
+            dialogIcon.textContent = stages[stageNumber -1].icon;
+            dialogMessage.textContent = stages[stageNumber -1].message;
+            stageDialog.showModal();
+              
+        }
+        
+        closeDialog.addEventListener("click", () => {
+            stageDialog.close();
+        });
+        updateTracker(order.stage);
+
+    }
+
+    orderDataValidate();
+    addNotification()
 }
 
-orderDataValidate();
+
