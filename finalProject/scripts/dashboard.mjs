@@ -146,7 +146,7 @@ function orderDataValidate() {
             }
 
             if (order.stage === 5) {
-                cleearInterval(timer);
+                clearInterval(timer);
             }
         }, 5000);
 
