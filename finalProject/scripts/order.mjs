@@ -73,7 +73,7 @@ form.addEventListener("submit", (e) =>{
     };
     //Generate random id between 1000 and 9999
     
-    localStorage.setItem("freshfold-order", JSON.stringify(order));
+    localStorage.setItem("freshFold-order", JSON.stringify(order));
     
     document.querySelector("#dialog-order-id").textContent = order.id;
     document.querySelector("#order-confirm-dialog").showModal();   

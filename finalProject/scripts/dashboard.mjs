@@ -1,6 +1,6 @@
 import "./main.mjs";
 
-const orderData = localStorage.getItem("freshfold-order");
+const orderData = localStorage.getItem("freshFold-order");
 function orderDataValidate() {
 
     if (orderData === null){
@@ -138,7 +138,7 @@ function orderDataValidate() {
         const timer = setInterval(() => {
             if (order.stage < 5) {
                 order.stage++;
-                localStorage.setItem("freshfold-order", JSON.stringify(order));
+                localStorage.setItem("freshFold-order", JSON.stringify(order));
                 addNotification(order.stage);
                 updateTracker(order.stage);
                 showStageDialog(order.stage);
