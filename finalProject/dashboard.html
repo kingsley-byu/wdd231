@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/dashboard-small.css">
     <link rel="stylesheet" href="styles/dashboard-large.css">
-    <script src="scripts/services.mjs" type="module"></script>
+    <script src="scripts/dashboard.mjs" type="module"></script>
 </head>
 <body>
     <header>
@@ -158,7 +158,7 @@
                         <h3>🔔 Notifications</h3>
                         <ul class="notification-list" id="notification-list">
 
-                            <li class="notifif-empty">No notification yet. Update will appear here as you order progresses.</li>
+                            <li class="notif-empty">No notification yet. Update will appear here as you order progresses.</li>
                         </ul>
                     </div>
                 </div> <!-- End dashboard grid -->
@@ -174,7 +174,7 @@
 
         <dialog id="stage-dialog">
             <div class="dialog-inner">
-                <span class="dialo'-icon" id="dialo-atage-icon">🔄</span>
+                <span class="dialog'-icon" id="dialog-stage-icon">🔄</span>
                 <h3>Status Update</h3>
                 <p id="dialog-stage-message">Your laundry is now being washed!</p>
                 <button id="close-dialog" class="btn btn-primary">Got it</button>

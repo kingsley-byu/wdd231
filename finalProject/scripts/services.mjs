@@ -3,7 +3,7 @@ async function loadServices() {
     const grid = document.querySelector("#services-grid");
 
     try {
-        const response = await fetch("/finalProject/scripts/data/services.json");
+        const response = await fetch("./scripts/data/services.json");
         if (!response.ok) {
             throw Error(await response.text());
         }

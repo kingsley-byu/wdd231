@@ -95,7 +95,7 @@ function orderDataValidate() {
     
         function addNotification(stageNumber) {
             const notificationList = document.querySelector("#notification-list");
-            const emptyMsg = notificationList.document.querySelector(".notif-empty");
+            const emptyMsg = notificationList.querySelector(".notif-empty");
             
             if (emptyMsg) {
                 emptyMsg.remove();
@@ -120,6 +120,7 @@ function orderDataValidate() {
         const dialogMessage = document.querySelector("#dialog-stage-message");
         const stageDialog = document.querySelector("#stage-dialog");
         const closeDialog = document.querySelector("#close-dialog");
+
         function showStageDialog(stageNumber) {
             
             dialogIcon.textContent = stages[stageNumber -1].icon;
@@ -131,12 +132,30 @@ function orderDataValidate() {
         closeDialog.addEventListener("click", () => {
             stageDialog.close();
         });
+        addNotification(order.stage);
         updateTracker(order.stage);
+
+        const timer = setInterval(() => {
+            if (order.stage < 5) {
+                order.stage++;
+                localStorage.setItem("freshfold-order", JSON.stringify(order));
+                addNotification(order.stage);
+                updateTracker(order.stage);
+                showStageDialog(order.stage);
+                
+            }
+
+            if (order.stage === 5) {
+                cleearInterval(timer);
+            }
+        }, 5000);
+
+
 
     }
 
-    orderDataValidate();
-    addNotification()
+    
 }
+orderDataValidate();
 
 
