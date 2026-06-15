@@ -3,19 +3,19 @@ import "./main.mjs";
 const orderData = localStorage.getItem("freshFold-order");
 function orderDataValidate() {
 
-    if (orderData === null){
+    if (orderData === null) {
         const emptyState = document.querySelector("#empty-state");
         const dashboardBanner = document.querySelector(".dashboard-banner");
         const dashboardGrid = document.querySelector(".dashboard-grid");
-    
+
         emptyState.removeAttribute("hidden");
         dashboardBanner.style.display = "none";
         dashboardGrid.style.display = "none";
         return;
     }
-    
+
     else {
-        const order = JSON.parse(orderData)
+        const order = JSON.parse(orderData);
 
         const customerName = document.querySelector("#customer-name");
         const bannerOrderId = document.querySelector("#banner-order-id");
@@ -35,52 +35,46 @@ function orderDataValidate() {
         summaryDate.textContent = order.date;
         summaryAddress.textContent = order.address;
 
-        //Calculate total cost
+        // Calculate total cost
         const prices = {
             Washing: 1500,
             Ironing: 500,
             Drying: 800,
             Delivery: 1000
         };
-        
+
         const price = prices[order.service];
 
         let total;
-        if (order.service ==="Delivery") {
+        if (order.service === "Delivery") {
             total = price;
-        }
-        else{
+        } else {
             total = price * Number(order.quantity);
         }
-        summaryTotal.textContent = `₦${total.toLocaleString()}`; 
+        summaryTotal.textContent = `₦${total.toLocaleString()}`;
+
         const stages = [
             { title: "Order Received",      icon: "📥", message: "Your order has been received and is being prepared for washing." },
             { title: "Washing in Progress", icon: "🫧", message: "Your laundry is currently being washed." },
             { title: "Drying Completed",    icon: "💨", message: "Your laundry has finished drying and is being folded." },
             { title: "Ready for Pickup",    icon: "📦", message: "Your laundry is ready for pickup or delivery." },
             { title: "Delivered",           icon: "🎉", message: "Your laundry has been delivered. Thank you for choosing FreshFold!" }
-            ];
-
+        ];
 
         function updateTracker(currentStage) {
             for (let i = 1; i <= 5; i++) {
-               const stageE1 = document.querySelector(`#stage-${i}`);
-               const badge = stageE1.querySelector(".status-badge")
-               if (i < currentStage){
-                stageE1.classList.add("completed");
-
-                badge.textContent = "Completed";
-                badge.className = "status-badge badge-completed";
-               }
-
-               if (i === currentStage) {
-                stageE1.classList.add("active");
-                badge.textContent = "In progress";
-                badge.className = "status-badge badge-active";
-               }
-
-               if (i > currentStage) {
-               }
+                const stageEl = document.querySelector(`#stage-${i}`);
+                const badge = stageEl.querySelector(".status-badge");
+                if (i < currentStage) {
+                    stageEl.classList.add("completed");
+                    badge.textContent = "Completed";
+                    badge.className = "status-badge badge-completed";
+                }
+                if (i === currentStage) {
+                    stageEl.classList.add("active");
+                    badge.textContent = "In progress";
+                    badge.className = "status-badge badge-active";
+                }
             }
 
             const percent = (currentStage / 5) * 100;
@@ -90,13 +84,13 @@ function orderDataValidate() {
 
             progressBar.style.width = `${percent}%`;
             progressPercent.textContent = `${percent}%`;
-            bannerStatusText.textContent = stages[currentStage -1].title;
+            bannerStatusText.textContent = stages[currentStage - 1].title;
         }
-    
+
         function addNotification(stageNumber) {
             const notificationList = document.querySelector("#notification-list");
             const emptyMsg = notificationList.querySelector(".notif-empty");
-            
+
             if (emptyMsg) {
                 emptyMsg.remove();
             }
@@ -112,9 +106,8 @@ function orderDataValidate() {
                 <span>${time}</span>
             </div>`;
 
-            // Append it to the beginning using prepend
             notificationList.prepend(item);
-    }
+        }
 
         const dialogIcon = document.querySelector("#dialog-stage-icon");
         const dialogMessage = document.querySelector("#dialog-stage-message");
@@ -122,16 +115,15 @@ function orderDataValidate() {
         const closeDialog = document.querySelector("#close-dialog");
 
         function showStageDialog(stageNumber) {
-            
-            dialogIcon.textContent = stages[stageNumber -1].icon;
-            dialogMessage.textContent = stages[stageNumber -1].message;
+            dialogIcon.textContent = stages[stageNumber - 1].icon;
+            dialogMessage.textContent = stages[stageNumber - 1].message;
             stageDialog.showModal();
-              
         }
-        
+
         closeDialog.addEventListener("click", () => {
             stageDialog.close();
         });
+
         addNotification(order.stage);
         updateTracker(order.stage);
 
@@ -142,20 +134,12 @@ function orderDataValidate() {
                 addNotification(order.stage);
                 updateTracker(order.stage);
                 showStageDialog(order.stage);
-                
             }
-
             if (order.stage === 5) {
                 clearInterval(timer);
             }
         }, 5000);
-
-
-
     }
-
-    
 }
+
 orderDataValidate();
-
-

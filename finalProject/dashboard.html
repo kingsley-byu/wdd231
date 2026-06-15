@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreshFold Laundry Co. | Home</title>
+    <title>FreshFold Laundry Co. | Dashboard</title>
     <meta name="description" content="FreshFold Laundry Co. offers professional laundry, washing, ironing, pickup, and doorstep delivery services.">
     <meta name="author" content="Osaruyi Kingsley Osawaru">
     <link rel="icon" href="images/freshfold-icon.svg">
@@ -22,33 +22,30 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/dashboard-small.css">
     <link rel="stylesheet" href="styles/dashboard-large.css">
-    
-    
 </head>
 <body>
     <header>
-       <img src="images/freshfold-logo.svg" alt="FreshFold Laundry Co.">
+        <img src="images/freshfold-logo.svg" alt="FreshFold Laundry Co.">
         <button id="menu-btn" aria-label="Toggle navigation">☰</button>
         <nav id="nav-bar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="order.html">Order</a></li>
-                
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="page-hero">
-            <div class="container page-hero-inner">
+            <div class="ff-container ff-page-hero-inner">
                 <h1>Track Your Order</h1>
                 <p>Live updates on you laundry - from pickup to delivery.</p>
             </div>
         </section>
 
         <section class="dashboard-section">
-            <div class="container">
+            <div class="ff-container">
 
                 <div class="dashboard-banner">
                     <div class="banner-left">
@@ -92,12 +89,12 @@
                             <span id="summary-total">1,500</span>
                         </div>
                     </div>
-                    
+
                     <!-- Tracker card -->
                     <div class="dash-card">
                         <h3>🔄 Order Progress</h3>
 
-                            <!--Progress bar -->
+                        <!-- Progress bar -->
                         <div class="progress-bar-track">
                             <div class="progress-bar-fill" id="progress-bar"></div>
                         </div>
@@ -107,7 +104,7 @@
                         <div class="tracker">
 
                             <div class="tracker-stage" id="stage-1" data-stage="1">
-                                <div class="stage-dot">>📥</div>
+                                <div class="stage-dot">📥</div>
                                 <div class="stage-info">
                                     <h4>Order Received</h4>
                                     <span class="stage-time" id="time-1"></span>
@@ -150,35 +147,34 @@
                                 </div>
                                 <span class="status-badge badge-pending">Pending</span>
                             </div>
-                
+
                         </div> <!-- End tracker -->
                     </div>
 
-                    <!--  Notification card  -->
+                    <!-- Notification card -->
                     <div class="dash-card dash-card-full">
                         <h3>🔔 Notifications</h3>
                         <ul class="notification-list" id="notification-list">
-
                             <li class="notif-empty">No notification yet. Update will appear here as you order progresses.</li>
                         </ul>
                     </div>
                 </div> <!-- End dashboard grid -->
 
-                <!--- no order state (shown if localStorage is empty) -->
+                <!-- no order state (shown if localStorage is empty) -->
                 <div class="empty-state" id="empty-state" hidden>
                     <span class="empty-icon">🧺</span>
                     <p>You have not placed an order yet.</p>
-                    <a href="order.html" class="btn btn-primary">Place an Order</a>
-                </div>          
+                    <a href="order.html" class="ff-btn ff-btn-primary">Place an Order</a>
+                </div>
             </div>
         </section>
 
         <dialog id="stage-dialog">
             <div class="dialog-inner">
-                <span class="dialog'-icon" id="dialog-stage-icon">🔄</span>
+                <span class="dialog-icon" id="dialog-stage-icon">🔄</span>
                 <h3>Status Update</h3>
                 <p id="dialog-stage-message">Your laundry is now being washed!</p>
-                <button id="close-dialog" class="btn btn-primary">Got it</button>
+                <button id="close-dialog" class="ff-btn ff-btn-primary">Got it</button>
             </div>
         </dialog>
     </main>
@@ -192,16 +188,14 @@
             <p>(234) 7045084904</p>
         </div>
 
-        
         <div class="footer-socials">
             <a href="https://www.youtube.com/" aria-label="YouTube"><img src="../chamber/images/youtube.svg" alt="YouTube Icon"></a>
             <a href="https://x.com/" aria-label="Twitter"><img src="../chamber/images/twitter.svg" alt="Twitter Icon"></a>
             <a href="https://www.linkedin.com/login" aria-label="LinkedIn"><img src="../chamber/images/linkedin.svg" alt="LinkedIn Icon"></a>
         </div>
 
-        
         <div class="footer-project">
-            <p>WDD231 Final  Project</p>
+            <p>WDD231 Final Project</p>
             <p>&copy; <span id="currentyear"></span> Osaruyi Kingsley Osawaru • Nigeria</p>
             <p id="lastModified"></p>
         </div>

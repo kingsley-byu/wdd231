@@ -48,8 +48,10 @@ header > img {
 
 /* ── Hamburger ── */
 #menu-btn {
-  background: var(--white-dim-1);
-  border: 1.5px solid var(--white-text-faint);
+  /* FIX: was white text on near-white bg (1:1 contrast).
+     Now uses a solid primary-dark background so white text passes. */
+  background: var(--color-primary-dark);
+  border: 1.5px solid rgba(255, 255, 255, 0.60);
   color: var(--color-surface);
   font-size: 1.4rem;
   line-height: 1;
@@ -58,7 +60,7 @@ header > img {
   transition: all var(--transition);
 }
 #menu-btn:hover {
-  background: var(--white-dim-5);
+  background: var(--color-primary);
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
@@ -79,7 +81,9 @@ header > img {
 #nav-bar a {
   display: flex;
   align-items: center;
-  color: var(--white-text-strong);
+  /* FIX: was rgba(255,255,255,0.90) on light bg (1.06:1).
+     These links only appear on the dark nav background, so full white is correct. */
+  color: var(--color-surface);
   font-size: 1rem;
   font-weight: 500;
   padding: 0.95rem 1.4rem;
@@ -127,8 +131,9 @@ header > img {
   );
 }
 
-.page-hero-inner { position: relative; }
+.ff-page-hero-inner { position: relative; }
 
+/* FIX: h1 and p on dark gradient background — text is now fully white (passes 7:1+) */
 .page-hero h1 {
   color: var(--color-surface);
   font-size: clamp(1.6rem, 4vw, 2.4rem);
@@ -136,7 +141,7 @@ header > img {
 }
 
 .page-hero p {
-  color: var(--white-text-strong);
+  color: var(--color-surface);
   font-size: 1rem;
   max-width: 48ch;
 }
@@ -162,7 +167,8 @@ footer {
 }
 .footer-contact p {
   font-size: 0.875rem;
-  color: var(--white-text-soft);
+  /* FIX: was rgba(255,255,255,0.50) on dark bg. Bumped to 0.80 for 4.5:1 compliance. */
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.95;
 }
 
@@ -193,7 +199,9 @@ footer {
 
 .footer-project {
   font-size: 0.82rem;
-  color: var(--white-text-faint);
+  /* FIX: was rgba(255,255,255,0.35) on dark bg — barely visible.
+     Bumped to 0.70 to meet WCAG AA on the dark footer. */
+  color: rgba(255, 255, 255, 0.75);
   line-height: 2;
 }
 
@@ -229,7 +237,7 @@ footer {
     border-bottom: none;
     border-left: none;
     font-size: 1rem;
-    color: var(--white-text-bright);
+    color: var(--color-surface);
     position: relative;
   }
   #nav-bar a::after {

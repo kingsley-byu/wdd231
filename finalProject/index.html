@@ -21,20 +21,16 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/home.css">
-
-   
-    
 </head>
 <body>
     <header>
-       <img src="images/freshfold-logo.svg" alt="FreshFold Laundry Co.">
+        <img src="images/freshfold-logo.svg" alt="FreshFold Laundry Co.">
         <button id="menu-btn" aria-label="Toggle navigation">☰</button>
         <nav id="nav-bar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="order.html">Order</a></li>
-                
             </ul>
         </nav>
     </header>
@@ -51,20 +47,21 @@
                 <h1>Fresh Laundry, Delivered to your Door</h1>
                 <p>Professional washing, Ironing, and delivery - tracked in real time.</p>
             </div>
-            
         </section>
+
         <section class="services-section">
-            <div class="container">
-                <div class="section-title">
+            <div class="ff-container">
+                <div class="ff-section-title">
                     <h2>Our Services</h2>
                     <p>Everything your laundry needs, handled with care.</p>
                 </div>
                 <div class="services-grid" id="services-grid"></div>
             </div>
         </section>
+
         <section class="how-it-works">
-            <div class="container">
-                <div class="section-title">
+            <div class="ff-container">
+                <div class="ff-section-title">
                     <h2>How it Works</h2>
                     <p>Fresh clean laundry in four simple steps.</p>
                 </div>
@@ -99,20 +96,19 @@
                     </div>
                 </div>
             </div>
-
         </section>
 
         <section class="cta-banner">
-            <div class="container cta-banner-inner">
+            <div class="ff-container ff-cta-banner-inner">
                 <div class="cta-content">
                     <h2>Ready for <em>Fresh</em> Laundry?</h2>
                     <p>Join hundreds of happy customers who trust FreshFold to handle their
                         laundry - clean, folded, and delivered right to your door.
                     </p>
 
-                    <div class="btn-group">
-                        <a href="order.html" class="btn btn-primary">Place an Order</a>
-                        <a href="dashboard.html" class="btn btn-ghost-white">Track my Order</a>
+                    <div class="ff-btn-group">
+                        <a href="order.html" class="ff-btn ff-btn-primary">Place an Order</a>
+                        <a href="dashboard.html" class="ff-btn ff-btn-ghost-white">Track my Order</a>
                     </div>
                 </div>
 
@@ -134,8 +130,6 @@
                 </div>
             </div>
         </section>
-       
-
     </main>
 
     <footer>
@@ -145,11 +139,12 @@
             <p>Benin City, Nigeria</p>
             <p>kingsleylove2018@gmail.com</p>
             <p>(234) 7045084904</p>
-            <a href="">Video link</a>
-            <div class="image optimizer">
-                <h3>Image optimizer</h3>
-                <a href="https://claude.ai/login">claude ai</a>
-                <a href="https://squoosh.app/?utm_medium=PWA&utm_source=launcher">Squoosh</a>
+            
+            <div class="ff-image-optimizer">
+                <h3>Image Optimizer And Video Link</h3>
+                <li><a href="https://claude.ai/login">claude ai</a></li>
+                <li><a href="https://squoosh.app/?utm_medium=PWA&utm_source=launcher">Squoosh</a></li>
+                <li><a href="">Video link</a></li>
             </div>
         </div>
         <div class="footer-socials">
@@ -158,12 +153,11 @@
             <a href="https://www.linkedin.com/login" aria-label="LinkedIn"><img src="../chamber/images/linkedin.svg" alt="LinkedIn Icon"></a>
         </div>
         <div class="footer-project">
-            <p>WDD231 Final  Project</p>
+            <p>WDD231 Final Project</p>
             <p>&copy; <span id="currentyear"></span> Osaruyi Kingsley Osawaru • Nigeria</p>
             <p id="lastModified"></p>
         </div>
     </footer>
-    // Script reference
     <script src="scripts/services.mjs" type="module"></script>
 </body>
 </html>

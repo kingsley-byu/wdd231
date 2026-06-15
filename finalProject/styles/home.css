@@ -68,14 +68,16 @@
   color: var(--color-surface);
 }
 
+/* FIX: h1 on dark hero overlay — fully white, high contrast */
 .hero-overlay h1 {
   color: var(--color-surface);
   margin-bottom: 1rem;
   max-width: 16ch;
 }
 
+/* FIX: was rgba(255,255,255,0.80) — bumped to full white since overlay is very dark */
 .hero-overlay p {
-  color: var(--white-text-near);
+  color: var(--color-surface);
   font-size: 1.05rem;
   max-width: 40ch;
   margin-bottom: 2rem;
@@ -129,11 +131,13 @@
 .service-card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
 .service-card p  { font-size: 0.88rem; color: var(--color-muted); }
 
+/* FIX: was accent color on accent-surface bg (2.09:1 for large text, too low for normal).
+   Changed to primary-dark text on accent-surface for clear contrast. */
 .service-price {
   display: inline-block;
   margin-top: 1rem;
   background: var(--accent-surface);
-  color: var(--color-accent-dark);
+  color: var(--color-primary-dark);
   font-size: 0.82rem;
   font-weight: 700;
   padding: 0.28rem 0.85rem;
@@ -230,19 +234,21 @@
   );
 }
 
-.cta-banner-inner { position: relative; }
+.ff-cta-banner-inner { position: relative; }
 .cta-content { margin-bottom: 2.5rem; }
 
 .cta-content h2 { color: var(--color-surface); margin-bottom: 0.8rem; }
+/* FIX: <em> was accent color on light bg (1.97:1). On dark CTA banner it's fine — keeping accent. */
 .cta-content h2 em { color: var(--color-accent); font-style: italic; }
+/* FIX: was rgba(255,255,255,0.72) — bumped to solid white for clear legibility on dark bg */
 .cta-content p {
-  color: var(--white-text-strong);
+  color: var(--color-surface);
   font-size: 1rem;
   max-width: 46ch;
   margin-bottom: 1.8rem;
 }
 
-.btn-group { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+.ff-btn-group { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 
 .cta-visual {
   display: grid;
@@ -250,9 +256,11 @@
   gap: 0.9rem;
 }
 
+/* FIX: stat cards — was accent text + semi-white text on near-transparent bg.
+   Changed card bg to a more opaque dark overlay so both text colours pass. */
 .cta-stat-card {
-  background: var(--white-dim-3);
-  border: 1px solid var(--white-border-5);
+  background: rgba(6, 38, 42, 0.50);
+  border: 1px solid rgba(255, 255, 255, 0.20);
   border-radius: var(--radius-lg);
   padding: 1.2rem 0.6rem;
   text-align: center;
@@ -266,9 +274,10 @@
   line-height: 1;
   margin-bottom: 0.35rem;
 }
+/* FIX: was rgba(255,255,255,0.62) on near-transparent bg (1:1). Now white on dark bg. */
 .cta-stat-card span {
   font-size: 0.72rem;
-  color: var(--white-text-mid);
+  color: var(--color-surface);
   line-height: 1.4;
 }
 
@@ -286,7 +295,7 @@
   .steps { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 
   .cta-banner { padding: 5rem 0; }
-  .cta-banner-inner {
+  .ff-cta-banner-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;

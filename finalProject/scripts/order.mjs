@@ -6,13 +6,7 @@ pickupDate.min = today;
 
 const form = document.querySelector("#order-form");
 
-//const today = new Date().toISOString.split('T')[0];  short form
-//document.querySelector("#pickup-date").min = today;
-
-
-
-
-form.addEventListener("submit", (e) =>{
+form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const fullname = document.querySelector("#fullname").value.trim();
@@ -23,64 +17,59 @@ form.addEventListener("submit", (e) =>{
     const quantityOrdered = document.querySelector("#quantity").value.trim();
     const pickupDateValue = pickupDate.value;
 
-
     const selectedService = document.querySelector('input[name="service"]:checked');
 
-
-    //validate fullname
-    if (!fullname){
+    // validate fullname
+    if (!fullname) {
         alert("Please enter you full name");
         return;
     }
 
-     //validate phone
-    if (!phone){
+    // validate phone
+    if (!phone) {
         alert("Please enter you phone number");
         return;
     }
-     //validate pickup date
-    if (!pickupDateValue){
+
+    // validate pickup date
+    if (!pickupDateValue) {
         alert("Please enter a pickup date");
         return;
     }
 
-     //validate address
-    if (!address){
+    // validate address
+    if (!address) {
         alert("Please enter your address");
         return;
     }
 
-     //validate service selection
-    if (!selectedService){
+    // validate service selection
+    if (!selectedService) {
         alert("Please select a service.");
         return;
     }
-
 
     const order = {
         id: generateOrderId(),
         name: fullname,
         phone: phone,
         email: email,
-        service:selectedService.value,
+        service: selectedService.value,
         quantity: quantityOrdered,
         date: pickupDateValue,
         address: address,
         notes: notes,
         stage: 1,
         timestamp: new Date().toISOString()
-
     };
-    //Generate random id between 1000 and 9999
-    
+
     localStorage.setItem("freshFold-order", JSON.stringify(order));
-    
+
     document.querySelector("#dialog-order-id").textContent = order.id;
-    document.querySelector("#order-confirm-dialog").showModal();   
-    
-})
-function generateOrderId(){
+    document.querySelector("#order-confirm-dialog").showModal();
+});
+
+function generateOrderId() {
     const num = Math.floor(Math.random() * 9000) + 1000;
     return `#FF-${num}`;
 }
-

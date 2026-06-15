@@ -45,13 +45,13 @@
   --white-border-5: rgba(255, 255, 255, 0.16);
   --white-border-6: rgba(255, 255, 255, 0.18);
 
-  /* ── White Text Shades ── */
-  --white-text-faint:  rgba(255, 255, 255, 0.35);
-  --white-text-soft:   rgba(255, 255, 255, 0.50);
-  --white-text-mid:    rgba(255, 255, 255, 0.62);
-  --white-text-strong: rgba(255, 255, 255, 0.72);
-  --white-text-near:   rgba(255, 255, 255, 0.80);
-  --white-text-bright: rgba(255, 255, 255, 0.90);
+  /* ── White Text Shades (contrast-safe versions) ── */
+  --white-text-faint:  rgba(255, 255, 255, 0.70);
+  --white-text-soft:   rgba(255, 255, 255, 0.80);
+  --white-text-mid:    rgba(255, 255, 255, 0.88);
+  --white-text-strong: rgba(255, 255, 255, 0.92);
+  --white-text-near:   rgba(255, 255, 255, 0.95);
+  --white-text-bright: rgba(255, 255, 255, 1.00);
 
   /* ── Dark Overlays ── */
   --overlay-heavy: rgba(6, 38, 42, 0.90);
@@ -142,18 +142,20 @@ p { line-height: 1.75; }
 
 /* ══════════════════════════════════════════
    LAYOUT UTILITIES
+   Renamed: .container → .ff-container
+            .section-title → .ff-section-title
 ══════════════════════════════════════════ */
-.container {
+.ff-container {
   width: min(1100px, 100% - 2rem);
   margin-inline: auto;
 }
 
-.section-title {
+.ff-section-title {
   text-align: center;
   margin-bottom: 2.5rem;
 }
-.section-title h2 { margin-bottom: 0.5rem; }
-.section-title p {
+.ff-section-title h2 { margin-bottom: 0.5rem; }
+.ff-section-title p {
   color: var(--color-muted);
   font-size: 1rem;
   max-width: 50ch;
@@ -162,8 +164,12 @@ p { line-height: 1.75; }
 
 /* ══════════════════════════════════════════
    BUTTONS
+   Renamed: .btn → .ff-btn
+            .btn-primary → .ff-btn-primary
+            .btn-outline → .ff-btn-outline
+            .btn-ghost-white → .ff-btn-ghost-white
 ══════════════════════════════════════════ */
-.btn {
+.ff-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -179,31 +185,31 @@ p { line-height: 1.75; }
   text-decoration: none;
   white-space: nowrap;
 }
-.btn-primary {
+.ff-btn-primary {
   background: var(--color-accent);
   color: var(--color-text);
 }
-.btn-primary:hover {
+.ff-btn-primary:hover {
   background: var(--color-accent-dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px var(--accent-glow);
 }
-.btn-outline {
+.ff-btn-outline {
   background: transparent;
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
 }
-.btn-outline:hover {
+.ff-btn-outline:hover {
   background: var(--color-primary);
   color: var(--color-surface);
   transform: translateY(-2px);
 }
-.btn-ghost-white {
+.ff-btn-ghost-white {
   background: transparent;
   color: var(--color-surface);
-  border: 2px solid var(--white-text-soft);
+  border: 2px solid rgba(255, 255, 255, 0.75);
 }
-.btn-ghost-white:hover {
+.ff-btn-ghost-white:hover {
   background: var(--white-dim-4);
   border-color: var(--color-surface);
 }
@@ -253,4 +259,9 @@ dialog::backdrop {
   max-width: 34ch;
 }
 
-.dialog-inner .btn { margin-top: 0.5rem; min-width: 160px; }
+.dialog-inner .ff-btn { margin-top: 0.5rem; min-width: 160px; }
+
+.ff-image-optimizer li {
+  color: var(--color-surface);
+  text-decoration: underline;
+}
