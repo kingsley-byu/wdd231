@@ -353,6 +353,8 @@
   gap: 0.8rem;
 }
 
+
+
 .empty-icon { font-size: 3.5rem; }
 
 .empty-state h3 {
@@ -368,3 +370,7 @@
 }
 
 .empty-state .btn { margin-top: 0.5rem; }
+
+.empty-state[hidden] {
+  display: none;
+}
