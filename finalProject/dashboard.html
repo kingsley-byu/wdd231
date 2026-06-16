@@ -49,7 +49,7 @@
         <section class="dashboard-section">
             <div class="ff-container">
 
-                <div class="dashboard-banner">
+                <div class="ff-dashboard-banner">
                     <div class="banner-left">
                         <p class="banner-greeting">Welcome back, <strong id="customer-name">Customer</strong>  👋</p>
                         <p class="banner-order">Order <span id="banner-order-id">#FF-0001</span></p>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                <div class="dashboard-grid">
+                <div class="ff-dashboard-grid">
 
                     <div class="ff-dash-card">
                         <h3>📋 Order Summary</h3>
@@ -163,8 +163,8 @@
                 </div> <!-- End dashboard grid -->
 
                 <!-- no order state (shown if localStorage is empty) -->
-                <div class="empty-state" id="empty-state" hidden>
-                    <span class="empty-icon">🧺</span>
+                <div class="ff-empty-state" id="empty-state" hidden>
+                    <span class="ff-empty-icon">🧺</span>
                     <p>You have not placed an order yet.</p>
                     <a href="order.html" class="ff-btn ff-btn-primary">Place an Order</a>
                 </div>
@@ -172,7 +172,7 @@
         </section>
 
         <dialog id="stage-dialog">
-            <div class="dialog-inner">
+            <div class="ff-dialog-inner">
                 <span class="dialog-icon" id="dialog-stage-icon">🔄</span>
                 <h3>Status Update</h3>
                 <p id="dialog-stage-message">Your laundry is now being washed!</p>

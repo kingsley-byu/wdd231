@@ -224,6 +224,8 @@ dialog {
   max-width: min(460px, 90vw);
   box-shadow: var(--shadow-lg);
   animation: dialogIn 0.25s ease;
+  margin: auto;
+
 }
 
 dialog::backdrop {
@@ -236,7 +238,7 @@ dialog::backdrop {
   to   { opacity: 1; transform: translateY(0)     scale(1);    }
 }
 
-.dialog-inner {
+.ff-dialog-inner {
   padding: 2.5rem 2rem;
   text-align: center;
   display: flex;
@@ -247,19 +249,19 @@ dialog::backdrop {
 
 .dialog-icon { font-size: 3rem; line-height: 1; }
 
-.dialog-inner h3 {
+.ff-dialog-inner h3 {
   font-size: 1.4rem;
   color: var(--color-primary);
   margin: 0;
 }
 
-.dialog-inner p {
+.ff-dialog-inner p {
   color: var(--color-muted);
   font-size: 0.95rem;
   max-width: 34ch;
 }
 
-.dialog-inner .ff-btn { margin-top: 0.5rem; min-width: 160px; }
+.ff-dialog-inner .ff-btn { margin-top: 0.5rem; min-width: 160px; }
 
 .ff-image-optimizer a {
   color: var(--color-surface);

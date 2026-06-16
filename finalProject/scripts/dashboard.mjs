@@ -5,8 +5,8 @@ function orderDataValidate() {
 
     if (orderData === null) {
         const emptyState = document.querySelector("#empty-state");
-        const dashboardBanner = document.querySelector(".dashboard-banner");
-        const dashboardGrid = document.querySelector(".dashboard-grid");
+        const dashboardBanner = document.querySelector(".ff-dashboard-banner");
+        const dashboardGrid = document.querySelector(".ff-dashboard-grid");
 
         emptyState.removeAttribute("hidden");
         dashboardBanner.style.display = "none";

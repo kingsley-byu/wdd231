@@ -13,7 +13,7 @@
 /* ══════════════════════════════════════════
    WELCOME BANNER
 ══════════════════════════════════════════ */
-.dashboard-banner {
+.ff-dashboard-banner {
   background: var(--color-primary);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -26,7 +26,7 @@
   overflow: hidden;
 }
 
-.dashboard-banner::before {
+.ff-dashboard-banner::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -86,7 +86,7 @@
 /* ══════════════════════════════════════════
    DASHBOARD GRID
 ══════════════════════════════════════════ */
-.dashboard-grid {
+.ff-dashboard-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
@@ -95,7 +95,7 @@
 /* ══════════════════════════════════════════
    DASH CARDS
 ══════════════════════════════════════════ */
-.fff-dash-card {
+.ff-dash-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -344,7 +344,7 @@
 /* ══════════════════════════════════════════
    EMPTY STATE (no order in localStorage)
 ══════════════════════════════════════════ */
-.empty-state {
+.ff-empty-state {
   text-align: center;
   padding: 4rem 1rem;
   display: flex;
@@ -355,22 +355,22 @@
 
 
 
-.empty-icon { font-size: 3.5rem; }
+.ff-empty-icon { font-size: 3.5rem; }
 
-.empty-state h3 {
+.ff-empty-state h3 {
   font-family: var(--font-body);
   font-size: 1.2rem;
   color: var(--color-muted);
 }
 
-.empty-state p {
+.ff-empty-state p {
   color: var(--color-muted);
   font-size: 0.9rem;
   max-width: 30ch;
 }
 
-.empty-state .ff-btn { margin-top: 0.5rem; }
+.ff-empty-state .ff-btn { margin-top: 0.5rem; }
 
-.empty-state[hidden] {
+.ff-empty-state[hidden] {
   display: none;
 }
