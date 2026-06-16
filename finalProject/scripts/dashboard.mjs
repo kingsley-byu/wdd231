@@ -64,7 +64,7 @@ function orderDataValidate() {
         function updateTracker(currentStage) {
             for (let i = 1; i <= 5; i++) {
                 const stageEl = document.querySelector(`#stage-${i}`);
-                const badge = stageEl.querySelector(".status-badge");
+                const badge = stageEl.querySelector(".ff-status-badge");
                 if (i < currentStage) {
                     stageEl.classList.add("ff-completed");
                     badge.textContent = "Completed";
