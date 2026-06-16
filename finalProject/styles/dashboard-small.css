@@ -369,7 +369,7 @@
   max-width: 30ch;
 }
 
-.empty-state .btn { margin-top: 0.5rem; }
+.empty-state .ff-btn { margin-top: 0.5rem; }
 
 .empty-state[hidden] {
   display: none;
