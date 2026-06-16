@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/dashboard-small.css">
     <link rel="stylesheet" href="styles/dashboard-large.css">
+
+    <script src="scripts/dashboard.mjs" type="module"></script>
 </head>
 <body>
     <header>
@@ -53,14 +55,14 @@
                         <p class="banner-order">Order <span id="banner-order-id">#FF-0001</span></p>
                     </div>
                     <div class="banner-status">
-                        <span class="status-dot"></span>
+                        <span class="ff-status-dot"></span>
                         <span id="banner-status-text">Washing in Progress</span>
                     </div>
                 </div>
 
                 <div class="dashboard-grid">
 
-                    <div class="dash-card">
+                    <div class="ff-dash-card">
                         <h3>📋 Order Summary</h3>
 
                         <div class="order-detail-row">
@@ -91,7 +93,7 @@
                     </div>
 
                     <!-- Tracker card -->
-                    <div class="dash-card">
+                    <div class="ff-dash-card">
                         <h3>🔄 Order Progress</h3>
 
                         <!-- Progress bar -->
@@ -101,58 +103,58 @@
                         <p class="progress-label"><span id="progress-percent">0%</span> Complete</p>
 
                         <!-- Five stages -->
-                        <div class="tracker">
+                        <div class="ff-tracker">
 
-                            <div class="tracker-stage" id="stage-1" data-stage="1">
-                                <div class="stage-dot">📥</div>
-                                <div class="stage-info">
+                            <div class="ff-tracker-stage" id="stage-1" data-stage="1">
+                                <div class="ff-stage-dot">📥</div>
+                                <div class="ff-stage-info">
                                     <h4>Order Received</h4>
-                                    <span class="stage-time" id="time-1"></span>
+                                    <span class="ff-stage-time" id="time-1"></span>
                                 </div>
-                                <span class="status-badge badge-pending">Pending</span>
+                                <span class="ff-status-badge ff-badge-pending">Pending</span>
                             </div>
 
-                            <div class="tracker-stage" id="stage-2" data-stage="2">
-                                <div class="stage-dot">💨</div>
-                                <div class="stage-info">
+                            <div class="ff-tracker-stage" id="stage-2" data-stage="2">
+                                <div class="ff-stage-dot">💨</div>
+                                <div class="ff-stage-info">
                                     <h4>Washing in progress</h4>
-                                    <span class="stage-time" id="time-2"></span>
+                                    <span class="ff-stage-time" id="time-2"></span>
                                 </div>
-                                <span class="status-badge badge-pending">Pending</span>
+                                <span class="ff-status-badge ff-badge-pending">Pending</span>
                             </div>
 
-                            <div class="tracker-stage" id="stage-3" data-stage="3">
-                                <div class="stage-dot">📦</div>
-                                <div class="stage-info">
+                            <div class="ff-tracker-stage" id="stage-3" data-stage="3">
+                                <div class="ff-stage-dot">📦</div>
+                                <div class="ff-stage-info">
                                     <h4>Drying Completed</h4>
-                                    <span class="stage-time" id="time-3"></span>
+                                    <span class="ff-stage-time" id="time-3"></span>
                                 </div>
-                                <span class="status-badge badge-pending">Pending</span>
+                                <span class="ff-status-badge ff-badge-pending">Pending</span>
                             </div>
 
-                            <div class="tracker-stage" id="stage-4" data-stage="4">
-                                <div class="stage-dot">🎉</div>
-                                <div class="stage-info">
+                            <div class="ff-tracker-stage" id="stage-4" data-stage="4">
+                                <div class="ff-stage-dot">🎉</div>
+                                <div class="ff-stage-info">
                                     <h4>Ready for Pickup</h4>
-                                    <span class="stage-time" id="time-4"></span>
+                                    <span class="ff-stage-time" id="time-4"></span>
                                 </div>
-                                <span class="status-badge badge-pending">Pending</span>
+                                <span class="ff-status-badge ff-badge-pending">Pending</span>
                             </div>
 
-                            <div class="tracker-stage" id="stage-5" data-stage="5">
-                                <div class="stage-dot">🎉</div>
-                                <div class="stage-info">
+                            <div class="ff-tracker-stage" id="stage-5" data-stage="5">
+                                <div class="ff-stage-dot">🎉</div>
+                                <div class="ff-stage-info">
                                     <h4>Delivered</h4>
-                                    <span class="stage-time" id="time-5"></span>
+                                    <span class="ff-stage-time" id="time-5"></span>
                                 </div>
-                                <span class="status-badge badge-pending">Pending</span>
+                                <span class="ff-status-badge ff-badge-pending">Pending</span>
                             </div>
 
                         </div> <!-- End tracker -->
                     </div>
 
                     <!-- Notification card -->
-                    <div class="dash-card dash-card-full">
+                    <div class="ff-dash-card ff-dash-card-full">
                         <h3>🔔 Notifications</h3>
                         <ul class="notification-list" id="notification-list">
                             <li class="notif-empty">No notification yet. Update will appear here as you order progresses.</li>
@@ -200,6 +202,6 @@
             <p id="lastModified"></p>
         </div>
     </footer>
-    <script src="scripts/dashboard.mjs" type="module"></script>
+    
 </body>
 </html>

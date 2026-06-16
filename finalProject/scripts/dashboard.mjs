@@ -66,14 +66,14 @@ function orderDataValidate() {
                 const stageEl = document.querySelector(`#stage-${i}`);
                 const badge = stageEl.querySelector(".status-badge");
                 if (i < currentStage) {
-                    stageEl.classList.add("completed");
+                    stageEl.classList.add("ff-completed");
                     badge.textContent = "Completed";
-                    badge.className = "status-badge badge-completed";
+                    badge.className = "ff-status-badge ff-badge-completed";
                 }
                 if (i === currentStage) {
-                    stageEl.classList.add("active");
+                    stageEl.classList.add("ff-active");
                     badge.textContent = "In progress";
-                    badge.className = "status-badge badge-active";
+                    badge.className = "ff-status-badge ff-badge-active";
                 }
             }
 

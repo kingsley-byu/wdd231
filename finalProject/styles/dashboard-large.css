@@ -27,9 +27,9 @@
   }
 
   /* Notifications spans both columns */
-  .dash-card-full { grid-column: 1 / -1; }
+  .ff-dash-card-full { grid-column: 1 / -1; }
 
-  .dash-card { padding: 2rem; }
+  .ff-dash-card { padding: 2rem; }
 
   /* Notifications list allows more height */
   .notification-list { max-height: 220px; }
@@ -48,12 +48,12 @@
     gap: 2rem;
   }
 
-  .dash-card { padding: 2.2rem; }
+  .ff-dash-card { padding: 2.2rem; }
 
   /* Tracker stages show side by side on wide cards */
-  .tracker-stage { padding-bottom: 1.6rem; }
+  .ff-tracker-stage { padding-bottom: 1.6rem; }
 
-  .stage-info h4 { font-size: 0.95rem; }
+  .ff-stage-info h4 { font-size: 0.95rem; }
 
   /* Notification list shows more items */
   .notification-list { max-height: 280px; }

@@ -261,7 +261,7 @@ dialog::backdrop {
 
 .dialog-inner .ff-btn { margin-top: 0.5rem; min-width: 160px; }
 
-.ff-image-optimizer li {
+.ff-image-optimizer a {
   color: var(--color-surface);
   text-decoration: underline;
 }
