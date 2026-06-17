@@ -65,6 +65,28 @@ form.addEventListener("submit", (e) => {
 
     localStorage.setItem("freshFold-order", JSON.stringify(order));
 
+    /* ══════════════════════════════════════════
+       FORM ACTION PAGE — URL Search Params
+       Build a query string from the submitted
+       order and attach it to the "Track My Order"
+       link, so dashboard.html (the form's action
+       page) can read these values straight from
+       the URL using URLSearchParams.
+    ══════════════════════════════════════════ */
+    const params = new URLSearchParams({
+        id: order.id,
+        name: order.name,
+        phone: order.phone,
+        email: order.email,
+        service: order.service,
+        quantity: order.quantity,
+        date: order.date,
+        address: order.address,
+        notes: order.notes
+    });
+
+    document.querySelector("#dialog-track-link").href = `dashboard.html?${params.toString()}`;
+
     document.querySelector("#dialog-order-id").textContent = order.id;
     document.querySelector("#order-confirm-dialog").showModal();
 });

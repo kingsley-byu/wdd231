@@ -1,12 +1,41 @@
 import "./main.mjs";
 
+/* ══════════════════════════════════════════
+   FORM ACTION PAGE — URL Search Params
+   Reads form data passed via the URL query
+   string (from order.mjs) and displays it
+   directly, satisfying the requirement that
+   the form's action page show submitted
+   entries using URLSearchParams.
+══════════════════════════════════════════ */
+function displayFormSubmission() {
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.toString() === "") return; // no query string — nothing to show
+
+    const card = document.querySelector("#form-submission-card");
+    card.removeAttribute("hidden");
+
+    document.querySelector("#param-id").textContent = params.get("id") || "—";
+    document.querySelector("#param-name").textContent = params.get("name") || "—";
+    document.querySelector("#param-phone").textContent = params.get("phone") || "—";
+    document.querySelector("#param-email").textContent = params.get("email") || "—";
+    document.querySelector("#param-service").textContent = params.get("service") || "—";
+    document.querySelector("#param-quantity").textContent = params.get("quantity") || "—";
+    document.querySelector("#param-date").textContent = params.get("date") || "—";
+    document.querySelector("#param-address").textContent = params.get("address") || "—";
+    document.querySelector("#param-notes").textContent = params.get("notes") || "—";
+}
+
+displayFormSubmission();
+
 const orderData = localStorage.getItem("freshFold-order");
 function orderDataValidate() {
 
     if (orderData === null) {
         const emptyState = document.querySelector("#empty-state");
-        const dashboardBanner = document.querySelector(".ff-dashboard-banner");
-        const dashboardGrid = document.querySelector(".ff-dashboard-grid");
+        const dashboardBanner = document.querySelector(".dashboard-banner");
+        const dashboardGrid = document.querySelector(".dashboard-grid");
 
         emptyState.removeAttribute("hidden");
         dashboardBanner.style.display = "none";
@@ -66,12 +95,12 @@ function orderDataValidate() {
                 const stageEl = document.querySelector(`#stage-${i}`);
                 const badge = stageEl.querySelector(".ff-status-badge");
                 if (i < currentStage) {
-                    stageEl.classList.add("ff-completed");
+                    stageEl.classList.add("completed");
                     badge.textContent = "Completed";
                     badge.className = "ff-status-badge ff-badge-completed";
                 }
                 if (i === currentStage) {
-                    stageEl.classList.add("ff-active");
+                    stageEl.classList.add("active");
                     badge.textContent = "In progress";
                     badge.className = "ff-status-badge ff-badge-active";
                 }

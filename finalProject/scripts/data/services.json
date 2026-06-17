@@ -24,7 +24,91 @@
     "id": 4,
     "name": "Delivery",
     "icon": "🚚",
-    "description": "Doorstep pickup and delivery within your area. Scheduled at your convenience.",
+    "description": "Doorstep pickup and delivery within your area, scheduled at your convenience.",
     "price": "₦1,000 flat"
+  },
+  {
+    "id": 5,
+    "name": "Express Wash",
+    "icon": "⚡",
+    "description": "Same-day rush washing for when you need clean clothes in a hurry.",
+    "price": "₦2,500 / load"
+  },
+  {
+    "id": 6,
+    "name": "Dry Cleaning",
+    "icon": "🧥",
+    "description": "Specialized solvent cleaning for suits, coats, and delicate fabrics.",
+    "price": "₦3,000 / item"
+  },
+  {
+    "id": 7,
+    "name": "Stain Removal",
+    "icon": "🧽",
+    "description": "Targeted treatment for tough stains like oil, wine, and grass.",
+    "price": "₦700 / item"
+  },
+  {
+    "id": 8,
+    "name": "Bedding Wash",
+    "icon": "🛏️",
+    "description": "Deep wash for duvets, comforters, and large bedding sets.",
+    "price": "₦2,000 / set"
+  },
+  {
+    "id": 9,
+    "name": "Curtain Cleaning",
+    "icon": "🪟",
+    "description": "Gentle cleaning that preserves fabric and color in heavy curtains.",
+    "price": "₦2,200 / panel"
+  },
+  {
+    "id": 10,
+    "name": "Shoe Cleaning",
+    "icon": "👟",
+    "description": "Hand-cleaned sneakers and shoes restored to a fresh, like-new look.",
+    "price": "₦1,200 / pair"
+  },
+  {
+    "id": 11,
+    "name": "Carpet Cleaning",
+    "icon": "🟫",
+    "description": "Deep steam cleaning to lift dirt and odors from rugs and carpets.",
+    "price": "₦4,000 / piece"
+  },
+  {
+    "id": 12,
+    "name": "Suit Pressing",
+    "icon": "🤵",
+    "description": "Sharp, crease-free pressing for suits and formal wear.",
+    "price": "₦900 / item"
+  },
+  {
+    "id": 13,
+    "name": "Duvet Cleaning",
+    "icon": "🛌",
+    "description": "Specialized cleaning for thick duvets and winter blankets.",
+    "price": "₦2,500 / item"
+  },
+  {
+    "id": 14,
+    "name": "Leather Care",
+    "icon": "🧴",
+    "description": "Conditioning and cleaning for leather jackets and bags.",
+    "price": "₦3,500 / item"
+  },
+  {
+    "id": 15,
+    "name": "Wedding Dress Care",
+    "icon": "👰",
+    "description": "Delicate cleaning and preservation for wedding gowns.",
+    "price": "₦8,000 / item"
+  },
+  {
+    "id": 16,
+    "name": "Starch & Press",
+    "icon": "🎽",
+    "description": "Crisp starching and pressing for shirts and uniforms.",
+    "price": "₦600 / item"
   }
 ]
